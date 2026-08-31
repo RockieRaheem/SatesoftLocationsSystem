@@ -4,6 +4,7 @@ import { Theme, Country, ElectoralLevelName } from '../types';
 import Icon from './Icon';
 import DefineElectoralLevelsModal from './DefineElectoralLevelsModal';
 import ViewElectoralLevelsModal from './ViewElectoralLevelsModal';
+import UgandaElectoralRegistry from './UgandaElectoralRegistry';
 
 const FlagIcon: React.FC<{ countryCode: string, countryName: string }> = ({ countryCode, countryName }) => {
     return (
@@ -76,6 +77,7 @@ const CountryElectoralLevelsPage: React.FC<CountryElectoralLevelsPageProps> = ({
             />
             
             <div className={`${theme === 'dark' ? 'bg-slate-900' : 'bg-white'} p-6 rounded-lg shadow-sm h-full flex flex-col`}>
+                <UgandaElectoralRegistry theme={theme} />
                 <div className="flex flex-col sm:flex-row justify-between items-center mb-6 gap-4">
                     <div>
                         <h2 className={`text-xl font-bold ${theme === 'dark' ? 'text-slate-100' : 'text-slate-900'}`}>Country Electoral Levels</h2>

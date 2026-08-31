@@ -80,8 +80,14 @@ export const allAfricanCountries: Country[] = [
             { id: 123, name: 'Goma', level: 3, countryCode: 'UG', parentAdminLevelId: 12 }
         ], 
         adminLevelNames: [{level: 1, name: "Region"}, {level: 2, name: "District"}, {level: 3, name: "Village"}], 
-        numberOfAdminLevels: 3, numberOfElectoralLevels: 3, numberOfEconomicLevels: 2,
-        electoralLevelNames: [{ level: 1, name: "Presidential" }, { level: 2, name: "Parliamentary" }, { level: 3, name: "Local Council" }],
+        numberOfAdminLevels: 3, numberOfElectoralLevels: 5, numberOfEconomicLevels: 2,
+        electoralLevelNames: [
+            { level: 1, name: "District / City" },
+            { level: 2, name: "Constituency" },
+            { level: 3, name: "Subcounty / Town / Division" },
+            { level: 4, name: "Parish / Ward" },
+            { level: 5, name: "Village / Cell" }
+        ],
         loyaltyProgram: { enabled: true, earningThreshold: 15000, redemptionValue: 100 },
         currencyDenominators: [
             { id: 1, value: 50000, label: '50,000', type: 'Note', status: 'Active' },

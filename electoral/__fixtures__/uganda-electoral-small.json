@@ -1,0 +1,34 @@
+{
+  "districts": ["ALPHA"],
+  "byVillage": {
+    "SAME": {
+      "village": "SAME",
+      "parish": "PARISH ONE",
+      "subcounty": "SUBCOUNTY ONE",
+      "constituency": "CONSTITUENCY ONE",
+      "district": "ALPHA"
+    }
+  },
+  "byParish": {
+    "ALPHA||SUBCOUNTY THREE||PARISH THREE": {
+      "parish": "PARISH THREE",
+      "villages": ["ORPHAN"],
+      "subcounty": "SUBCOUNTY THREE",
+      "district": "ALPHA"
+    }
+  },
+  "bySubcounty": {
+    "ALPHA||SUBCOUNTY ONE": {
+      "subcounty": "SUBCOUNTY ONE",
+      "district": "ALPHA",
+      "constituency": "CONSTITUENCY ONE",
+      "data": [{ "parish": "PARISH ONE", "villages": ["SAME", "NEW"] }]
+    },
+    "ALPHA||SUBCOUNTY TWO": {
+      "subcounty": "SUBCOUNTY TWO",
+      "district": "ALPHA",
+      "constituency": "CONSTITUENCY TWO",
+      "data": [{ "parish": "PARISH TWO", "villages": ["SAME"] }]
+    }
+  }
+}

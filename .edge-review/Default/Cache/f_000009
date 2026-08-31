@@ -1,0 +1,600 @@
+import { createHotContext as __vite__createHotContext } from "/@vite/client";import.meta.hot = __vite__createHotContext("/components/Icon.tsx");import __vite__cjsImport0_react_jsxDevRuntime from "/node_modules/.vite/deps/react_jsx-dev-runtime.js?v=f70ce694"; const Fragment = __vite__cjsImport0_react_jsxDevRuntime["Fragment"]; const jsxDEV = __vite__cjsImport0_react_jsxDevRuntime["jsxDEV"];
+const icons = {
+  refresh: /* @__PURE__ */ jsxDEV("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0011.664 0l3.181-3.183m-4.991-2.696L7.985 5.644m0 0l3.181 3.183m0 0V5.644" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 28,
+    columnNumber: 12
+  }, this),
+  "chevron-up": /* @__PURE__ */ jsxDEV("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M4.5 15.75l7.5-7.5 7.5 7.5" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 29,
+    columnNumber: 17
+  }, this),
+  "chevron-down": /* @__PURE__ */ jsxDEV("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M19.5 8.25l-7.5 7.5-7.5-7.5" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 30,
+    columnNumber: 19
+  }, this),
+  "x-mark": /* @__PURE__ */ jsxDEV("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M6 18L18 6M6 6l12 12" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 31,
+    columnNumber: 13
+  }, this),
+  dashboard: /* @__PURE__ */ jsxDEV("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25a2.25 2.25 0 01-2.25 2.25h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25h-2.25a2.25 2.25 0 01-2.25-2.25v-2.25z" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 32,
+    columnNumber: 14
+  }, this),
+  "sales-desk": /* @__PURE__ */ jsxDEV("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.75A.75.75 0 013 4.5h.75m0 0h.75A.75.75 0 015.25 6v.75m0 0H3.75m0 0A.75.75 0 013 5.25v-.75m0 0A.75.75 0 013.75 3h.75a.75.75 0 01.75.75v.75m0 0h-.75m0 0A.75.75 0 013.75 6M9 3.75h.008v.008H9V3.75zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zM12 3.75h.008v.008H12V3.75zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zM15 3.75h.008v.008H15V3.75zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 33,
+    columnNumber: 17
+  }, this),
+  reports: /* @__PURE__ */ jsxDEV("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75c0 .621-.504 1.125-1.125 1.125h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 34,
+    columnNumber: 12
+  }, this),
+  "client-mgt": /* @__PURE__ */ jsxDEV("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-4.663v.003z" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 35,
+    columnNumber: 17
+  }, this),
+  "manage-stock": /* @__PURE__ */ jsxDEV("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 36,
+    columnNumber: 19
+  }, this),
+  "stock-purchase": /* @__PURE__ */ jsxDEV("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c.51 0 .962-.343 1.087-.835l.383-1.437M7.5 14.25L5.106 5.106A2.25 2.25 0 002.854 3H2.25" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 37,
+    columnNumber: 21
+  }, this),
+  "stock-listing": /* @__PURE__ */ jsxDEV("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 38,
+    columnNumber: 20
+  }, this),
+  "shop-mgt": /* @__PURE__ */ jsxDEV("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M13.5 21v-7.5a.75.75 0 01.75-.75h3a.75.75 0 01.75.75V21m-4.5 0H2.25m11.25 0H21.75M12 17.25a2.25 2.25 0 01-2.25-2.25V7.5a2.25 2.25 0 012.25-2.25h.01M12 7.5a2.25 2.25 0 00-2.25-2.25H9.75M12 7.5a2.25 2.25 0 012.25-2.25h.01M12 7.5a2.25 2.25 0 002.25-2.25H14.25m-2.25 9.75h.01M1.5 9.75a.75.75 0 01.75-.75h19.5a.75.75 0 01.75.75v.75a.75.75 0 01-.75.75H2.25a.75.75 0 01-.75-.75v-.75z" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 39,
+    columnNumber: 15
+  }, this),
+  finances: /* @__PURE__ */ jsxDEV("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 40,
+    columnNumber: 13
+  }, this),
+  "product-chain": /* @__PURE__ */ jsxDEV("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 41,
+    columnNumber: 20
+  }, this),
+  "user-mgt": /* @__PURE__ */ jsxDEV("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-4.663v.003z" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 42,
+    columnNumber: 15
+  }, this),
+  "subscription-mgt": /* @__PURE__ */ jsxDEV("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M16.5 12a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0zm0 0c0 1.657 1.007 3 2.25 3S21 13.657 21 12a9 9 0 10-2.636 6.364M16.5 12V8.25" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 43,
+    columnNumber: 23
+  }, this),
+  "system-settings": /* @__PURE__ */ jsxDEV("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M4.5 12a7.5 7.5 0 0015 0m-15 0a7.5 7.5 0 1115 0m-15 0H3m16.5 0H21m-1.5 0H12m-8.457 3.077l1.41-.513m14.095-5.13l1.41-.513M5.106 17.785l1.15-.964m11.49-9.642l1.149-.964M7.501 19.795l.75-1.3m7.5-12.99l.75-1.3m-10.639 14.962l.13-1.495m11.495-13.23l.13-1.495m-12.876 14.165l-.513-1.411m14.095-5.13l-.513-1.411M3.319 15.299l-1.15-.964m11.49-9.642l-1.15-.964M6.6 12.427l-1.495.13m13.23-11.495l-1.495.13" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 44,
+    columnNumber: 22
+  }, this),
+  "shield-check": /* @__PURE__ */ jsxDEV("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.43-.334-2.814-.952-4.121a11.959 11.959 0 00-4.522-3.482z" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 45,
+    columnNumber: 19
+  }, this),
+  "shield-alert": /* @__PURE__ */ jsxDEV("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 46,
+    columnNumber: 19
+  }, this),
+  "lookup-values": /* @__PURE__ */ jsxDEV("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M3.75 12h16.5m-16.5 3.75h16.5M3.75 19.5h16.5M5.625 4.5h12.75a1.875 1.875 0 010 3.75H5.625a1.875 1.875 0 010-3.75z" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 47,
+    columnNumber: 20
+  }, this),
+  currencies: /* @__PURE__ */ jsxDEV("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M14.25 7.756a4.5 4.5 0 100 8.488M7.5 10.5h5.25m-5.25 3h5.25M21 12a9 9 0 11-18 0 9 9 0 0118 0z" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 48,
+    columnNumber: 15
+  }, this),
+  countries: /* @__PURE__ */ jsxDEV("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M21 12a9 9 0 11-18 0 9 9 0 0118 0z" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 49,
+    columnNumber: 14
+  }, this),
+  logout: /* @__PURE__ */ jsxDEV("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 50,
+    columnNumber: 11
+  }, this),
+  hamburger: /* @__PURE__ */ jsxDEV("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 51,
+    columnNumber: 14
+  }, this),
+  "chevron-up-down": /* @__PURE__ */ jsxDEV("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 52,
+    columnNumber: 22
+  }, this),
+  search: /* @__PURE__ */ jsxDEV("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 53,
+    columnNumber: 11
+  }, this),
+  delete: /* @__PURE__ */ jsxDEV("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.134-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.067-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 54,
+    columnNumber: 11
+  }, this),
+  check: /* @__PURE__ */ jsxDEV("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M4.5 12.75l6 6 9-13.5" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 55,
+    columnNumber: 10
+  }, this),
+  "check-circle": /* @__PURE__ */ jsxDEV("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 56,
+    columnNumber: 19
+  }, this),
+  "exclamation-triangle": /* @__PURE__ */ jsxDEV("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 57,
+    columnNumber: 27
+  }, this),
+  "arrows-right-left": /* @__PURE__ */ jsxDEV("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M7.5 21L3 16.5m0 0L7.5 12M3 16.5h18M16.5 3L21 7.5m0 0L16.5 12M21 7.5H3" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 58,
+    columnNumber: 24
+  }, this),
+  "user-circle": /* @__PURE__ */ jsxDEV("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 59,
+    columnNumber: 18
+  }, this),
+  view: /* @__PURE__ */ jsxDEV(Fragment, { children: [
+    /* @__PURE__ */ jsxDEV("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.432 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" }, void 0, false, {
+      fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+      lineNumber: 62,
+      columnNumber: 7
+    }, this),
+    /* @__PURE__ */ jsxDEV("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M15 12a3 3 0 11-6 0 3 3 0 016 0z" }, void 0, false, {
+      fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+      lineNumber: 63,
+      columnNumber: 7
+    }, this)
+  ] }, void 0, true, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 61,
+    columnNumber: 3
+  }, this),
+  edit: /* @__PURE__ */ jsxDEV("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 66,
+    columnNumber: 9
+  }, this),
+  filter: /* @__PURE__ */ jsxDEV("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M12 3c2.755 0 5.455.232 8.083.678.533.09.917.556.917 1.096v1.044a2.25 2.25 0 01-.659 1.591l-5.432 5.432a2.25 2.25 0 00-.659 1.591v2.927a2.25 2.25 0 01-1.244 2.013L9.75 21v-6.572a2.25 2.25 0 00-.659-1.591L3.659 7.409A2.25 2.25 0 013 5.818V4.774c0-.54.384-1.006.917-1.096A48.32 48.32 0 0112 3z" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 67,
+    columnNumber: 11
+  }, this),
+  download: /* @__PURE__ */ jsxDEV("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 68,
+    columnNumber: 13
+  }, this),
+  upload: /* @__PURE__ */ jsxDEV("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 69,
+    columnNumber: 11
+  }, this),
+  template: /* @__PURE__ */ jsxDEV("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 70,
+    columnNumber: 13
+  }, this),
+  "chevron-left": /* @__PURE__ */ jsxDEV("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M15.75 19.5L8.25 12l7.5-7.5" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 71,
+    columnNumber: 19
+  }, this),
+  "chevron-right": /* @__PURE__ */ jsxDEV("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M8.25 4.5l7.5 7.5-7.5 7.5" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 72,
+    columnNumber: 20
+  }, this),
+  bell: /* @__PURE__ */ jsxDEV("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.31 5.632l-1.32.917A5.96 5.96 0 006 21h12a5.96 5.96 0 00.917-2.918z" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 73,
+    columnNumber: 9
+  }, this),
+  key: /* @__PURE__ */ jsxDEV("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M15.75 5.25a3 3 0 013 3m3 0a6 6 0 01-7.029 5.912c-.563-.097-1.159.026-1.563.43L10.5 17.25H8.25v-2.25L10.5 13.5c.404-.404.527-1 .43-1.563A6 6 0 1121.75 8.25z" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 74,
+    columnNumber: 8
+  }, this),
+  camera: /* @__PURE__ */ jsxDEV("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M6.827 6.175A2.31 2.31 0 015.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9.574c0-1.167-.75-1.994-1.802-2.169a47.865 47.865 0 00-1.134-.175 2.31 2.31 0 01-1.64-1.055l-.822-1.316a2.192 2.192 0 00-1.736-1.039 48.776 48.776 0 00-5.232 0 2.192 2.192 0 00-1.736 1.039l-.821 1.316z" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 75,
+    columnNumber: 11
+  }, this),
+  phone: /* @__PURE__ */ jsxDEV("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 76,
+    columnNumber: 10
+  }, this),
+  twitter: /* @__PURE__ */ jsxDEV("path", { d: "M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 77,
+    columnNumber: 12
+  }, this),
+  linkedin: /* @__PURE__ */ jsxDEV("path", { d: "M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zm-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79zM6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68zm1.39 9.94v-8.37H5.5v8.37h2.77z" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 78,
+    columnNumber: 13
+  }, this),
+  github: /* @__PURE__ */ jsxDEV("path", { fillRule: "evenodd", d: "M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.165 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.378.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z", clipRule: "evenodd" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 79,
+    columnNumber: 11
+  }, this),
+  cash: /* @__PURE__ */ jsxDEV("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.75A.75.75 0 013 4.5h.75m0 0h.75A.75.75 0 015.25 6v.75m0 0H3.75m0 0A.75.75 0 013 5.25v-.75m0 0A.75.75 0 013.75 3h.75a.75.75 0 01.75.75v.75m0 0h-.75m0 0A.75.75 0 013.75 6M21 12a9 9 0 11-18 0 9 9 0 0118 0z" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 80,
+    columnNumber: 9
+  }, this),
+  globe: /* @__PURE__ */ jsxDEV(Fragment, { children: [
+    /* @__PURE__ */ jsxDEV("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M12 21a9 9 0 100-18 9 9 0 000 18z" }, void 0, false, {
+      fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+      lineNumber: 83,
+      columnNumber: 7
+    }, this),
+    /* @__PURE__ */ jsxDEV("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M3.636 9h16.728M4.242 15h15.516M12 3c-2.121 0-4.08.8-5.515 2.222M12 21c2.121 0 4.08-.8 5.515-2.222" }, void 0, false, {
+      fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+      lineNumber: 84,
+      columnNumber: 7
+    }, this)
+  ] }, void 0, true, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 82,
+    columnNumber: 3
+  }, this),
+  "arrow-up": /* @__PURE__ */ jsxDEV("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M12 19.5v-15m0 0l-6.75 6.75M12 4.5l6.75 6.75" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 87,
+    columnNumber: 15
+  }, this),
+  "arrow-down": /* @__PURE__ */ jsxDEV("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M12 4.5v15m0 0l6.75-6.75M12 19.5l-6.75-6.75" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 88,
+    columnNumber: 17
+  }, this),
+  calendar: /* @__PURE__ */ jsxDEV("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25A2.25 2.25 0 0118.75 21H5.25A2.25 2.25 0 013 18.75z" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 89,
+    columnNumber: 13
+  }, this),
+  plus: /* @__PURE__ */ jsxDEV("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M12 4.5v15m7.5-7.5h-15" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 90,
+    columnNumber: 9
+  }, this),
+  star: /* @__PURE__ */ jsxDEV("path", { fillRule: "evenodd", d: "M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.116 3.994 1.28 5.385c.199.84-.701 1.502-1.442 1.106L12 18.502l-4.706 2.927c-.742.396-1.641-.266-1.442-1.106l1.28-5.385-4.116-3.994c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.007z", clipRule: "evenodd" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 91,
+    columnNumber: 9
+  }, this),
+  print: /* @__PURE__ */ jsxDEV("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M14.25 7.5V4.5a2.25 2.25 0 00-2.25-2.25H7.5A2.25 2.25 0 005.25 4.5v3m9 0h3.75a2.25 2.25 0 012.25 2.25v6.75a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 16.5V9.75a2.25 2.25 0 012.25-2.25h3.75m3.375 0v-1.5c0-.621-.504-1.125-1.125-1.125H10.875c-.621 0-1.125.504-1.125 1.125v1.5m3.375 0h-3.375" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 92,
+    columnNumber: 10
+  }, this),
+  share: /* @__PURE__ */ jsxDEV("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M7.217 10.907a2.25 2.25 0 100 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186l9.566-5.314m-9.566 7.5l9.566 5.314m0 0a2.25 2.25 0 100-2.186m0 2.186c-.18.324-.283.696-.283 1.093s.103.77.283 1.093m0-2.186V10.907" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 93,
+    columnNumber: 10
+  }, this),
+  map: /* @__PURE__ */ jsxDEV("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M9 6.75V15m6-10.5V15m.75 4.5l-3-3H5.25m7.5-15l3 3H21m-7.5 15l-3-3H4.5m7.5 4.5V21m-7.5-4.5V3.75m15 13.5V3.75" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 94,
+    columnNumber: 8
+  }, this),
+  "arrows-pointing-out": /* @__PURE__ */ jsxDEV("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75v4.5m0-4.5h-4.5m4.5 0L15 9m5.25 11.25v-4.5m0 4.5h-4.5m4.5 0L15 15" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 95,
+    columnNumber: 26
+  }, this),
+  "arrows-pointing-in": /* @__PURE__ */ jsxDEV("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M9 9V4.5M9 9H4.5m0 0l-1.875-1.875M4.5 9l1.875 1.875m11.25-1.875V4.5m0 4.5h-4.5m4.5 0l1.875-1.875m-1.875 1.875-1.875 1.875m-7.5 7.5V15m0 4.5h4.5m-4.5 0l1.875 1.875M9 15l-1.875 1.875m11.25-1.875V15m0 4.5h-4.5m4.5 0l1.875 1.875m-1.875-1.875-1.875 1.875" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 96,
+    columnNumber: 25
+  }, this),
+  play: /* @__PURE__ */ jsxDEV("path", { fillRule: "evenodd", d: "M4.5 5.653c0-1.426 1.529-2.33 2.779-1.643l11.54 6.647c1.295.748 1.295 2.538 0 3.286L7.279 20.99c-1.25.72-2.779-.217-2.779-1.643V5.653z", clipRule: "evenodd" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 97,
+    columnNumber: 9
+  }, this),
+  pause: /* @__PURE__ */ jsxDEV("path", { fillRule: "evenodd", d: "M6.75 5.25a.75.75 0 01.75.75v12a.75.75 0 01-1.5 0v-12a.75.75 0 01.75-.75zm9 0a.75.75 0 01.75.75v12a.75.75 0 01-1.5 0v-12a.75.75 0 01.75-.75z", clipRule: "evenodd" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 98,
+    columnNumber: 10
+  }, this),
+  "volume-up": /* @__PURE__ */ jsxDEV("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M19.114 5.636a9 9 0 010 12.728M16.463 8.288a5.25 5.25 0 010 7.424M6.75 8.25l4.72-4.72a.75.75 0 011.28.53v15.88a.75.75 0 01-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.01 9.01 0 012.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75z" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 99,
+    columnNumber: 16
+  }, this),
+  "volume-off": /* @__PURE__ */ jsxDEV("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M17.25 9.75 19.5 12m0 0 2.25 2.25M19.5 12l2.25-2.25M19.5 12l-2.25 2.25M15 9.75l-4.72-4.72a.75.75 0 0 0-1.28.53v15.88a.75.75 0 0 0 1.28.53L15 9.75z" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 100,
+    columnNumber: 17
+  }, this),
+  "expand": /* @__PURE__ */ jsxDEV("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M4 8V4h4m12 12v-4h-4M4 16v4h4m12-12h-4v-4" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 101,
+    columnNumber: 13
+  }, this),
+  "compress": /* @__PURE__ */ jsxDEV("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M8 4H4v4m12 12h4v-4M8 20H4v-4m12-12h4V4" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 102,
+    columnNumber: 15
+  }, this),
+  "record": /* @__PURE__ */ jsxDEV("circle", { cx: "12", cy: "12", r: "8" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 103,
+    columnNumber: 13
+  }, this),
+  "stop": /* @__PURE__ */ jsxDEV("rect", { x: "6", y: "6", width: "12", height: "12", rx: "2" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 104,
+    columnNumber: 11
+  }, this),
+  "backward": /* @__PURE__ */ jsxDEV("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M18.75 19.5l-7.5-7.5 7.5-7.5m-6 15L5.25 12l7.5-7.5" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 105,
+    columnNumber: 15
+  }, this),
+  "forward": /* @__PURE__ */ jsxDEV("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M5.25 4.5l7.5 7.5-7.5 7.5m6-15l7.5 7.5-7.5 7.5" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 106,
+    columnNumber: 14
+  }, this),
+  "api": /* @__PURE__ */ jsxDEV("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 107,
+    columnNumber: 10
+  }, this),
+  "chat-bubble": /* @__PURE__ */ jsxDEV("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12.375m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.159 3 12c0-4.555 4.03-8.25 9-8.25s9 3.694 9 8.25z" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 108,
+    columnNumber: 18
+  }, this),
+  "broadcast": /* @__PURE__ */ jsxDEV("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 109,
+    columnNumber: 16
+  }, this),
+  "lock": /* @__PURE__ */ jsxDEV("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 110,
+    columnNumber: 11
+  }, this),
+  "users": /* @__PURE__ */ jsxDEV("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-4.663v.003z" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 111,
+    columnNumber: 12
+  }, this),
+  "ellipsis-vertical": /* @__PURE__ */ jsxDEV("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M12 6.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 12.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 18.75a.75.75 0 110-1.5.75.75 0 010 1.5z" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 112,
+    columnNumber: 24
+  }, this),
+  "reply": /* @__PURE__ */ jsxDEV("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M9 15L3 9m0 0l6-6M3 9h12a6 6 0 010 12h-3" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 113,
+    columnNumber: 12
+  }, this),
+  "info": /* @__PURE__ */ jsxDEV("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 114,
+    columnNumber: 11
+  }, this),
+  "audio": /* @__PURE__ */ jsxDEV("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M19.114 5.636a9 9 0 010 12.728M16.463 8.288a5.25 5.25 0 010 7.424M6.75 8.25l4.72-4.72a.75.75 0 011.28.53v15.88a.75.75 0 01-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.01 9.01 0 012.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75z" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 115,
+    columnNumber: 12
+  }, this),
+  "cloud": /* @__PURE__ */ jsxDEV("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M2.25 15a4.5 4.5 0 004.5 4.5H18a3.75 3.75 0 001.332-7.257 3 3 0 00-3.758-3.848 5.25 5.25 0 00-10.233 2.33A4.502 4.502 0 002.25 15z" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 116,
+    columnNumber: 12
+  }, this),
+  "analytics": /* @__PURE__ */ jsxDEV("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M10.5 6a7.5 7.5 0 107.5 7.5h-7.5V6z M13.5 10.5H21A7.5 7.5 0 0013.5 3v7.5z" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 117,
+    columnNumber: 16
+  }, this),
+  "smile": /* @__PURE__ */ jsxDEV("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M15.182 15.182a4.5 4.5 0 01-6.364 0M21 12a9 9 0 11-18 0 9 9 0 0118 0zM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75zm-.375 0h.008v.015h-.008V9.75zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75zm-.375 0h.008v.015h-.008V9.75z" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 118,
+    columnNumber: 12
+  }, this),
+  "meh": /* @__PURE__ */ jsxDEV("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M21 12a9 9 0 11-18 0 9 9 0 0118 0zM9 10a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zM9 15h6" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 119,
+    columnNumber: 10
+  }, this),
+  "frown": /* @__PURE__ */ jsxDEV("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M15.182 16.318A4.486 4.486 0 0012.016 15a4.486 4.486 0 00-3.198 1.318M21 12a9 9 0 11-18 0 9 9 0 0118 0zM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75zm-.375 0h.008v.015h-.008V9.75zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75zm-.375 0h.008v.015h-.008V9.75z" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 120,
+    columnNumber: 12
+  }, this),
+  "phone-incoming": /* @__PURE__ */ jsxDEV("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M19.5 4.5l-15 15m0 0h11.25m-11.25 0V8.25" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 121,
+    columnNumber: 21
+  }, this),
+  "phone-outgoing": /* @__PURE__ */ jsxDEV("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 122,
+    columnNumber: 21
+  }, this),
+  "phone-missed": /* @__PURE__ */ jsxDEV("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 123,
+    columnNumber: 19
+  }, this),
+  "transcript": /* @__PURE__ */ jsxDEV("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 124,
+    columnNumber: 17
+  }, this),
+  "trash": /* @__PURE__ */ jsxDEV("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.134-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.067-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 125,
+    columnNumber: 12
+  }, this),
+  "play-circle": /* @__PURE__ */ jsxDEV("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M21 12a9 9 0 11-18 0 9 9 0 0118 0z" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 126,
+    columnNumber: 18
+  }, this),
+  "wallet": /* @__PURE__ */ jsxDEV("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M21 12a2.25 2.25 0 00-2.25-2.25H15a3 3 0 11-6 0H5.25A2.25 2.25 0 003 12m18 0v6a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 18v-6m18 0V9M3 12V9m18 0a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 9m18 0V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v3" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 127,
+    columnNumber: 13
+  }, this),
+  "history": /* @__PURE__ */ jsxDEV("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 128,
+    columnNumber: 14
+  }, this),
+  "archive": /* @__PURE__ */ jsxDEV("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5m8.25 3.75h3.75M12 15.75h3.75M12 12h3.75M12 15.75v-3.75M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 129,
+    columnNumber: 14
+  }, this),
+  "cart": /* @__PURE__ */ jsxDEV("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c.51 0 .962-.343 1.087-.835l.383-1.437M7.5 14.25L5.106 5.106A2.25 2.25 0 002.854 3H2.25" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 130,
+    columnNumber: 11
+  }, this),
+  "adjustments": /* @__PURE__ */ jsxDEV("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 12h9.75" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 131,
+    columnNumber: 18
+  }, this),
+  "close": /* @__PURE__ */ jsxDEV("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M6 18L18 6M6 6l12 12" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 132,
+    columnNumber: 12
+  }, this),
+  "eye": /* @__PURE__ */ jsxDEV(Fragment, { children: [
+    /* @__PURE__ */ jsxDEV("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.432 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" }, void 0, false, {
+      fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+      lineNumber: 135,
+      columnNumber: 7
+    }, this),
+    /* @__PURE__ */ jsxDEV("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M15 12a3 3 0 11-6 0 3 3 0 016 0z" }, void 0, false, {
+      fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+      lineNumber: 136,
+      columnNumber: 7
+    }, this)
+  ] }, void 0, true, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 134,
+    columnNumber: 3
+  }, this),
+  "pencil": /* @__PURE__ */ jsxDEV("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 139,
+    columnNumber: 13
+  }, this),
+  "gift": /* @__PURE__ */ jsxDEV("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M21 11.25v8.25a1.5 1.5 0 01-1.5 1.5H4.5a1.5 1.5 0 01-1.5-1.5v-8.25m18 0l-18 0m18 0v-1.5a1.5 1.5 0 00-1.5-1.5H4.5a1.5 1.5 0 00-1.5 1.5v1.5m18 0h-18M12 7.5v13.5m-3-13.5c0-1.657 1.343-3 3-3s3 1.343 3 3" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 140,
+    columnNumber: 11
+  }, this),
+  "minus": /* @__PURE__ */ jsxDEV("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M19.5 12h-15" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 141,
+    columnNumber: 12
+  }, this),
+  "document": /* @__PURE__ */ jsxDEV("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 142,
+    columnNumber: 15
+  }, this),
+  "cog-6-tooth": /* @__PURE__ */ jsxDEV("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M4.5 12a7.5 7.5 0 0015 0m-15 0a7.5 7.5 0 1115 0m-15 0H3m16.5 0H21m-1.5 0H12m-8.457 3.077l1.41-.513m14.095-5.13l1.41-.513M5.106 17.785l1.15-.964m11.49-9.642l1.149-.964M7.501 19.795l.75-1.3m7.5-12.99l.75-1.3m-10.639 14.962l.13-1.495m11.495-13.23l.13-1.495m-12.876 14.165l-.513-1.411m14.095-5.13l-.513-1.411M3.319 15.299l-1.15-.964m11.49-9.642l-1.15-.964M6.6 12.427l-1.495.13m13.23-11.495l-1.495.13" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 143,
+    columnNumber: 18
+  }, this),
+  "user": /* @__PURE__ */ jsxDEV("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" }, void 0, false, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+    lineNumber: 144,
+    columnNumber: 11
+  }, this)
+};
+const Icon = ({ name, className }) => {
+  const iconPath = icons[name] || icons.dashboard;
+  const isFilled = ["github", "twitter", "linkedin", "star", "play", "pause", "record", "stop"].includes(name);
+  return /* @__PURE__ */ jsxDEV(
+    "svg",
+    {
+      xmlns: "http://www.w3.org/2000/svg",
+      viewBox: "0 0 24 24",
+      fill: isFilled ? "currentColor" : "none",
+      strokeWidth: isFilled ? 0 : 1.5,
+      stroke: isFilled ? "none" : "currentColor",
+      className,
+      "aria-hidden": "true",
+      children: iconPath
+    },
+    void 0,
+    false,
+    {
+      fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx",
+      lineNumber: 155,
+      columnNumber: 5
+    },
+    this
+  );
+};
+_c = Icon;
+export default Icon;
+var _c;
+$RefreshReg$(_c, "Icon");
+import * as RefreshRuntime from "/@react-refresh";
+const inWebWorker = typeof WorkerGlobalScope !== "undefined" && self instanceof WorkerGlobalScope;
+if (import.meta.hot && !inWebWorker) {
+  if (!window.$RefreshReg$) {
+    throw new Error(
+      "@vitejs/plugin-react can't detect preamble. Something is wrong."
+    );
+  }
+  RefreshRuntime.__hmr_import(import.meta.url).then((currentExports) => {
+    RefreshRuntime.registerExportsForReactRefresh("C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx", currentExports);
+    import.meta.hot.accept((nextExports) => {
+      if (!nextExports) return;
+      const invalidateMessage = RefreshRuntime.validateRefreshBoundaryAndEnqueueUpdate("C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx", currentExports, nextExports);
+      if (invalidateMessage) import.meta.hot.invalidate(invalidateMessage);
+    });
+  });
+}
+function $RefreshReg$(type, id) {
+  return RefreshRuntime.register(type, "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/Icon.tsx " + id);
+}
+function $RefreshSig$() {
+  return RefreshRuntime.createSignatureFunctionForTransform();
+}
+
+//# sourceMappingURL=data:application/json;base64,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QUFBO0FBQUEsU0FBbUU7QUFBQSxFQUM1RSxZQUFZLHVCQUFDLFVBQUssZUFBYyxTQUFRLGdCQUFlLFNBQVEsR0FBRSxrUUFBckQ7QUFBQTtBQUFBO0FBQUE7QUFBQSxTQUFtVDtBQUFBLEVBQy9ULGVBQWUsdUJBQUMsVUFBSyxlQUFjLFNBQVEsZ0JBQWUsU0FBUSxHQUFFLGlaQUFyRDtBQUFBO0FBQUE7QUFBQTtBQUFBLFNBQWtjO0FBQUEsRUFDamQsUUFBUSx1QkFBQyxVQUFLLGVBQWMsU0FBUSxnQkFBZSxTQUFRLEdBQUUsbU1BQXJEO0FBQUE7QUFBQTtBQUFBO0FBQUEsU0FBb1A7QUFDOVA7QUFHQSxNQUFNQyxPQUE0QkEsQ0FBQyxFQUFFQyxNQUFNQyxVQUFVLE1BQU07QUFDekQsUUFBTUMsV0FBV3RDLE1BQU1vQyxJQUFJLEtBQUtwQyxNQUFNRTtBQUd0QyxRQUFNcUMsV0FBVyxDQUFDLFVBQVUsV0FBVyxZQUFZLFFBQVEsUUFBUSxTQUFTLFVBQVUsTUFBTSxFQUFFQyxTQUFTSixJQUFJO0FBRTNHLFNBQ0U7QUFBQSxJQUFDO0FBQUE7QUFBQSxNQUNDLE9BQU07QUFBQSxNQUNOLFNBQVE7QUFBQSxNQUNSLE1BQU1HLFdBQVcsaUJBQWlCO0FBQUEsTUFDbEMsYUFBYUEsV0FBVyxJQUFJO0FBQUEsTUFDNUIsUUFBUUEsV0FBVyxTQUFTO0FBQUEsTUFDNUI7QUFBQSxNQUNBLGVBQVk7QUFBQSxNQUVYRDtBQUFBQTtBQUFBQSxJQVRIO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQSxFQVVBO0FBRUo7QUFBRUcsS0FuQklOO0FBcUJOLGVBQWVBO0FBQUssSUFBQU07QUFBQSxhQUFBQSxJQUFBIiwibmFtZXMiOlsiaWNvbnMiLCJyZWZyZXNoIiwiZGFzaGJvYXJkIiwicmVwb3J0cyIsImZpbmFuY2VzIiwiY3VycmVuY2llcyIsImNvdW50cmllcyIsImxvZ291dCIsImhhbWJ1cmdlciIsInNlYXJjaCIsImRlbGV0ZSIsImNoZWNrIiwidmlldyIsImVkaXQiLCJmaWx0ZXIiLCJkb3dubG9hZCIsInVwbG9hZCIsInRlbXBsYXRlIiwiYmVsbCIsImtleSIsImNhbWVyYSIsInBob25lIiwidHdpdHRlciIsImxpbmtlZGluIiwiZ2l0aHViIiwiY2FzaCIsImdsb2JlIiwiY2FsZW5kYXIiLCJwbHVzIiwic3RhciIsInByaW50Iiwic2hhcmUiLCJtYXAiLCJwbGF5IiwicGF1c2UiLCJJY29uIiwibmFtZSIsImNsYXNzTmFtZSIsImljb25QYXRoIiwiaXNGaWxsZWQiLCJpbmNsdWRlcyIsIl9jIl0sImlnbm9yZUxpc3QiOltdLCJzb3VyY2VzIjpbIkljb24udHN4Il0sInNvdXJjZXNDb250ZW50IjpbIlxyXG5pbXBvcnQgUmVhY3QgZnJvbSAncmVhY3QnO1xyXG5cclxuLy8gRklYOiBEZWZpbmUgSWNvbk5hbWUgdHlwZSB0byBiZSB1c2VkIGFjcm9zcyB0aGUgYXBwbGljYXRpb24uXHJcbmV4cG9ydCB0eXBlIEljb25OYW1lID1cclxuICB8ICdyZWZyZXNoJyB8ICdjaGV2cm9uLWRvd24nIHwgJ2NoZXZyb24tdXAnIHwgJ3gtbWFyaycgfCAnZGFzaGJvYXJkJyB8ICdzYWxlcy1kZXNrJ1xyXG4gIHwgJ3JlcG9ydHMnIHwgJ2NsaWVudC1tZ3QnIHwgJ21hbmFnZS1zdG9jaycgfCAnc3RvY2stcHVyY2hhc2UnIHwgJ3N0b2NrLWxpc3RpbmcnXHJcbiAgfCAnc2hvcC1tZ3QnIHwgJ2ZpbmFuY2VzJyB8ICdwcm9kdWN0LWNoYWluJyB8ICd1c2VyLW1ndCcgfCAnc3Vic2NyaXB0aW9uLW1ndCdcclxuICB8ICdzeXN0ZW0tc2V0dGluZ3MnIHwgJ3NoaWVsZC1jaGVjaycgfCAnc2hpZWxkLWFsZXJ0JyB8ICdsb29rdXAtdmFsdWVzJyB8ICdjdXJyZW5jaWVzJyB8ICdjb3VudHJpZXMnXHJcbiAgfCAnbG9nb3V0JyB8ICdoYW1idXJnZXInIHwgJ2NoZXZyb24tdXAtZG93bicgfCAnc2VhcmNoJyB8ICdkZWxldGUnXHJcbiAgfCAnY2hlY2snIHwgJ2NoZWNrLWNpcmNsZScgfCAnZXhjbGFtYXRpb24tdHJpYW5nbGUnIHwgJ2Fycm93cy1yaWdodC1sZWZ0JyB8ICd1c2VyLWNpcmNsZScgfCAndmlldydcclxuICB8ICdlZGl0JyB8ICdmaWx0ZXInIHwgJ2Rvd25sb2FkJyB8ICd1cGxvYWQnIHwgJ3RlbXBsYXRlJyB8ICdjaGV2cm9uLWxlZnQnXHJcbiAgfCAnY2hldnJvbi1yaWdodCcgfCAnYmVsbCcgfCAna2V5JyB8ICdjYW1lcmEnIHwgJ3Bob25lJyB8ICd0d2l0dGVyJyB8ICdsaW5rZWRpbicgfCAnZ2l0aHViJyB8ICdjYXNoJ1xyXG4gIHwgJ2dsb2JlJyB8ICdhcnJvdy11cCcgfCAnYXJyb3ctZG93bicgfCAnY2FsZW5kYXInIHwgJ3BsdXMnIHwgJ3N0YXInIHwgJ3ByaW50JyB8ICdzaGFyZScgfCAnbWFwJ1xyXG4gIHwgJ2Fycm93cy1wb2ludGluZy1vdXQnIHwgJ2Fycm93cy1wb2ludGluZy1pbicgfCAncGxheScgfCAncGF1c2UnIHwgJ3ZvbHVtZS11cCcgfCAndm9sdW1lLW9mZidcclxuICB8ICdleHBhbmQnIHwgJ2NvbXByZXNzJyB8ICdyZWNvcmQnIHwgJ3N0b3AnIHwgJ2JhY2t3YXJkJyB8ICdmb3J3YXJkJ1xyXG4gIHwgJ2FwaScgfCAnY2hhdC1idWJibGUnIHwgJ2Jyb2FkY2FzdCcgfCAnbG9jaycgfCAndXNlcnMnIHwgJ2VsbGlwc2lzLXZlcnRpY2FsJyB8ICdyZXBseScgfCAnaW5mbydcclxuICB8ICdhdWRpbycgfCAnY2xvdWQnIHwgJ2FuYWx5dGljcycgfCAnc21pbGUnIHwgJ21laCcgfCAnZnJvd24nIHwgJ3Bob25lLWluY29taW5nJyB8ICdwaG9uZS1vdXRnb2luZycgfCAncGhvbmUtbWlzc2VkJyB8ICd0cmFuc2NyaXB0JyB8ICd0cmFzaCcgfCAncGxheS1jaXJjbGUnIHwgJ3dhbGxldCcgfCAnaGlzdG9yeScgfCAnYXJjaGl2ZScgfCAnY2FydCcgfCAnYWRqdXN0bWVudHMnXHJcbiAgfCAnY2xvc2UnIHwgJ2V5ZScgfCAncGVuY2lsJyB8ICdnaWZ0JyB8ICdtaW51cycgfCAnZG9jdW1lbnQnIHwgJ2NvZy02LXRvb3RoJyB8ICd1c2VyJztcclxuXHJcbmludGVyZmFjZSBJY29uUHJvcHMge1xyXG4gIG5hbWU6IEljb25OYW1lO1xyXG4gIGNsYXNzTmFtZT86IHN0cmluZztcclxufVxyXG5cclxuLy8gRklYOiBSZXBsYWNlZCBgSlNYLkVsZW1lbnRgIHdpdGggYFJlYWN0LlJlYWN0RWxlbWVudGAgdG8gcmVzb2x2ZSB0aGUgXCJDYW5ub3QgZmluZCBuYW1lc3BhY2UgJ0pTWCdcIiBlcnJvci4gVGhpcyBlbnN1cmVzIHRoZSB0eXBlIGlzIGNvcnJlY3RseSByZXNvbHZlZCBmcm9tIHRoZSBpbXBvcnRlZCBSZWFjdCBtb2R1bGUuXHJcbmNvbnN0IGljb25zOiBSZWNvcmQ8SWNvbk5hbWUsIFJlYWN0LlJlYWN0RWxlbWVudD4gPSB7XHJcbiAgcmVmcmVzaDogPHBhdGggc3Ryb2tlTGluZWNhcD1cInJvdW5kXCIgc3Ryb2tlTGluZWpvaW49XCJyb3VuZFwiIGQ9XCJNMTYuMDIzIDkuMzQ4aDQuOTkydi0uMDAxTTIuOTg1IDE5LjY0NHYtNC45OTJtMCAwaDQuOTkybS00Ljk5MyAwbDMuMTgxIDMuMTgzYTguMjUgOC4yNSAwIDAwMTEuNjY0IDBsMy4xODEtMy4xODNtLTQuOTkxLTIuNjk2TDcuOTg1IDUuNjQ0bTAgMGwzLjE4MSAzLjE4M20wIDBWNS42NDRcIiAvPixcclxuICAnY2hldnJvbi11cCc6IDxwYXRoIHN0cm9rZUxpbmVjYXA9XCJyb3VuZFwiIHN0cm9rZUxpbmVqb2luPVwicm91bmRcIiBkPVwiTTQuNSAxNS43NWw3LjUtNy41IDcuNSA3LjVcIiAvPixcclxuICAnY2hldnJvbi1kb3duJzogPHBhdGggc3Ryb2tlTGluZWNhcD1cInJvdW5kXCIgc3Ryb2tlTGluZWpvaW49XCJyb3VuZFwiIGQ9XCJNMTkuNSA4LjI1bC03LjUgNy41LTcuNS03LjVcIiAvPixcclxuICAneC1tYXJrJzogPHBhdGggc3Ryb2tlTGluZWNhcD1cInJvdW5kXCIgc3Ryb2tlTGluZWpvaW49XCJyb3VuZFwiIGQ9XCJNNiAxOEwxOCA2TTYgNmwxMiAxMlwiIC8+LFxyXG4gIGRhc2hib2FyZDogPHBhdGggc3Ryb2tlTGluZWNhcD1cInJvdW5kXCIgc3Ryb2tlTGluZWpvaW49XCJyb3VuZFwiIGQ9XCJNMy43NSA2QTIuMjUgMi4yNSAwIDAxNiAzLjc1aDIuMjVBMi4yNSAyLjI1IDAgMDExMC41IDZ2Mi4yNWEyLjI1IDIuMjUgMCAwMS0yLjI1IDIuMjVINmEyLjI1IDIuMjUgMCAwMS0yLjI1LTIuMjVWNnpNMy43NSAxNS43NUEyLjI1IDIuMjUgMCAwMTYgMTMuNWgyLjI1YTIuMjUgMi4yNSAwIDAxMi4yNSAyLjI1VjE4YTIuMjUgMi4yNSAwIDAxLTIuMjUgMi4yNUg2QTIuMjUgMi4yNSAwIDAxMy43NSAxOHYtMi4yNXpNMTMuNSA2YTIuMjUgMi4yNSAwIDAxMi4yNS0yLjI1SDE4QTIuMjUgMi4yNSAwIDAxMjAuMjUgNnYyLjI1YTIuMjUgMi4yNSAwIDAxLTIuMjUgMi4yNWgtMi4yNWEyLjI1IDIuMjUgMCAwMS0yLjI1LTIuMjVWNnpNMTMuNSAxNS43NWEyLjI1IDIuMjUgMCAwMTIuMjUtMi4yNUgxOGEyLjI1IDIuMjUgMCAwMTIuMjUgMi4yNVYxOGEyLjI1IDIuMjUgMCAwMS0yLjI1IDIuMjVoLTIuMjVhMi4yNSAyLjI1IDAgMDEtMi4yNS0yLjI1di0yLjI1elwiIC8+LFxyXG4gICdzYWxlcy1kZXNrJzogPHBhdGggc3Ryb2tlTGluZWNhcD1cInJvdW5kXCIgc3Ryb2tlTGluZWpvaW49XCJyb3VuZFwiIGQ9XCJNMi4yNSAxOC43NWE2MC4wNyA2MC4wNyAwIDAxMTUuNzk3IDIuMTAxYy43MjcuMTk4IDEuNDUzLS4zNDIgMS40NTMtMS4wOTZWMTguNzVNMy43NSA0LjV2Ljc1QS43NS43NSAwIDAxMyA2aC0uNzVtMCAwdi0uNzVBLjc1Ljc1IDAgMDEzIDQuNWguNzVtMCAwaC43NUEuNzUuNzUgMCAwMTUuMjUgNnYuNzVtMCAwSDMuNzVtMCAwQS43NS43NSAwIDAxMyA1LjI1di0uNzVtMCAwQS43NS43NSAwIDAxMy43NSAzaC43NWEuNzUuNzUgMCAwMS43NS43NXYuNzVtMCAwaC0uNzVtMCAwQS43NS43NSAwIDAxMy43NSA2TTkgMy43NWguMDA4di4wMDhIOVYzLjc1em0uMzc1IDBhLjM3NS4zNzUgMCAxMS0uNzUgMCAuMzc1LjM3NSAwIDAxLjc1IDB6TTEyIDMuNzVoLjAwOHYuMDA4SDEyVjMuNzV6bS4zNzUgMGEuMzc1LjM3NSAwIDExLS43NSAwIC4zNzUuMzc1IDAgMDEuNzUgMHpNMTUgMy43NWguMDA4di4wMDhIMTVWMy43NXptLjM3NSAwYS4zNzUuMzc1IDAgMTEtLjc1IDAgLjM3NS4zNzUgMCAwMS43NSAwelwiIC8+LFxyXG4gIHJlcG9ydHM6IDxwYXRoIHN0cm9rZUxpbmVjYXA9XCJyb3VuZFwiIHN0cm9rZUxpbmVqb2luPVwicm91bmRcIiBkPVwiTTMgMTMuMTI1QzMgMTIuNTA0IDMuNTA0IDEyIDQuMTI1IDEyaDIuMjVjLjYyMSAwIDEuMTI1LjUwNCAxLjEyNSAxLjEyNXY2Ljc1YzAgLjYyMS0uNTA0IDEuMTI1LTEuMTI1IDEuMTI1aC0yLjI1QTEuMTI1IDEuMTI1IDAgMDEzIDE5Ljg3NXYtNi43NXpNOS43NSA4LjYyNWMwLS42MjEuNTA0LTEuMTI1IDEuMTI1LTEuMTI1aDIuMjVjLjYyMSAwIDEuMTI1LjUwNCAxLjEyNSAxLjEyNXYxMS4yNWMwIC42MjEtLjUwNCAxLjEyNS0xLjEyNSAxLjEyNWgtMi4yNWExLjEyNSAxLjEyNSAwIDAxLTEuMTI1LTEuMTI1VjguNjI1ek0xNi41IDQuMTI1YzAtLjYyMS41MDQtMS4xMjUgMS4xMjUtMS4xMjVoMi4yNUMyMC40OTYgMyAyMSAzLjUwNCAyMSA0LjEyNXYxNS43NWMwIC42MjEtLjUwNCAxLjEyNS0xLjEyNSAxLjEyNWgtMi4yNWExLjEyNSAxLjEyNSAwIDAxLTEuMTI1LTEuMTI1VjQuMTI1elwiIC8+LFxyXG4gICdjbGllbnQtbWd0JzogPHBhdGggc3Ryb2tlTGluZWNhcD1cInJvdW5kXCIgc3Ryb2tlTGluZWpvaW49XCJyb3VuZFwiIGQ9XCJNMTUgMTkuMTI4YTkuMzggOS4zOCAwIDAwMi42MjUuMzcyIDkuMzM3IDkuMzM3IDAgMDA0LjEyMS0uOTUyIDQuMTI1IDQuMTI1IDAgMDAtNy41MzMtMi40OTNNMTUgMTkuMTI4di0uMDAzYzAtMS4xMTMtLjI4NS0yLjE2LS43ODYtMy4wN00xNSAxOS4xMjh2LjEwNkExMi4zMTggMTIuMzE4IDAgMDE4LjYyNCAyMWMtMi4zMzEgMC00LjUxMi0uNjQ1LTYuMzc0LTEuNzY2bC0uMDAxLS4xMDlhNi4zNzUgNi4zNzUgMCAwMTExLjk2NC00LjY2M3YuMDAzelwiIC8+LFxyXG4gICdtYW5hZ2Utc3RvY2snOiA8cGF0aCBzdHJva2VMaW5lY2FwPVwicm91bmRcIiBzdHJva2VMaW5lam9pbj1cInJvdW5kXCIgZD1cIk0yMC4yNSA3LjVsLS42MjUgMTAuNjMyYTIuMjUgMi4yNSAwIDAxLTIuMjQ3IDIuMTE4SDYuNjIyYTIuMjUgMi4yNSAwIDAxLTIuMjQ3LTIuMTE4TDMuNzUgNy41TTEwIDExLjI1aDRNMy4zNzUgNy41aDE3LjI1Yy42MjEgMCAxLjEyNS0uNTA0IDEuMTI1LTEuMTI1di0xLjVjMC0uNjIxLS41MDQtMS4xMjUtMS4xMjUtMS4xMjVIMy4zNzVjLS42MjEgMC0xLjEyNS41MDQtMS4xMjUgMS4xMjV2MS41YzAgLjYyMS41MDQgMS4xMjUgMS4xMjUgMS4xMjV6XCIgLz4sXHJcbiAgJ3N0b2NrLXB1cmNoYXNlJzogPHBhdGggc3Ryb2tlTGluZWNhcD1cInJvdW5kXCIgc3Ryb2tlTGluZWpvaW49XCJyb3VuZFwiIGQ9XCJNMi4yNSAzaDEuMzg2Yy41MSAwIC45NTUuMzQzIDEuMDg3LjgzNWwuMzgzIDEuNDM3TTcuNSAxNC4yNWEzIDMgMCAwMC0zIDNoMTUuNzVtLTEyLjc1LTNoMTEuMjE4Yy41MSAwIC45NjItLjM0MyAxLjA4Ny0uODM1bC4zODMtMS40MzdNNy41IDE0LjI1TDUuMTA2IDUuMTA2QTIuMjUgMi4yNSAwIDAwMi44NTQgM0gyLjI1XCIgLz4sXHJcbiAgJ3N0b2NrLWxpc3RpbmcnOiA8cGF0aCBzdHJva2VMaW5lY2FwPVwicm91bmRcIiBzdHJva2VMaW5lam9pbj1cInJvdW5kXCIgZD1cIk0zLjc1IDYuNzVoMTYuNU0zLjc1IDEyaDE2LjVtLTE2LjUgNS4yNWgxNi41XCIgLz4sXHJcbiAgJ3Nob3AtbWd0JzogPHBhdGggc3Ryb2tlTGluZWNhcD1cInJvdW5kXCIgc3Ryb2tlTGluZWpvaW49XCJyb3VuZFwiIGQ9XCJNMTMuNSAyMXYtNy41YS43NS43NSAwIDAxLjc1LS43NWgzYS43NS43NSAwIDAxLjc1Ljc1VjIxbS00LjUgMEgyLjI1bTExLjI1IDBIMjEuNzVNMTIgMTcuMjVhMi4yNSAyLjI1IDAgMDEtMi4yNS0yLjI1VjcuNWEyLjI1IDIuMjUgMCAwMTIuMjUtMi4yNWguMDFNMTIgNy41YTIuMjUgMi4yNSAwIDAwLTIuMjUtMi4yNUg5Ljc1TTEyIDcuNWEyLjI1IDIuMjUgMCAwMTIuMjUtMi4yNWguMDFNMTIgNy41YTIuMjUgMi4yNSAwIDAwMi4yNS0yLjI1SDE0LjI1bS0yLjI1IDkuNzVoLjAxTTEuNSA5Ljc1YS43NS43NSAwIDAxLjc1LS43NWgxOS41YS43NS43NSAwIDAxLjc1Ljc1di43NWEuNzUuNzUgMCAwMS0uNzUuNzVIMi4yNWEuNzUuNzUgMCAwMS0uNzUtLjc1di0uNzV6XCIgLz4sXHJcbiAgZmluYW5jZXM6IDxwYXRoIHN0cm9rZUxpbmVjYXA9XCJyb3VuZFwiIHN0cm9rZUxpbmVqb2luPVwicm91bmRcIiBkPVwiTTEyIDZ2MTJtLTMtMi44MThsLjg3OS42NTljMS4xNzEuODc5IDMuMDcuODc5IDQuMjQyIDAgMS4xNzItLjg3OSAxLjE3Mi0yLjMwMyAwLTMuMTgyQzEzLjUzNiAxMi4yMTkgMTIuNzY4IDEyIDEyIDEyYy0uNzI1IDAtMS40NS0uMjItMi4wMDMtLjY1OS0xLjEwNi0uODc5LTEuMTA2LTIuMzAzIDAtMy4xODJzMi45LS44NzkgNC4wMDYgMGwuNDE1LjMzTTIxIDEyYTkgOSAwIDExLTE4IDAgOSA5IDAgMDExOCAwelwiIC8+LFxyXG4gICdwcm9kdWN0LWNoYWluJzogPHBhdGggc3Ryb2tlTGluZWNhcD1cInJvdW5kXCIgc3Ryb2tlTGluZWpvaW49XCJyb3VuZFwiIGQ9XCJNMTMuMTkgOC42ODhhNC41IDQuNSAwIDAxMS4yNDIgNy4yNDRsLTQuNSA0LjVhNC41IDQuNSAwIDAxLTYuMzY0LTYuMzY0bDEuNzU3LTEuNzU3bTEzLjM1LS42MjJsMS43NTctMS43NTdhNC41IDQuNSAwIDAwLTYuMzY0LTYuMzY0bC00LjUgNC41YTQuNSA0LjUgMCAwMDEuMjQyIDcuMjQ0XCIgLz4sXHJcbiAgJ3VzZXItbWd0JzogPHBhdGggc3Ryb2tlTGluZWNhcD1cInJvdW5kXCIgc3Ryb2tlTGluZWpvaW49XCJyb3VuZFwiIGQ9XCJNMTUgMTkuMTI4YTkuMzggOS4zOCAwIDAwMi42MjUuMzcyIDkuMzM3IDkuMzM3IDAgMDA0LjEyMS0uOTUyIDQuMTI1IDQuMTI1IDAgMDAtNy41MzMtMi40OTNNMTUgMTkuMTI4di0uMDAzYzAtMS4xMTMtLjI4NS0yLjE2LS43ODYtMy4wN00xNSAxOS4xMjh2LjEwNkExMi4zMTggMTIuMzE4IDAgMDE4LjYyNCAyMWMtMi4zMzEgMC00LjUxMi0uNjQ1LTYuMzc0LTEuNzY2bC0uMDAxLS4xMDlhNi4zNzUgNi4zNzUgMCAwMTExLjk2NC00LjY2M3YuMDAzelwiIC8+LFxyXG4gICdzdWJzY3JpcHRpb24tbWd0JzogPHBhdGggc3Ryb2tlTGluZWNhcD1cInJvdW5kXCIgc3Ryb2tlTGluZWpvaW49XCJyb3VuZFwiIGQ9XCJNMTYuNSAxMmE0LjUgNC41IDAgMTEtOSAwIDQuNSA0LjUgMCAwMTkgMHptMCAwYzAgMS42NTcgMS4wMDcgMyAyLjI1IDNTMjEgMTMuNjU3IDIxIDEyYTkgOSAwIDEwLTIuNjM2IDYuMzY0TTE2LjUgMTJWOC4yNVwiIC8+LFxyXG4gICdzeXN0ZW0tc2V0dGluZ3MnOiA8cGF0aCBzdHJva2VMaW5lY2FwPVwicm91bmRcIiBzdHJva2VMaW5lam9pbj1cInJvdW5kXCIgZD1cIk00LjUgMTJhNy41IDcuNSAwIDAwMTUgMG0tMTUgMGE3LjUgNy41IDAgMTExNSAwbS0xNSAwSDNtMTYuNSAwSDIxbS0xLjUgMEgxMm0tOC40NTcgMy4wNzdsMS40MS0uNTEzbTE0LjA5NS01LjEzbDEuNDEtLjUxM001LjEwNiAxNy43ODVsMS4xNS0uOTY0bTExLjQ5LTkuNjQybDEuMTQ5LS45NjRNNy41MDEgMTkuNzk1bC43NS0xLjNtNy41LTEyLjk5bC43NS0xLjNtLTEwLjYzOSAxNC45NjJsLjEzLTEuNDk1bTExLjQ5NS0xMy4yM2wuMTMtMS40OTVtLTEyLjg3NiAxNC4xNjVsLS41MTMtMS40MTFtMTQuMDk1LTUuMTNsLS41MTMtMS40MTFNMy4zMTkgMTUuMjk5bC0xLjE1LS45NjRtMTEuNDktOS42NDJsLTEuMTUtLjk2NE02LjYgMTIuNDI3bC0xLjQ5NS4xM20xMy4yMy0xMS40OTVsLTEuNDk1LjEzXCIgLz4sXHJcbiAgJ3NoaWVsZC1jaGVjayc6IDxwYXRoIHN0cm9rZUxpbmVjYXA9XCJyb3VuZFwiIHN0cm9rZUxpbmVqb2luPVwicm91bmRcIiBkPVwiTTkgMTIuNzVMMTEuMjUgMTUgMTUgOS43NW0tMy03LjAzNkExMS45NTkgMTEuOTU5IDAgMDEzLjU5OCA2IDExLjk5IDExLjk5IDAgMDAzIDkuNzQ5YzAgNS41OTIgMy44MjQgMTAuMjkgOSAxMS42MjIgNS4xNzYtMS4zMzIgOS02LjAzIDktMTEuNjIyIDAtMS40My0uMzM0LTIuODE0LS45NTItNC4xMjFhMTEuOTU5IDExLjk1OSAwIDAwLTQuNTIyLTMuNDgyelwiIC8+LFxyXG4gICdzaGllbGQtYWxlcnQnOiA8cGF0aCBzdHJva2VMaW5lY2FwPVwicm91bmRcIiBzdHJva2VMaW5lam9pbj1cInJvdW5kXCIgZD1cIk0xMiA5djMuNzVtLTkuMzAzIDMuMzc2Yy0uODY2IDEuNS4yMTcgMy4zNzQgMS45NDggMy4zNzRoMTQuNzFjMS43MyAwIDIuODEzLTEuODc0IDEuOTQ4LTMuMzc0TDEzLjk0OSAzLjM3OGMtLjg2Ni0xLjUtMy4wMzItMS41LTMuODk4IDBMMi42OTcgMTYuMTI2ek0xMiAxNS43NWguMDA3di4wMDhIMTJ2LS4wMDh6XCIgLz4sXHJcbiAgJ2xvb2t1cC12YWx1ZXMnOiA8cGF0aCBzdHJva2VMaW5lY2FwPVwicm91bmRcIiBzdHJva2VMaW5lam9pbj1cInJvdW5kXCIgZD1cIk0zLjc1IDEyaDE2LjVtLTE2LjUgMy43NWgxNi41TTMuNzUgMTkuNWgxNi41TTUuNjI1IDQuNWgxMi43NWExLjg3NSAxLjg3NSAwIDAxMCAzLjc1SDUuNjI1YTEuODc1IDEuODc1IDAgMDEwLTMuNzV6XCIgLz4sXHJcbiAgY3VycmVuY2llczogPHBhdGggc3Ryb2tlTGluZWNhcD1cInJvdW5kXCIgc3Ryb2tlTGluZWpvaW49XCJyb3VuZFwiIGQ9XCJNMTQuMjUgNy43NTZhNC41IDQuNSAwIDEwMCA4LjQ4OE03LjUgMTAuNWg1LjI1bS01LjI1IDNoNS4yNU0yMSAxMmE5IDkgMCAxMS0xOCAwIDkgOSAwIDAxMTggMHpcIiAvPixcclxuICBjb3VudHJpZXM6IDxwYXRoIHN0cm9rZUxpbmVjYXA9XCJyb3VuZFwiIHN0cm9rZUxpbmVqb2luPVwicm91bmRcIiBkPVwiTTIxIDEyYTkgOSAwIDExLTE4IDAgOSA5IDAgMDExOCAwelwiIC8+LFxyXG4gIGxvZ291dDogPHBhdGggc3Ryb2tlTGluZWNhcD1cInJvdW5kXCIgc3Ryb2tlTGluZWpvaW49XCJyb3VuZFwiIGQ9XCJNMTUuNzUgOVY1LjI1QTIuMjUgMi4yNSAwIDAwMTMuNSAzaC02YTIuMjUgMi4yNSAwIDAwLTIuMjUgMi4yNXYxMy41QTIuMjUgMi4yNSAwIDAwNy41IDIxaDZhMi4yNSAyLjI1IDAgMDAyLjI1LTIuMjVWMTVNMTIgOWwtMyAzbTAgMGwzIDNtLTMtM2gxMi43NVwiIC8+LFxyXG4gIGhhbWJ1cmdlcjogPHBhdGggc3Ryb2tlTGluZWNhcD1cInJvdW5kXCIgc3Ryb2tlTGluZWpvaW49XCJyb3VuZFwiIGQ9XCJNMy43NSA2Ljc1aDE2LjVNMy43NSAxMmgxNi41bS0xNi41IDUuMjVoMTYuNVwiIC8+LFxyXG4gICdjaGV2cm9uLXVwLWRvd24nOiA8cGF0aCBzdHJva2VMaW5lY2FwPVwicm91bmRcIiBzdHJva2VMaW5lam9pbj1cInJvdW5kXCIgZD1cIk04LjI1IDE1TDEyIDE4Ljc1IDE1Ljc1IDE1bS03LjUtNkwxMiA1LjI1IDE1Ljc1IDlcIiAvPixcclxuICBzZWFyY2g6IDxwYXRoIHN0cm9rZUxpbmVjYXA9XCJyb3VuZFwiIHN0cm9rZUxpbmVqb2luPVwicm91bmRcIiBkPVwiTTIxIDIxbC01LjE5Ny01LjE5N20wIDBBNy41IDcuNSAwIDEwNS4xOTYgNS4xOTZhNy41IDcuNSAwIDAwMTAuNjA3IDEwLjYwN3pcIiAvPixcclxuICBkZWxldGU6IDxwYXRoIHN0cm9rZUxpbmVjYXA9XCJyb3VuZFwiIHN0cm9rZUxpbmVqb2luPVwicm91bmRcIiBkPVwiTTE0Ljc0IDlsLS4zNDYgOW0tNC43ODggMEw5LjI2IDltOS45NjgtMy4yMWMuMzQyLjA1Mi42ODIuMTA3IDEuMDIyLjE2Nm0tMS4wMjItLjE2NUwxOC4xNiAxOS42NzNhMi4yNSAyLjI1IDAgMDEtMi4yNDQgMi4wNzdIOC4wODRhMi4yNSAyLjI1IDAgMDEtMi4yNDQtMi4wNzdMNC43NzIgNS43OW0xNC40NTYgMGE0OC4xMDggNDguMTA4IDAgMDAtMy40NzgtLjM5N20tMTIgLjU2MmMuMzQtLjA1OS42OC0uMTE0IDEuMDIyLS4xNjVtMCAwYTQ4LjExIDQ4LjExIDAgMDEzLjQ3OC0uMzk3bTcuNSAwdi0uOTE2YzAtMS4xOC0uOTEtMi4xMzQtMi4wOS0yLjIwMWE1MS45NjQgNTEuOTY0IDAgMDAtMy4zMiAwYy0xLjE4LjA2Ny0yLjA5IDEuMDIyLTIuMDkgMi4yMDF2LjkxNm03LjUgMGE0OC42NjcgNDguNjY3IDAgMDAtNy41IDBcIiAvPixcclxuICBjaGVjazogPHBhdGggc3Ryb2tlTGluZWNhcD1cInJvdW5kXCIgc3Ryb2tlTGluZWpvaW49XCJyb3VuZFwiIGQ9XCJNNC41IDEyLjc1bDYgNiA5LTEzLjVcIiAvPixcclxuICAnY2hlY2stY2lyY2xlJzogPHBhdGggc3Ryb2tlTGluZWNhcD1cInJvdW5kXCIgc3Ryb2tlTGluZWpvaW49XCJyb3VuZFwiIGQ9XCJNOSAxMi43NUwxMS4yNSAxNSAxNSA5Ljc1TTIxIDEyYTkgOSAwIDExLTE4IDAgOSA5IDAgMDExOCAwelwiIC8+LFxyXG4gICdleGNsYW1hdGlvbi10cmlhbmdsZSc6IDxwYXRoIHN0cm9rZUxpbmVjYXA9XCJyb3VuZFwiIHN0cm9rZUxpbmVqb2luPVwicm91bmRcIiBkPVwiTTEyIDl2My43NW0tOS4zMDMgMy4zNzZjLS44NjYgMS41LjIxNyAzLjM3NCAxLjk0OCAzLjM3NGgxNC43MWMxLjczIDAgMi44MTMtMS44NzQgMS45NDgtMy4zNzRMMTMuOTQ5IDMuMzc4Yy0uODY2LTEuNS0zLjAzMi0xLjUtMy44OTggMEwyLjY5NyAxNi4xMjZ6TTEyIDE1Ljc1aC4wMDd2LjAwOEgxMnYtLjAwOHpcIiAvPixcclxuICAnYXJyb3dzLXJpZ2h0LWxlZnQnOiA8cGF0aCBzdHJva2VMaW5lY2FwPVwicm91bmRcIiBzdHJva2VMaW5lam9pbj1cInJvdW5kXCIgZD1cIk03LjUgMjFMMyAxNi41bTAgMEw3LjUgMTJNMyAxNi41aDE4TTE2LjUgM0wyMSA3LjVtMCAwTDE2LjUgMTJNMjEgNy41SDNcIiAvPixcclxuICAndXNlci1jaXJjbGUnOiA8cGF0aCBzdHJva2VMaW5lY2FwPVwicm91bmRcIiBzdHJva2VMaW5lam9pbj1cInJvdW5kXCIgZD1cIk0xNy45ODIgMTguNzI1QTcuNDg4IDcuNDg4IDAgMDAxMiAxNS43NWE3LjQ4OCA3LjQ4OCAwIDAwLTUuOTgyIDIuOTc1bTExLjk2MyAwYTkgOSAwIDEwLTExLjk2MyAwbTExLjk2MyAwQTguOTY2IDguOTY2IDAgMDExMiAyMWE4Ljk2NiA4Ljk2NiAwIDAxLTUuOTgyLTIuMjc1TTE1IDkuNzVhMyAzIDAgMTEtNiAwIDMgMyAwIDAxNiAwelwiIC8+LFxyXG4gIHZpZXc6IChcclxuICAgIDw+XHJcbiAgICAgIDxwYXRoIHN0cm9rZUxpbmVjYXA9XCJyb3VuZFwiIHN0cm9rZUxpbmVqb2luPVwicm91bmRcIiBkPVwiTTIuMDM2IDEyLjMyMmExLjAxMiAxLjAxMiAwIDAxMC0uNjM5QzMuNDIzIDcuNTEgNy4zNiA0LjUgMTIgNC41YzQuNjM4IDAgOC41NzMgMy4wMDcgOS45NjMgNy4xNzguMDcuMjA3LjA3LjQzMiAwIC42MzlDMjAuNTc3IDE2LjQ5IDE2LjY0IDE5LjUgMTIgMTkuNWMtNC42MzggMC04LjU3My0zLjAwNy05Ljk2My03LjE3OHpcIiAvPlxyXG4gICAgICA8cGF0aCBzdHJva2VMaW5lY2FwPVwicm91bmRcIiBzdHJva2VMaW5lam9pbj1cInJvdW5kXCIgZD1cIk0xNSAxMmEzIDMgMCAxMS02IDAgMyAzIDAgMDE2IDB6XCIgLz5cclxuICAgIDwvPlxyXG4gICksXHJcbiAgZWRpdDogPHBhdGggc3Ryb2tlTGluZWNhcD1cInJvdW5kXCIgc3Ryb2tlTGluZWpvaW49XCJyb3VuZFwiIGQ9XCJNMTYuODYyIDQuNDg3bDEuNjg3LTEuNjg4YTEuODc1IDEuODc1IDAgMTEyLjY1MiAyLjY1MkwxMC41ODIgMTYuMDdhNC41IDQuNSAwIDAxLTEuODk3IDEuMTNMNiAxOGwuOC0yLjY4NWE0LjUgNC41IDAgMDExLjEzLTEuODk3bDguOTMyLTguOTMxem0wIDBMMTkuNSA3LjEyNU0xOCAxNHY0Ljc1QTIuMjUgMi4yNSAwIDAxMTUuNzUgMjFINS4yNUEyLjI1IDIuMjUgMCAwMTMgMTguNzVWOC4yNUEyLjI1IDIuMjUgMCAwMTUuMjUgNkgxMFwiIC8+LFxyXG4gIGZpbHRlcjogPHBhdGggc3Ryb2tlTGluZWNhcD1cInJvdW5kXCIgc3Ryb2tlTGluZWpvaW49XCJyb3VuZFwiIGQ9XCJNMTIgM2MyLjc1NSAwIDUuNDU1LjIzMiA4LjA4My42NzguNTMzLjA5LjkxNy41NTYuOTE3IDEuMDk2djEuMDQ0YTIuMjUgMi4yNSAwIDAxLS42NTkgMS41OTFsLTUuNDMyIDUuNDMyYTIuMjUgMi4yNSAwIDAwLS42NTkgMS41OTF2Mi45MjdhMi4yNSAyLjI1IDAgMDEtMS4yNDQgMi4wMTNMOS43NSAyMXYtNi41NzJhMi4yNSAyLjI1IDAgMDAtLjY1OS0xLjU5MUwzLjY1OSA3LjQwOUEyLjI1IDIuMjUgMCAwMTMgNS44MThWNC43NzRjMC0uNTQuMzg0LTEuMDA2LjkxNy0xLjA5NkE0OC4zMiA0OC4zMiAwIDAxMTIgM3pcIiAvPixcclxuICBkb3dubG9hZDogPHBhdGggc3Ryb2tlTGluZWNhcD1cInJvdW5kXCIgc3Ryb2tlTGluZWpvaW49XCJyb3VuZFwiIGQ9XCJNMyAxNi41djIuMjVBMi4yNSAyLjI1IDAgMDA1LjI1IDIxaDEzLjVBMi4yNSAyLjI1IDAgMDAyMSAxOC43NVYxNi41TTE2LjUgMTJMMTIgMTYuNW0wIDBMNy41IDEybTQuNSA0LjVWM1wiIC8+LFxyXG4gIHVwbG9hZDogPHBhdGggc3Ryb2tlTGluZWNhcD1cInJvdW5kXCIgc3Ryb2tlTGluZWpvaW49XCJyb3VuZFwiIGQ9XCJNMyAxNi41djIuMjVBMi4yNSAyLjI1IDAgMDA1LjI1IDIxaDEzLjVBMi4yNSAyLjI1IDAgMDAyMSAxOC43NVYxNi41bS0xMy41LTlMMTIgM20wIDBsNC41IDQuNU0xMiAzdjEzLjVcIiAvPixcclxuICB0ZW1wbGF0ZTogPHBhdGggc3Ryb2tlTGluZWNhcD1cInJvdW5kXCIgc3Ryb2tlTGluZWpvaW49XCJyb3VuZFwiIGQ9XCJNMTkuNSAxNC4yNXYtMi42MjVhMy4zNzUgMy4zNzUgMCAwMC0zLjM3NS0zLjM3NWgtMS41QTEuMTI1IDEuMTI1IDAgMDExMy41IDcuMTI1di0xLjVhMy4zNzUgMy4zNzUgMCAwMC0zLjM3NS0zLjM3NUg4LjI1bTAgMTIuNzVoNy41bS03LjUgM0gxMk0xMC41IDIuMjVINS42MjVjLS42MjEgMC0xLjEyNS41MDQtMS4xMjUgMS4xMjV2MTcuMjVjMCAuNjIxLjUwNCAxLjEyNSAxLjEyNSAxLjEyNWgxMi43NWMuNjIxIDAgMS4xMjUtLjUwNCAxLjEyNS0xLjEyNVYxMS4yNWE5IDkgMCAwMC05LTl6XCIgLz4sXHJcbiAgJ2NoZXZyb24tbGVmdCc6IDxwYXRoIHN0cm9rZUxpbmVjYXA9XCJyb3VuZFwiIHN0cm9rZUxpbmVqb2luPVwicm91bmRcIiBkPVwiTTE1Ljc1IDE5LjVMOC4yNSAxMmw3LjUtNy41XCIgLz4sXHJcbiAgJ2NoZXZyb24tcmlnaHQnOiA8cGF0aCBzdHJva2VMaW5lY2FwPVwicm91bmRcIiBzdHJva2VMaW5lam9pbj1cInJvdW5kXCIgZD1cIk04LjI1IDQuNWw3LjUgNy41LTcuNSA3LjVcIiAvPixcclxuICBiZWxsOiA8cGF0aCBzdHJva2VMaW5lY2FwPVwicm91bmRcIiBzdHJva2VMaW5lam9pbj1cInJvdW5kXCIgZD1cIk0xNC44NTcgMTcuMDgyYTIzLjg0OCAyMy44NDggMCAwMDUuNDU0LTEuMzFBOC45NjcgOC45NjcgMCAwMTE4IDkuNzV2LS43VjlBNiA2IDAgMDA2IDl2Ljc1YTguOTY3IDguOTY3IDAgMDEtMi4zMSA1LjYzMmwtMS4zMi45MTdBNS45NiA1Ljk2IDAgMDA2IDIxaDEyYTUuOTYgNS45NiAwIDAwLjkxNy0yLjkxOHpcIiAvPixcclxuICBrZXk6IDxwYXRoIHN0cm9rZUxpbmVjYXA9XCJyb3VuZFwiIHN0cm9rZUxpbmVqb2luPVwicm91bmRcIiBkPVwiTTE1Ljc1IDUuMjVhMyAzIDAgMDEzIDNtMyAwYTYgNiAwIDAxLTcuMDI5IDUuOTEyYy0uNTYzLS4wOTctMS4xNTkuMDI2LTEuNTYzLjQzTDEwLjUgMTcuMjVIOC4yNXYtMi4yNUwxMC41IDEzLjVjLjQwNC0uNDA0LjUyNy0xIC40My0xLjU2M0E2IDYgMCAxMTIxLjc1IDguMjV6XCIgLz4sXHJcbiAgY2FtZXJhOiA8cGF0aCBzdHJva2VMaW5lY2FwPVwicm91bmRcIiBzdHJva2VMaW5lam9pbj1cInJvdW5kXCIgZD1cIk02LjgyNyA2LjE3NUEyLjMxIDIuMzEgMCAwMTUuMTg2IDcuMjNjLS4zOC4wNTQtLjc1Ny4xMTItMS4xMzQuMTc1QzIuOTk5IDcuNTggMi4yNSA4LjUwNyAyLjI1IDkuNTc0VjE4YTIuMjUgMi4yNSAwIDAwMi4yNSAyLjI1aDE1QTIuMjUgMi4yNSAwIDAwMjEuNzUgMThWOS41NzRjMC0xLjE2Ny0uNzUtMS45OTQtMS44MDItMi4xNjlhNDcuODY1IDQ3Ljg2NSAwIDAwLTEuMTM0LS4xNzUgMi4zMSAyLjMxIDAgMDEtMS42NC0xLjA1NWwtLjgyMi0xLjMxNmEyLjE5MiAyLjE5MiAwIDAwLTEuNzM2LTEuMDM5IDQ4Ljc3NiA0OC43NzYgMCAwMC01LjIzMiAwIDIuMTkyIDIuMTkyIDAgMDAtMS43MzYgMS4wMzlsLS44MjEgMS4zMTZ6XCIgLz4sXHJcbiAgcGhvbmU6IDxwYXRoIHN0cm9rZUxpbmVjYXA9XCJyb3VuZFwiIHN0cm9rZUxpbmVqb2luPVwicm91bmRcIiBkPVwiTTIuMjUgNi43NWMwIDguMjg0IDYuNzE2IDE1IDE1IDE1aDIuMjVhMi4yNSAyLjI1IDAgMDAyLjI1LTIuMjV2LTEuMzcyYzAtLjUxNi0uMzUxLS45NjYtLjg1Mi0xLjA5MWwtNC40MjMtMS4xMDZjLS40NC0uMTEtLjkwMi4wNTUtMS4xNzMuNDE3bC0uOTcgMS4yOTNjLS4yODIuMzc2LS43NjkuNTQyLTEuMjEuMzhhMTIuMDM1IDEyLjAzNSAwIDAxLTcuMTQzLTcuMTQzYy0uMTYyLS40NDEuMDA0LS45MjguMzgtMS4yMWwxLjI5My0uOTdjLjM2My0uMjcxLjUyNy0uNzM0LjQxNy0xLjE3M0w2Ljk2MyAzLjEwMmExLjEyNSAxLjEyNSAwIDAwLTEuMDkxLS44NTJINC41QTIuMjUgMi4yNSAwIDAwMi4yNSA0LjV2Mi4yNXpcIiAvPixcclxuICB0d2l0dGVyOiA8cGF0aCBkPVwiTTE4LjI0NCAyLjI1aDMuMzA4bC03LjIyNyA4LjI2IDguNTAyIDExLjI0SDE2LjE3bC01LjIxNC02LjgxN0w0Ljk5IDIxLjc1SDEuNjhsNy43My04LjgzNUwxLjI1NCAyLjI1SDguMDhsNC43MTMgNi4yMzF6bS0xLjE2MSAxNy41MmgxLjgzM0w3LjA4NCA0LjEyNkg1LjExN3pcIiAvPixcclxuICBsaW5rZWRpbjogPHBhdGggZD1cIk0xOSAzYTIgMiAwIDAgMSAyIDJ2MTRhMiAyIDAgMCAxLTIgMkg1YTIgMiAwIDAgMS0yLTJWNWEyIDIgMCAwIDEgMi0yaDE0em0tLjUgMTUuNXYtNS4zYTMuMjYgMy4yNiAwIDAgMC0zLjI2LTMuMjZjLS44NSAwLTEuODQuNTItMi4zMiAxLjN2LTEuMTFoLTIuNzl2OC4zN2gyLjc5di00LjkzYzAtLjc3LjYyLTEuNCAxLjM5LTEuNGExLjQgMS40IDAgMCAxIDEuNCAxLjR2NC45M2gyLjc5ek02Ljg4IDguNTZhMS42OCAxLjY4IDAgMCAwIDEuNjgtMS42OGMwLS45My0uNzUtMS42OS0xLjY4LTEuNjlhMS42OSAxLjY5IDAgMCAwLTEuNjkgMS42OWMwIC45My43NiAxLjY4IDEuNjkgMS42OHptMS4zOSA5Ljk0di04LjM3SDUuNXY4LjM3aDIuNzd6XCIgLz4sXHJcbiAgZ2l0aHViOiA8cGF0aCBmaWxsUnVsZT1cImV2ZW5vZGRcIiBkPVwiTTEyIDJDNi40NzcgMiAyIDYuNDc3IDIgMTJjMCA0LjQxOCAyLjg2NSA4LjE2NSA2LjgzOSA5LjQ5LjUuMDkyLjY4Mi0uMjE3LjY4Mi0uNDgyIDAtLjIzNy0uMDA5LS44NjgtLjAxNC0xLjcwMy0yLjc4Mi42MDUtMy4zNjktMS4zNDMtMy4zNjktMS4zNDMtLjQ1NC0xLjE1OC0xLjExLTEuNDY2LTEuMTEtMS40NjYtLjkwOC0uNjIuMDY5LS42MDguMDY5LS42MDggMS4wMDMuMDcgMS41MzEgMS4wMzIgMS41MzEgMS4wMzIuODkyIDEuNTMgMi4zNDEgMS4wODggMi45MS44MzIuMDkyLS42NDcuMzUtMS4wODguNjM2LTEuMzM4LTIuMjItLjI1My00LjU1NS0xLjExMy00LjU1NS00Ljk1MSAwLTEuMDkzLjM5LTEuOTg4IDEuMDMxLTIuNjg4LS4xMDMtLjI1My0uNDQ2LTEuMjcyLjA5OC0yLjY1IDAgMCAuODQtLjI3IDIuNzUgMS4wMjZBOS41NjQgOS41NjQgMCAwMTEyIDYuODQ0Yy44NS4wMDQgMS43MDUuMTE1IDIuNTA0LjMzNyAxLjkwOS0xLjI5NiAyLjc0Ny0xLjAyNyAyLjc0Ny0xLjAyNy41NDYgMS4zNzguMjAzIDIuMzk4LjEgMi42NTEuNjQuNyAxLjAzIDEuNTk1IDEuMDMgMi42ODggMCAzLjg0OC0yLjMzOCA0LjY5NS00LjU2NiA0Ljk0My4zNTkuMzA5LjY3OC45Mi42NzggMS44NTUgMCAxLjMzOC0uMDEyIDIuNDE5LS4wMTIgMi43NDcgMCAuMjY4LjE4LjU4LjY4OC40ODJBMTAuMDAxIDEwLjAwMSAwIDAwMjIgMTJjMC01LjUyMy00LjQ3Ny0xMC0xMC0xMHpcIiBjbGlwUnVsZT1cImV2ZW5vZGRcIiAvPixcclxuICBjYXNoOiA8cGF0aCBzdHJva2VMaW5lY2FwPVwicm91bmRcIiBzdHJva2VMaW5lam9pbj1cInJvdW5kXCIgZD1cIk0yLjI1IDE4Ljc1YTYwLjA3IDYwLjA3IDAgMDExNS43OTcgMi4xMDFjLjcyNy4xOTggMS40NTMtLjM0MiAxLjQ1My0xLjA5NlYxOC43NU0zLjc1IDQuNXYuNzVBLjc1Ljc1IDAgMDEzIDZoLS43NW0wIDB2LS43NUEuNzUuNzUgMCAwMTMgNC41aC43NW0wIDBoLjc1QS43NS43NSAwIDAxNS4yNSA2di43NW0wIDBIMy43NW0wIDBBLjc1Ljc1IDAgMDEzIDUuMjV2LS43NW0wIDBBLjc1Ljc1IDAgMDEzLjc1IDNoLjc1YS43NS43NSAwIDAxLjc1Ljc1di43NW0wIDBoLS43NW0wIDBBLjc1Ljc1IDAgMDEzLjc1IDZNMjEgMTJhOSA5IDAgMTEtMTggMCA5IDkgMCAwMTE4IDB6XCIgLz4sXHJcbiAgZ2xvYmU6IChcclxuICAgIDw+XHJcbiAgICAgIDxwYXRoIHN0cm9rZUxpbmVjYXA9XCJyb3VuZFwiIHN0cm9rZUxpbmVqb2luPVwicm91bmRcIiBkPVwiTTEyIDIxYTkgOSAwIDEwMC0xOCA5IDkgMCAwMDAgMTh6XCIgLz5cclxuICAgICAgPHBhdGggc3Ryb2tlTGluZWNhcD1cInJvdW5kXCIgc3Ryb2tlTGluZWpvaW49XCJyb3VuZFwiIGQ9XCJNMy42MzYgOWgxNi43MjhNNC4yNDIgMTVoMTUuNTE2TTEyIDNjLTIuMTIxIDAtNC4wOC44LTUuNTE1IDIuMjIyTTEyIDIxYzIuMTIxIDAgNC4wOC0uOCA1LjUxNS0yLjIyMlwiIC8+XHJcbiAgICA8Lz5cclxuICApLFxyXG4gICdhcnJvdy11cCc6IDxwYXRoIHN0cm9rZUxpbmVjYXA9XCJyb3VuZFwiIHN0cm9rZUxpbmVqb2luPVwicm91bmRcIiBkPVwiTTEyIDE5LjV2LTE1bTAgMGwtNi43NSA2Ljc1TTEyIDQuNWw2Ljc1IDYuNzVcIiAvPixcclxuICAnYXJyb3ctZG93bic6IDxwYXRoIHN0cm9rZUxpbmVjYXA9XCJyb3VuZFwiIHN0cm9rZUxpbmVqb2luPVwicm91bmRcIiBkPVwiTTEyIDQuNXYxNW0wIDBsNi43NS02Ljc1TTEyIDE5LjVsLTYuNzUtNi43NVwiIC8+LFxyXG4gIGNhbGVuZGFyOiA8cGF0aCBzdHJva2VMaW5lY2FwPVwicm91bmRcIiBzdHJva2VMaW5lam9pbj1cInJvdW5kXCIgZD1cIk02Ljc1IDN2Mi4yNU0xNy4yNSAzdjIuMjVNMyAxOC43NVY3LjVhMi4yNSAyLjI1IDAgMDEyLjI1LTIuMjVoMTMuNUEyLjI1IDIuMjUgMCAwMTIxIDcuNXYxMS4yNUEyLjI1IDIuMjUgMCAwMTE4Ljc1IDIxSDUuMjVBMi4yNSAyLjI1IDAgMDEzIDE4Ljc1elwiIC8+LFxyXG4gIHBsdXM6IDxwYXRoIHN0cm9rZUxpbmVjYXA9XCJyb3VuZFwiIHN0cm9rZUxpbmVqb2luPVwicm91bmRcIiBkPVwiTTEyIDQuNXYxNW03LjUtNy41aC0xNVwiIC8+LFxyXG4gIHN0YXI6IDxwYXRoIGZpbGxSdWxlPVwiZXZlbm9kZFwiIGQ9XCJNMTAuNzg4IDMuMjFjLjQ0OC0xLjA3NyAxLjk3Ni0xLjA3NyAyLjQyNCAwbDIuMDgyIDUuMDA3IDUuNDA0LjQzM2MxLjE2NC4wOTMgMS42MzYgMS41NDUuNzQ5IDIuMzA1bC00LjExNiAzLjk5NCAxLjI4IDUuMzg1Yy4xOTkuODQtLjcwMSAxLjUwMi0xLjQ0MiAxLjEwNkwxMiAxOC41MDJsLTQuNzA2IDIuOTI3Yy0uNzQyLjM5Ni0xLjY0MS0uMjY2LTEuNDQyLTEuMTA2bDEuMjgtNS4zODUtNC4xMTYtMy45OTRjLS44ODctLjc2LS40MTUtMi4yMTIuNzQ5LTIuMzA1bDUuNDA0LS40MzMgMi4wODItNS4wMDd6XCIgY2xpcFJ1bGU9XCJldmVub2RkXCIgLz4sXHJcbiAgcHJpbnQ6IDxwYXRoIHN0cm9rZUxpbmVjYXA9XCJyb3VuZFwiIHN0cm9rZUxpbmVqb2luPVwicm91bmRcIiBkPVwiTTE0LjI1IDcuNVY0LjVhMi4yNSAyLjI1IDAgMDAtMi4yNS0yLjI1SDcuNUEyLjI1IDIuMjUgMCAwMDUuMjUgNC41djNtOSAwaDMuNzVhMi4yNSAyLjI1IDAgMDEyLjI1IDIuMjV2Ni43NWEyLjI1IDIuMjUgMCAwMS0yLjI1IDIuMjVINS4yNUEyLjI1IDIuMjUgMCAwMTMgMTYuNVY5Ljc1YTIuMjUgMi4yNSAwIDAxMi4yNS0yLjI1aDMuNzVtMy4zNzUgMHYtMS41YzAtLjYyMS0uNTA0LTEuMTI1LTEuMTI1LTEuMTI1SDEwLjg3NWMtLjYyMSAwLTEuMTI1LjUwNC0xLjEyNSAxLjEyNXYxLjVtMy4zNzUgMGgtMy4zNzVcIiAvPixcclxuICBzaGFyZTogPHBhdGggc3Ryb2tlTGluZWNhcD1cInJvdW5kXCIgc3Ryb2tlTGluZWpvaW49XCJyb3VuZFwiIGQ9XCJNNy4yMTcgMTAuOTA3YTIuMjUgMi4yNSAwIDEwMCAyLjE4Nm0wLTIuMTg2Yy4xOC4zMjQuMjgzLjY5Ni4yODMgMS4wOTNzLS4xMDMuNzctLjI4MyAxLjA5M20wLTIuMTg2bDkuNTY2LTUuMzE0bS05LjU2NiA3LjVsOS41NjYgNS4zMTRtMCAwYTIuMjUgMi4yNSAwIDEwMC0yLjE4Nm0wIDIuMTg2Yy0uMTguMzI0LS4yODMuNjk2LS4yODMgMS4wOTNzLjEwMy43Ny4yODMgMS4wOTNtMC0yLjE4NlYxMC45MDdcIiAvPixcclxuICBtYXA6IDxwYXRoIHN0cm9rZUxpbmVjYXA9XCJyb3VuZFwiIHN0cm9rZUxpbmVqb2luPVwicm91bmRcIiBkPVwiTTkgNi43NVYxNW02LTEwLjVWMTVtLjc1IDQuNWwtMy0zSDUuMjVtNy41LTE1bDMgM0gyMW0tNy41IDE1bC0zLTNINC41bTcuNSA0LjVWMjFtLTcuNS00LjVWMy43NW0xNSAxMy41VjMuNzVcIiAvPixcclxuICAnYXJyb3dzLXBvaW50aW5nLW91dCc6IDxwYXRoIHN0cm9rZUxpbmVjYXA9XCJyb3VuZFwiIHN0cm9rZUxpbmVqb2luPVwicm91bmRcIiBkPVwiTTMuNzUgMy43NXY0LjVtMC00LjVoNC41bS00LjUgMEw5IDlNMy43NSAyMC4yNXYtNC41bTAgNC41aDQuNW0tNC41IDBMOSAxNU0yMC4yNSAzLjc1djQuNW0wLTQuNWgtNC41bTQuNSAwTDE1IDltNS4yNSAxMS4yNXYtNC41bTAgNC41aC00LjVtNC41IDBMMTUgMTVcIiAvPixcclxuICAnYXJyb3dzLXBvaW50aW5nLWluJzogPHBhdGggc3Ryb2tlTGluZWNhcD1cInJvdW5kXCIgc3Ryb2tlTGluZWpvaW49XCJyb3VuZFwiIGQ9XCJNOSA5VjQuNU05IDlINC41bTAgMGwtMS44NzUtMS44NzVNNC41IDlsMS44NzUgMS44NzVtMTEuMjUtMS44NzVWNC41bTAgNC41aC00LjVtNC41IDBsMS44NzUtMS44NzVtLTEuODc1IDEuODc1LTEuODc1IDEuODc1bS03LjUgNy41VjE1bTAgNC41aDQuNW0tNC41IDBsMS44NzUgMS44NzVNOSAxNWwtMS44NzUgMS44NzVtMTEuMjUtMS44NzVWMTVtMCA0LjVoLTQuNW00LjUgMGwxLjg3NSAxLjg3NW0tMS44NzUtMS44NzUtMS44NzUgMS44NzVcIiAvPixcclxuICBwbGF5OiA8cGF0aCBmaWxsUnVsZT1cImV2ZW5vZGRcIiBkPVwiTTQuNSA1LjY1M2MwLTEuNDI2IDEuNTI5LTIuMzMgMi43NzktMS42NDNsMTEuNTQgNi42NDdjMS4yOTUuNzQ4IDEuMjk1IDIuNTM4IDAgMy4yODZMNy4yNzkgMjAuOTljLTEuMjUuNzItMi43NzktLjIxNy0yLjc3OS0xLjY0M1Y1LjY1M3pcIiBjbGlwUnVsZT1cImV2ZW5vZGRcIiAvPixcclxuICBwYXVzZTogPHBhdGggZmlsbFJ1bGU9XCJldmVub2RkXCIgZD1cIk02Ljc1IDUuMjVhLjc1Ljc1IDAgMDEuNzUuNzV2MTJhLjc1Ljc1IDAgMDEtMS41IDB2LTEyYS43NS43NSAwIDAxLjc1LS43NXptOSAwYS43NS43NSAwIDAxLjc1Ljc1djEyYS43NS43NSAwIDAxLTEuNSAwdi0xMmEuNzUuNzUgMCAwMS43NS0uNzV6XCIgY2xpcFJ1bGU9XCJldmVub2RkXCIgLz4sXHJcbiAgJ3ZvbHVtZS11cCc6IDxwYXRoIHN0cm9rZUxpbmVjYXA9XCJyb3VuZFwiIHN0cm9rZUxpbmVqb2luPVwicm91bmRcIiBkPVwiTTE5LjExNCA1LjYzNmE5IDkgMCAwMTAgMTIuNzI4TTE2LjQ2MyA4LjI4OGE1LjI1IDUuMjUgMCAwMTAgNy40MjRNNi43NSA4LjI1bDQuNzItNC43MmEuNzUuNzUgMCAwMTEuMjguNTN2MTUuODhhLjc1Ljc1IDAgMDEtMS4yOC41M2wtNC43Mi00LjcySDQuNTFjLS44OCAwLTEuNzA0LS41MDctMS45MzgtMS4zNTRBOS4wMSA5LjAxIDAgMDEyLjI1IDEyYzAtLjgzLjExMi0xLjYzMy4zMjItMi4zOTZDMi44MDYgOC43NTYgMy42MyA4LjI1IDQuNTEgOC4yNUg2Ljc1elwiIC8+LFxyXG4gICd2b2x1bWUtb2ZmJzogPHBhdGggc3Ryb2tlTGluZWNhcD1cInJvdW5kXCIgc3Ryb2tlTGluZWpvaW49XCJyb3VuZFwiIGQ9XCJNMTcuMjUgOS43NSAxOS41IDEybTAgMCAyLjI1IDIuMjVNMTkuNSAxMmwyLjI1LTIuMjVNMTkuNSAxMmwtMi4yNSAyLjI1TTE1IDkuNzVsLTQuNzItNC43MmEuNzUuNzUgMCAwIDAtMS4yOC41M3YxNS44OGEuNzUuNzUgMCAwIDAgMS4yOC41M0wxNSA5Ljc1elwiIC8+LFxyXG4gICdleHBhbmQnOiA8cGF0aCBzdHJva2VMaW5lY2FwPVwicm91bmRcIiBzdHJva2VMaW5lam9pbj1cInJvdW5kXCIgZD1cIk00IDhWNGg0bTEyIDEydi00aC00TTQgMTZ2NGg0bTEyLTEyaC00di00XCIgLz4sXHJcbiAgJ2NvbXByZXNzJzogPHBhdGggc3Ryb2tlTGluZWNhcD1cInJvdW5kXCIgc3Ryb2tlTGluZWpvaW49XCJyb3VuZFwiIGQ9XCJNOCA0SDR2NG0xMiAxMmg0di00TTggMjBINHYtNG0xMi0xMmg0VjRcIiAvPixcclxuICAncmVjb3JkJzogPGNpcmNsZSBjeD1cIjEyXCIgY3k9XCIxMlwiIHI9XCI4XCIgLz4sXHJcbiAgJ3N0b3AnOiA8cmVjdCB4PVwiNlwiIHk9XCI2XCIgd2lkdGg9XCIxMlwiIGhlaWdodD1cIjEyXCIgcng9XCIyXCIgLz4sXHJcbiAgJ2JhY2t3YXJkJzogPHBhdGggc3Ryb2tlTGluZWNhcD1cInJvdW5kXCIgc3Ryb2tlTGluZWpvaW49XCJyb3VuZFwiIGQ9XCJNMTguNzUgMTkuNWwtNy41LTcuNSA3LjUtNy41bS02IDE1TDUuMjUgMTJsNy41LTcuNVwiIC8+LFxyXG4gICdmb3J3YXJkJzogPHBhdGggc3Ryb2tlTGluZWNhcD1cInJvdW5kXCIgc3Ryb2tlTGluZWpvaW49XCJyb3VuZFwiIGQ9XCJNNS4yNSA0LjVsNy41IDcuNS03LjUgNy41bTYtMTVsNy41IDcuNS03LjUgNy41XCIgLz4sXHJcbiAgJ2FwaSc6IDxwYXRoIHN0cm9rZUxpbmVjYXA9XCJyb3VuZFwiIHN0cm9rZUxpbmVqb2luPVwicm91bmRcIiBkPVwiTTE3LjI1IDYuNzVMMjIuNSAxMmwtNS4yNSA1LjI1bS0xMC41IDBMMS41IDEybDUuMjUtNS4yNW03LjUtM2wtNC41IDE2LjVcIiAvPixcclxuICAnY2hhdC1idWJibGUnOiA8cGF0aCBzdHJva2VMaW5lY2FwPVwicm91bmRcIiBzdHJva2VMaW5lam9pbj1cInJvdW5kXCIgZD1cIk04LjYyNSAxMmEuMzc1LjM3NSAwIDExLS43NSAwIC4zNzUuMzc1IDAgMDEuNzUgMHptMCAwSDguMjVtNC4xMjUgMGEuMzc1LjM3NSAwIDExLS43NSAwIC4zNzUuMzc1IDAgMDEuNzUgMHptMCAwSDEyLjM3NW00LjEyNSAwYS4zNzUuMzc1IDAgMTEtLjc1IDAgLjM3NS4zNzUgMCAwMS43NSAwem0wIDBoLS4zNzVNMjEgMTJjMCA0LjU1Ni00LjAzIDguMjUtOSA4LjI1YTkuNzY0IDkuNzY0IDAgMDEtMi41NTUtLjMzN0E1Ljk3MiA1Ljk3MiAwIDAxNS40MSAyMC45N2E1Ljk2OSA1Ljk2OSAwIDAxLS40NzQtLjA2NSA0LjQ4IDQuNDggMCAwMC45NzgtMi4wMjVjLjA5LS40NTctLjEzMy0uOTAxLS40NjctMS4yMjZDMy45MyAxNi4xNzggMyAxNC4xNTkgMyAxMmMwLTQuNTU1IDQuMDMtOC4yNSA5LTguMjVzOSAzLjY5NCA5IDguMjV6XCIgLz4sXHJcbiAgJ2Jyb2FkY2FzdCc6IDxwYXRoIHN0cm9rZUxpbmVjYXA9XCJyb3VuZFwiIHN0cm9rZUxpbmVqb2luPVwicm91bmRcIiBkPVwiTTguMjUgMTguNzVhMS41IDEuNSAwIDAxLTMgMG0zIDBhMS41IDEuNSAwIDAwLTMgMG0zIDBoNm0tOSAwSDMuMzc1YTEuMTI1IDEuMTI1IDAgMDEtMS4xMjUtMS4xMjVWMTQuMjVtMTcuMjUgNC41YTEuNSAxLjUgMCAwMS0zIDBtMyAwYTEuNSAxLjUgMCAwMC0zIDBtMyAwaDEuMTI1Yy42MjEgMCAxLjEyOS0uNTA0IDEuMDktMS4xMjRhMTcuOTAyIDE3LjkwMiAwIDAwLTMuMjEzLTkuMTkzIDIuMDU2IDIuMDU2IDAgMDAtMS41OC0uODZIMTQuMjVNMTYuNSAxOC43NWgtMi4yNW0wLTExLjE3N3YtLjk1OGMwLS41NjgtLjQyMi0xLjA0OC0uOTg3LTEuMTA2YTQ4LjU1NCA0OC41NTQgMCAwMC0xMC4wMjYgMCAxLjEwNiAxLjEwNiAwIDAwLS45ODcgMS4xMDZ2Ny42MzVtMTItNi42Nzd2Ni42NzdtMCA0LjV2LTQuNW0wIDBoLTEyXCIgLz4sXHJcbiAgJ2xvY2snOiA8cGF0aCBzdHJva2VMaW5lY2FwPVwicm91bmRcIiBzdHJva2VMaW5lam9pbj1cInJvdW5kXCIgZD1cIk0xNi41IDEwLjVWNi43NWE0LjUgNC41IDAgMTAtOSAwdjMuNzVtLS43NSAxMS4yNWgxMC41YTIuMjUgMi4yNSAwIDAwMi4yNS0yLjI1di02Ljc1YTIuMjUgMi4yNSAwIDAwLTIuMjUtMi4yNUg2Ljc1YTIuMjUgMi4yNSAwIDAwLTIuMjUgMi4yNXY2Ljc1YTIuMjUgMi4yNSAwIDAwMi4yNSAyLjI1elwiIC8+LFxyXG4gICd1c2Vycyc6IDxwYXRoIHN0cm9rZUxpbmVjYXA9XCJyb3VuZFwiIHN0cm9rZUxpbmVqb2luPVwicm91bmRcIiBkPVwiTTE1IDE5LjEyOGE5LjM4IDkuMzggMCAwMDIuNjI1LjM3MiA5LjMzNyA5LjMzNyAwIDAwNC4xMjEtLjk1MiA0LjEyNSA0LjEyNSAwIDAwLTcuNTMzLTIuNDkzTTE1IDE5LjEyOHYtLjAwM2MwLTEuMTEzLS4yODUtMi4xNi0uNzg2LTMuMDdNMTUgMTkuMTI4di4xMDZBMTIuMzE4IDEyLjMxOCAwIDAxOC42MjQgMjFjLTIuMzMxIDAtNC41MTItLjY0NS02LjM3NC0xLjc2NmwtLjAwMS0uMTA5YTYuMzc1IDYuMzc1IDAgMDExMS45NjQtNC42NjN2LjAwM3pcIiAvPixcclxuICAnZWxsaXBzaXMtdmVydGljYWwnOiA8cGF0aCBzdHJva2VMaW5lY2FwPVwicm91bmRcIiBzdHJva2VMaW5lam9pbj1cInJvdW5kXCIgZD1cIk0xMiA2Ljc1YS43NS43NSAwIDExMC0xLjUuNzUuNzUgMCAwMTAgMS41ek0xMiAxMi43NWEuNzUuNzUgMCAxMTAtMS41Ljc1Ljc1IDAgMDEwIDEuNXpNMTIgMTguNzVhLjc1Ljc1IDAgMTEwLTEuNS43NS43NSAwIDAxMCAxLjV6XCIgLz4sXHJcbiAgJ3JlcGx5JzogPHBhdGggc3Ryb2tlTGluZWNhcD1cInJvdW5kXCIgc3Ryb2tlTGluZWpvaW49XCJyb3VuZFwiIGQ9XCJNOSAxNUwzIDltMCAwbDYtNk0zIDloMTJhNiA2IDAgMDEwIDEyaC0zXCIgLz4sXHJcbiAgJ2luZm8nOiA8cGF0aCBzdHJva2VMaW5lY2FwPVwicm91bmRcIiBzdHJva2VMaW5lam9pbj1cInJvdW5kXCIgZD1cIk0xMS4yNSAxMS4yNWwuMDQxLS4wMmEuNzUuNzUgMCAwMTEuMDYzLjg1MmwtLjcwOCAyLjgzNmEuNzUuNzUgMCAwMDEuMDYzLjg1M2wuMDQxLS4wMjFNMjEgMTJhOSA5IDAgMTEtMTggMCA5IDkgMCAwMTE4IDB6bS05LTMuNzVoLjAwOHYuMDA4SDEyVjguMjV6XCIgLz4sXHJcbiAgJ2F1ZGlvJzogPHBhdGggc3Ryb2tlTGluZWNhcD1cInJvdW5kXCIgc3Ryb2tlTGluZWpvaW49XCJyb3VuZFwiIGQ9XCJNMTkuMTE0IDUuNjM2YTkgOSAwIDAxMCAxMi43MjhNMTYuNDYzIDguMjg4YTUuMjUgNS4yNSAwIDAxMCA3LjQyNE02Ljc1IDguMjVsNC43Mi00LjcyYS43NS43NSAwIDAxMS4yOC41M3YxNS44OGEuNzUuNzUgMCAwMS0xLjI4LjUzbC00LjcyLTQuNzJINC41MWMtLjg4IDAtMS43MDQtLjUwNy0xLjkzOC0xLjM1NEE5LjAxIDkuMDEgMCAwMTIuMjUgMTJjMC0uODMuMTEyLTEuNjMzLjMyMi0yLjM5NkMyLjgwNiA4Ljc1NiAzLjYzIDguMjUgNC41MSA4LjI1SDYuNzV6XCIgLz4sXHJcbiAgJ2Nsb3VkJzogPHBhdGggc3Ryb2tlTGluZWNhcD1cInJvdW5kXCIgc3Ryb2tlTGluZWpvaW49XCJyb3VuZFwiIGQ9XCJNMi4yNSAxNWE0LjUgNC41IDAgMDA0LjUgNC41SDE4YTMuNzUgMy43NSAwIDAwMS4zMzItNy4yNTcgMyAzIDAgMDAtMy43NTgtMy44NDggNS4yNSA1LjI1IDAgMDAtMTAuMjMzIDIuMzNBNC41MDIgNC41MDIgMCAwMDIuMjUgMTV6XCIgLz4sXHJcbiAgJ2FuYWx5dGljcyc6IDxwYXRoIHN0cm9rZUxpbmVjYXA9XCJyb3VuZFwiIHN0cm9rZUxpbmVqb2luPVwicm91bmRcIiBkPVwiTTEwLjUgNmE3LjUgNy41IDAgMTA3LjUgNy41aC03LjVWNnogTTEzLjUgMTAuNUgyMUE3LjUgNy41IDAgMDAxMy41IDN2Ny41elwiIC8+LFxyXG4gICdzbWlsZSc6IDxwYXRoIHN0cm9rZUxpbmVjYXA9XCJyb3VuZFwiIHN0cm9rZUxpbmVqb2luPVwicm91bmRcIiBkPVwiTTE1LjE4MiAxNS4xODJhNC41IDQuNSAwIDAxLTYuMzY0IDBNMjEgMTJhOSA5IDAgMTEtMTggMCA5IDkgMCAwMTE4IDB6TTkuNzUgOS43NWMwIC40MTQtLjE2OC43NS0uMzc1Ljc1UzkgMTAuMTY0IDkgOS43NSA5LjE2OCA5IDkuMzc1IDlzLjM3NS4zMzYuMzc1Ljc1em0tLjM3NSAwaC4wMDh2LjAxNWgtLjAwOFY5Ljc1em01LjYyNSAwYzAgLjQxNC0uMTY4Ljc1LS4zNzUuNzVzLS4zNzUtLjMzNi0uMzc1LS43NS4xNjgtLjc1LjM3NS0uNzUuMzc1LjMzNi4zNzUuNzV6bS0uMzc1IDBoLjAwOHYuMDE1aC0uMDA4VjkuNzV6XCIgLz4sXHJcbiAgJ21laCc6IDxwYXRoIHN0cm9rZUxpbmVjYXA9XCJyb3VuZFwiIHN0cm9rZUxpbmVqb2luPVwicm91bmRcIiBkPVwiTTIxIDEyYTkgOSAwIDExLTE4IDAgOSA5IDAgMDExOCAwek05IDEwYTEgMSAwIDExLTIgMCAxIDEgMCAwMTIgMHptNyAwYTEgMSAwIDExLTIgMCAxIDEgMCAwMTIgMHpNOSAxNWg2XCIgLz4sXHJcbiAgJ2Zyb3duJzogPHBhdGggc3Ryb2tlTGluZWNhcD1cInJvdW5kXCIgc3Ryb2tlTGluZWpvaW49XCJyb3VuZFwiIGQ9XCJNMTUuMTgyIDE2LjMxOEE0LjQ4NiA0LjQ4NiAwIDAwMTIuMDE2IDE1YTQuNDg2IDQuNDg2IDAgMDAtMy4xOTggMS4zMThNMjEgMTJhOSA5IDAgMTEtMTggMCA5IDkgMCAwMTE4IDB6TTkuNzUgOS43NWMwIC40MTQtLjE2OC43NS0uMzc1Ljc1UzkgMTAuMTY0IDkgOS43NSA5LjE2OCA5IDkuMzc1IDlzLjM3NS4zMzYuMzc1Ljc1em0tLjM3NSAwaC4wMDh2LjAxNWgtLjAwOFY5Ljc1em01LjYyNSAwYzAgLjQxNC0uMTY4Ljc1LS4zNzUuNzVzLS4zNzUtLjMzNi0uMzc1LS43NS4xNjgtLjc1LjM3NS0uNzUuMzc1LjMzNi4zNzUuNzV6bS0uMzc1IDBoLjAwOHYuMDE1aC0uMDA4VjkuNzV6XCIgLz4sXHJcbiAgJ3Bob25lLWluY29taW5nJzogPHBhdGggc3Ryb2tlTGluZWNhcD1cInJvdW5kXCIgc3Ryb2tlTGluZWpvaW49XCJyb3VuZFwiIGQ9XCJNMTkuNSA0LjVsLTE1IDE1bTAgMGgxMS4yNW0tMTEuMjUgMFY4LjI1XCIgLz4sXHJcbiAgJ3Bob25lLW91dGdvaW5nJzogPHBhdGggc3Ryb2tlTGluZWNhcD1cInJvdW5kXCIgc3Ryb2tlTGluZWpvaW49XCJyb3VuZFwiIGQ9XCJNNC41IDE5LjVsMTUtMTVtMCAwSDguMjVtMTEuMjUgMHYxMS4yNVwiIC8+LFxyXG4gICdwaG9uZS1taXNzZWQnOiA8cGF0aCBzdHJva2VMaW5lY2FwPVwicm91bmRcIiBzdHJva2VMaW5lam9pbj1cInJvdW5kXCIgZD1cIk0xOC4zNjQgMTguMzY0QTkgOSAwIDAwNS42MzYgNS42MzZtMTIuNzI4IDEyLjcyOEE5IDkgMCAwMTUuNjM2IDUuNjM2bTEyLjcyOCAxMi43MjhMNS42MzYgNS42MzZcIiAvPixcclxuICAndHJhbnNjcmlwdCc6IDxwYXRoIHN0cm9rZUxpbmVjYXA9XCJyb3VuZFwiIHN0cm9rZUxpbmVqb2luPVwicm91bmRcIiBkPVwiTTE5LjUgMTQuMjV2LTIuNjI1YTMuMzc1IDMuMzc1IDAgMDAtMy4zNzUtMy4zNzVoLTEuNUExLjEyNSAxLjEyNSAwIDAxMTMuNSA3LjEyNXYtMS41YTMuMzc1IDMuMzc1IDAgMDAtMy4zNzUtMy4zNzVIOC4yNW0yLjI1IDBINS42MjVjLS42MjEgMC0xLjEyNS41MDQtMS4xMjUgMS4xMjV2MTcuMjVjMCAuNjIxLjUwNCAxLjEyNSAxLjEyNSAxLjEyNWgxMi43NWMuNjIxIDAgMS4xMjUtLjUwNCAxLjEyNS0xLjEyNVYxMS4yNWE5IDkgMCAwMC05LTl6XCIgLz4sXHJcbiAgJ3RyYXNoJzogPHBhdGggc3Ryb2tlTGluZWNhcD1cInJvdW5kXCIgc3Ryb2tlTGluZWpvaW49XCJyb3VuZFwiIGQ9XCJNMTQuNzQgOWwtLjM0NiA5bS00Ljc4OCAwTDkuMjYgOW05Ljk2OC0zLjIxYy4zNDIuMDUyLjY4Mi4xMDcgMS4wMjIuMTY2bS0xLjAyMi0uMTY1TDE4LjE2IDE5LjY3M2EyLjI1IDIuMjUgMCAwMS0yLjI0NCAyLjA3N0g4LjA4NGEyLjI1IDIuMjUgMCAwMS0yLjI0NC0yLjA3N0w0Ljc3MiA1Ljc5bTE0LjQ1NiAwYTQ4LjEwOCA0OC4xMDggMCAwMC0zLjQ3OC0uMzk3bS0xMiAuNTYyYy4zNC0uMDU5LjY4LS4xMTQgMS4wMjItLjE2NW0wIDBhNDguMTEgNDguMTEgMCAwMTMuNDc4LS4zOTdtNy41IDB2LS45MTZjMC0xLjE4LS45MS0yLjEzNC0yLjA5LTIuMjAxYTUxLjk2NCA1MS45NjQgMCAwMC0zLjMyIDBjLTEuMTguMDY3LTIuMDkgMS4wMjItMi4wOSAyLjIwMXYuOTE2bTcuNSAwYTQ4LjY2NyA0OC42NjcgMCAwMC03LjUgMFwiIC8+LFxyXG4gICdwbGF5LWNpcmNsZSc6IDxwYXRoIHN0cm9rZUxpbmVjYXA9XCJyb3VuZFwiIHN0cm9rZUxpbmVqb2luPVwicm91bmRcIiBkPVwiTTIxIDEyYTkgOSAwIDExLTE4IDAgOSA5IDAgMDExOCAwelwiIC8+LFxyXG4gICd3YWxsZXQnOiA8cGF0aCBzdHJva2VMaW5lY2FwPVwicm91bmRcIiBzdHJva2VMaW5lam9pbj1cInJvdW5kXCIgZD1cIk0yMSAxMmEyLjI1IDIuMjUgMCAwMC0yLjI1LTIuMjVIMTVhMyAzIDAgMTEtNiAwSDUuMjVBMi4yNSAyLjI1IDAgMDAzIDEybTE4IDB2NmEyLjI1IDIuMjUgMCAwMS0yLjI1IDIuMjVINS4yNUEyLjI1IDIuMjUgMCAwMTMgMTh2LTZtMTggMFY5TTMgMTJWOW0xOCAwYTIuMjUgMi4yNSAwIDAwLTIuMjUtMi4yNUg1LjI1QTIuMjUgMi4yNSAwIDAwMyA5bTE4IDBWNmEyLjI1IDIuMjUgMCAwMC0yLjI1LTIuMjVINS4yNUEyLjI1IDIuMjUgMCAwMDMgNnYzXCIgLz4sXHJcbiAgJ2hpc3RvcnknOiA8cGF0aCBzdHJva2VMaW5lY2FwPVwicm91bmRcIiBzdHJva2VMaW5lam9pbj1cInJvdW5kXCIgZD1cIk0xMiA2djZoNC41bTQuNSAwYTkgOSAwIDExLTE4IDAgOSA5IDAgMDExOCAwelwiIC8+LFxyXG4gICdhcmNoaXZlJzogPHBhdGggc3Ryb2tlTGluZWNhcD1cInJvdW5kXCIgc3Ryb2tlTGluZWpvaW49XCJyb3VuZFwiIGQ9XCJNMjAuMjUgNy41bC0uNjI1IDEwLjYzMmEyLjI1IDIuMjUgMCAwMS0yLjI0NyAyLjExOEg2LjYyMmEyLjI1IDIuMjUgMCAwMS0yLjI0Ny0yLjExOEwzLjc1IDcuNW04LjI1IDMuNzVoMy43NU0xMiAxNS43NWgzLjc1TTEyIDEyaDMuNzVNMTIgMTUuNzV2LTMuNzVNMy4zNzUgNy41aDE3LjI1Yy42MjEgMCAxLjEyNS0uNTA0IDEuMTI1LTEuMTI1di0xLjVjMC0uNjIxLS41MDQtMS4xMjUtMS4xMjUtMS4xMjVIMy4zNzVjLS42MjEgMC0xLjEyNS41MDQtMS4xMjUgMS4xMjV2MS41YzAgLjYyMS41MDQgMS4xMjUgMS4xMjUgMS4xMjV6XCIgLz4sXHJcbiAgJ2NhcnQnOiA8cGF0aCBzdHJva2VMaW5lY2FwPVwicm91bmRcIiBzdHJva2VMaW5lam9pbj1cInJvdW5kXCIgZD1cIk0yLjI1IDNoMS4zODZjLjUxIDAgLjk1NS4zNDMgMS4wODcuODM1bC4zODMgMS40MzdNNy41IDE0LjI1YTMgMyAwIDAwLTMgM2gxNS43NW0tMTIuNzUtM2gxMS4yMThjLjUxIDAgLjk2Mi0uMzQzIDEuMDg3LS44MzVsLjM4My0xLjQzN003LjUgMTQuMjVMNS4xMDYgNS4xMDZBMi4yNSAyLjI1IDAgMDAyLjg1NCAzSDIuMjVcIiAvPixcclxuICAnYWRqdXN0bWVudHMnOiA8cGF0aCBzdHJva2VMaW5lY2FwPVwicm91bmRcIiBzdHJva2VMaW5lam9pbj1cInJvdW5kXCIgZD1cIk0xMC41IDZoOS43NU0xMC41IDZhMS41IDEuNSAwIDExLTMgMG0zIDBhMS41IDEuNSAwIDEwLTMgME0zLjc1IDZINy41bTMgMTJoOS43NW0tOS43NSAwYTEuNSAxLjUgMCAxMS0zIDBtMyAwYTEuNSAxLjUgMCAxMC0zIDBtLTMuNzUgMEg3LjVtOS02aDMuNzVtLTMuNzUgMGExLjUgMS41IDAgMTEtMyAwbTMgMGExLjUgMS41IDAgMTAtMyAwTTMuNzUgMTJoOS43NVwiIC8+LFxyXG4gICdjbG9zZSc6IDxwYXRoIHN0cm9rZUxpbmVjYXA9XCJyb3VuZFwiIHN0cm9rZUxpbmVqb2luPVwicm91bmRcIiBkPVwiTTYgMThMMTggNk02IDZsMTIgMTJcIiAvPixcclxuICAnZXllJzogKFxyXG4gICAgPD5cclxuICAgICAgPHBhdGggc3Ryb2tlTGluZWNhcD1cInJvdW5kXCIgc3Ryb2tlTGluZWpvaW49XCJyb3VuZFwiIGQ9XCJNMi4wMzYgMTIuMzIyYTEuMDEyIDEuMDEyIDAgMDEwLS42MzlDMy40MjMgNy41MSA3LjM2IDQuNSAxMiA0LjVjNC42MzggMCA4LjU3MyAzLjAwNyA5Ljk2MyA3LjE3OC4wNy4yMDcuMDcuNDMyIDAgLjYzOUMyMC41NzcgMTYuNDkgMTYuNjQgMTkuNSAxMiAxOS41Yy00LjYzOCAwLTguNTczLTMuMDA3LTkuOTYzLTcuMTc4elwiIC8+XHJcbiAgICAgIDxwYXRoIHN0cm9rZUxpbmVjYXA9XCJyb3VuZFwiIHN0cm9rZUxpbmVqb2luPVwicm91bmRcIiBkPVwiTTE1IDEyYTMgMyAwIDExLTYgMCAzIDMgMCAwMTYgMHpcIiAvPlxyXG4gICAgPC8+XHJcbiAgKSxcclxuICAncGVuY2lsJzogPHBhdGggc3Ryb2tlTGluZWNhcD1cInJvdW5kXCIgc3Ryb2tlTGluZWpvaW49XCJyb3VuZFwiIGQ9XCJNMTYuODYyIDQuNDg3bDEuNjg3LTEuNjg4YTEuODc1IDEuODc1IDAgMTEyLjY1MiAyLjY1MkwxMC41ODIgMTYuMDdhNC41IDQuNSAwIDAxLTEuODk3IDEuMTNMNiAxOGwuOC0yLjY4NWE0LjUgNC41IDAgMDExLjEzLTEuODk3bDguOTMyLTguOTMxem0wIDBMMTkuNSA3LjEyNU0xOCAxNHY0Ljc1QTIuMjUgMi4yNSAwIDAxMTUuNzUgMjFINS4yNUEyLjI1IDIuMjUgMCAwMTMgMTguNzVWOC4yNUEyLjI1IDIuMjUgMCAwMTUuMjUgNkgxMFwiIC8+LFxyXG4gICdnaWZ0JzogPHBhdGggc3Ryb2tlTGluZWNhcD1cInJvdW5kXCIgc3Ryb2tlTGluZWpvaW49XCJyb3VuZFwiIGQ9XCJNMjEgMTEuMjV2OC4yNWExLjUgMS41IDAgMDEtMS41IDEuNUg0LjVhMS41IDEuNSAwIDAxLTEuNS0xLjV2LTguMjVtMTggMGwtMTggMG0xOCAwdi0xLjVhMS41IDEuNSAwIDAwLTEuNS0xLjVINC41YTEuNSAxLjUgMCAwMC0xLjUgMS41djEuNW0xOCAwaC0xOE0xMiA3LjV2MTMuNW0tMy0xMy41YzAtMS42NTcgMS4zNDMtMyAzLTNzMyAxLjM0MyAzIDNcIiAvPixcclxuICAnbWludXMnOiA8cGF0aCBzdHJva2VMaW5lY2FwPVwicm91bmRcIiBzdHJva2VMaW5lam9pbj1cInJvdW5kXCIgZD1cIk0xOS41IDEyaC0xNVwiIC8+LFxyXG4gICdkb2N1bWVudCc6IDxwYXRoIHN0cm9rZUxpbmVjYXA9XCJyb3VuZFwiIHN0cm9rZUxpbmVqb2luPVwicm91bmRcIiBkPVwiTTE5LjUgMTQuMjV2LTIuNjI1YTMuMzc1IDMuMzc1IDAgMDAtMy4zNzUtMy4zNzVoLTEuNUExLjEyNSAxLjEyNSAwIDAxMTMuNSA3LjEyNXYtMS41YTMuMzc1IDMuMzc1IDAgMDAtMy4zNzUtMy4zNzVIOC4yNW0yLjI1IDBINS42MjVjLS42MjEgMC0xLjEyNS41MDQtMS4xMjUgMS4xMjV2MTcuMjVjMCAuNjIxLjUwNCAxLjEyNSAxLjEyNSAxLjEyNWgxMi43NWMuNjIxIDAgMS4xMjUtLjUwNCAxLjEyNS0xLjEyNVYxMS4yNWE5IDkgMCAwMC05LTl6XCIgLz4sXHJcbiAgJ2NvZy02LXRvb3RoJzogPHBhdGggc3Ryb2tlTGluZWNhcD1cInJvdW5kXCIgc3Ryb2tlTGluZWpvaW49XCJyb3VuZFwiIGQ9XCJNNC41IDEyYTcuNSA3LjUgMCAwMDE1IDBtLTE1IDBhNy41IDcuNSAwIDExMTUgMG0tMTUgMEgzbTE2LjUgMEgyMW0tMS41IDBIMTJtLTguNDU3IDMuMDc3bDEuNDEtLjUxM20xNC4wOTUtNS4xM2wxLjQxLS41MTNNNS4xMDYgMTcuNzg1bDEuMTUtLjk2NG0xMS40OS05LjY0MmwxLjE0OS0uOTY0TTcuNTAxIDE5Ljc5NWwuNzUtMS4zbTcuNS0xMi45OWwuNzUtMS4zbS0xMC42MzkgMTQuOTYybC4xMy0xLjQ5NW0xMS40OTUtMTMuMjNsLjEzLTEuNDk1bS0xMi44NzYgMTQuMTY1bC0uNTEzLTEuNDExbTE0LjA5NS01LjEzbC0uNTEzLTEuNDExTTMuMzE5IDE1LjI5OWwtMS4xNS0uOTY0bTExLjQ5LTkuNjQybC0xLjE1LS45NjRNNi42IDEyLjQyN2wtMS40OTUuMTNtMTMuMjMtMTEuNDk1bC0xLjQ5NS4xM1wiIC8+LFxyXG4gICd1c2VyJzogPHBhdGggc3Ryb2tlTGluZWNhcD1cInJvdW5kXCIgc3Ryb2tlTGluZWpvaW49XCJyb3VuZFwiIGQ9XCJNMTcuOTgyIDE4LjcyNUE3LjQ4OCA3LjQ4OCAwIDAwMTIgMTUuNzVhNy40ODggNy40ODggMCAwMC01Ljk4MiAyLjk3NW0xMS45NjMgMGE5IDkgMCAxMC0xMS45NjMgMG0xMS45NjMgMEE4Ljk2NiA4Ljk2NiAwIDAxMTIgMjFhOC45NjYgOC45NjYgMCAwMS01Ljk4Mi0yLjI3NU0xNSA5Ljc1YTMgMyAwIDExLTYgMCAzIDMgMCAwMTYgMHpcIiAvPlxyXG59O1xyXG5cclxuLy8gRklYOiBJbXBsZW1lbnRlZCB0aGUgSWNvbiBjb21wb25lbnQgdG8gcmVuZGVyIFNWR3MgZHluYW1pY2FsbHkuXHJcbmNvbnN0IEljb246IFJlYWN0LkZDPEljb25Qcm9wcz4gPSAoeyBuYW1lLCBjbGFzc05hbWUgfSkgPT4ge1xyXG4gIGNvbnN0IGljb25QYXRoID0gaWNvbnNbbmFtZV0gfHwgaWNvbnMuZGFzaGJvYXJkOyAvLyBGYWxsYmFja1xyXG4gIFxyXG4gIC8vIEZvciBpY29ucyBsaWtlIEdpdEh1YiBhbmQgVHdpdHRlciB0aGF0IHVzZSBmaWxsIGluc3RlYWQgb2Ygc3Ryb2tlXHJcbiAgY29uc3QgaXNGaWxsZWQgPSBbJ2dpdGh1YicsICd0d2l0dGVyJywgJ2xpbmtlZGluJywgJ3N0YXInLCAncGxheScsICdwYXVzZScsICdyZWNvcmQnLCAnc3RvcCddLmluY2x1ZGVzKG5hbWUpO1xyXG5cclxuICByZXR1cm4gKFxyXG4gICAgPHN2Z1xyXG4gICAgICB4bWxucz1cImh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnXCJcclxuICAgICAgdmlld0JveD1cIjAgMCAyNCAyNFwiXHJcbiAgICAgIGZpbGw9e2lzRmlsbGVkID8gXCJjdXJyZW50Q29sb3JcIiA6IFwibm9uZVwifVxyXG4gICAgICBzdHJva2VXaWR0aD17aXNGaWxsZWQgPyAwIDogMS41fVxyXG4gICAgICBzdHJva2U9e2lzRmlsbGVkID8gXCJub25lXCIgOiBcImN1cnJlbnRDb2xvclwifVxyXG4gICAgICBjbGFzc05hbWU9e2NsYXNzTmFtZX1cclxuICAgICAgYXJpYS1oaWRkZW49XCJ0cnVlXCJcclxuICAgID5cclxuICAgICAge2ljb25QYXRofVxyXG4gICAgPC9zdmc+XHJcbiAgKTtcclxufTtcclxuXHJcbmV4cG9ydCBkZWZhdWx0IEljb247XHJcbiJdLCJmaWxlIjoiQzovVXNlcnMvUmFoZWVtL0Rlc2t0b3AvU2F0ZXNvZnRMb2NhdGlvbnNTeXN0ZW0vY29tcG9uZW50cy9JY29uLnRzeCJ9
