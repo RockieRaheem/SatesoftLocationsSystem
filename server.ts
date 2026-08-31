@@ -42,16 +42,19 @@ async function startServer() {
   if (!Number.isInteger(port) || port < 1 || port > 65535) throw new Error('PORT must be an integer between 1 and 65535.');
 
   const allowedOrigins = (process.env.CORS_ALLOWED_ORIGINS ?? '').split(',').map(value => value.trim()).filter(Boolean);
+  const isDevelopment = process.env.NODE_ENV !== 'production';
   const supabaseUrl = process.env.SUPABASE_URL || process.env.VITE_SUPABASE_URL;
   const supabaseOrigin = supabaseUrl ? new URL(supabaseUrl).origin : '';
   const supabaseSocket = supabaseUrl ? `wss://${new URL(supabaseUrl).host}` : '';
-  const connectSources = ["'self'", supabaseOrigin, supabaseSocket].filter(Boolean).join(' ');
-  app.use(cors({ origin: allowedOrigins.length ? allowedOrigins : process.env.NODE_ENV !== 'production', credentials: false }));
+  const viteSockets = isDevelopment ? ['ws://localhost:24678', 'ws://127.0.0.1:24678'] : [];
+  const connectSources = ["'self'", supabaseOrigin, supabaseSocket, ...viteSockets].filter(Boolean).join(' ');
+  const scriptSources = isDevelopment ? "'self' 'unsafe-inline'" : "'self'";
+  app.use(cors({ origin: allowedOrigins.length ? allowedOrigins : isDevelopment, credentials: false }));
   app.use(express.json({ limit: '1mb', strict: true }));
   app.disable('x-powered-by');
   app.use((_req, res, next) => {
     res.set({
-      'Content-Security-Policy': `default-src 'self'; connect-src ${connectSources}; img-src 'self' data: https:; style-src 'self' 'unsafe-inline'; frame-ancestors 'none'`,
+      'Content-Security-Policy': `default-src 'self'; script-src ${scriptSources}; connect-src ${connectSources}; img-src 'self' data: https:; font-src 'self' data:; style-src 'self' 'unsafe-inline'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'`,
       'Referrer-Policy': 'strict-origin-when-cross-origin',
       'X-Content-Type-Options': 'nosniff',
       'X-Frame-Options': 'DENY',
@@ -187,7 +190,7 @@ async function startServer() {
 
   app.use('/api', (_req, _res, next) => next(Object.assign(new Error('API endpoint not found.'), { status: 404 })));
 
-  if (process.env.NODE_ENV !== 'production') {
+  if (isDevelopment) {
     const { createServer: createViteServer } = await import('vite');
     const vite = await createViteServer({ server: { middlewareMode: true }, appType: 'spa' });
     app.use(vite.middlewares);
