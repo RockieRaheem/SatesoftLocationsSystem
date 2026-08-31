@@ -69,6 +69,45 @@ button:disabled {
   }
 }
 
+/* Shared finish for data-heavy legacy screens while they retain their domain logic. */
+.registry-page input:not([type="checkbox"]):not([type="radio"]):not([type="color"]),
+.registry-page select,
+.registry-page textarea {
+  border-color: #d9d7cf !important;
+  border-radius: 12px !important;
+  background-color: #fff !important;
+  color: #262622 !important;
+  box-shadow: none !important;
+}
+
+.registry-page table thead {
+  background-color: #fafaf7 !important;
+}
+
+.registry-page table th {
+  border-color: #ebe9e2 !important;
+  color: #77766f !important;
+  font-size: 10px !important;
+  font-weight: 600 !important;
+  letter-spacing: .08em !important;
+}
+
+.registry-page table tbody,
+.registry-page table tr,
+.registry-page table td {
+  border-color: #efede7 !important;
+}
+
+.registry-page .bg-yellow-500 {
+  background-color: #1f1f1f !important;
+  color: #fff !important;
+}
+
+.registry-page .hover\:bg-yellow-600:hover,
+.registry-page .hover\:bg-yellow-400:hover {
+  background-color: #000 !important;
+}
+
 ::-webkit-scrollbar { width: 8px; height: 8px; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: rgba(100, 116, 139, 0.35); border: 2px solid transparent; border-radius: 999px; background-clip: padding-box; }
