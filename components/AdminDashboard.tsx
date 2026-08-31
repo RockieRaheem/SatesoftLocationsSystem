@@ -8,9 +8,9 @@ import { isSupabaseConfigured, supabase } from '../src/supabase/browser.ts';
 import AppErrorBoundary from './AppErrorBoundary.tsx';
 import Icon from './Icon.tsx';
 import MainContent from './MainContent.tsx';
-import Sidebar from './Sidebar.tsx';
+import Sidebar, { navigationViews } from './Sidebar.tsx';
 
-const registryViews: ActiveView[] = ['dashboard', 'countries', 'countries-map', 'country-admin-levels', 'country-electoral-levels', 'regional-economic-levels', 'country-profile', 'profile'];
+const registryViews: ActiveView[] = [...navigationViews, 'country-profile', 'shop-profile', 'shop-surveillance', 'income-statement-detail', 'balance-sheet-detail', 'cash-flow-detail', 'dashboard-customer', 'customer-make-order', 'customer-purchases', 'customer-loyalty'];
 const emptyUser: User = { id: '', name: 'Registry user', email: '', role: 'Viewer', bio: 'Location registry team member', avatar: null };
 const messageFrom = (error: unknown) => error instanceof Error ? error.message : 'The operation could not be completed.';
 

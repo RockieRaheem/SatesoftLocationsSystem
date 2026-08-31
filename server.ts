@@ -54,7 +54,7 @@ async function startServer() {
   app.disable('x-powered-by');
   app.use((_req, res, next) => {
     res.set({
-      'Content-Security-Policy': `default-src 'self'; script-src ${scriptSources}; connect-src ${connectSources}; img-src 'self' data: https:; font-src 'self' data:; style-src 'self' 'unsafe-inline'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'`,
+      'Content-Security-Policy': `default-src 'self'; script-src ${scriptSources}; connect-src ${connectSources}; img-src 'self' data: https:; font-src 'self' data:; style-src 'self' 'unsafe-inline'; frame-src https://maps.google.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'`,
       'Referrer-Policy': 'strict-origin-when-cross-origin',
       'X-Content-Type-Options': 'nosniff',
       'X-Frame-Options': 'DENY',

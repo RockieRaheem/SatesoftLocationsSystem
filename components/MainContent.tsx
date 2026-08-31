@@ -1,7 +1,6 @@
 import React, { Suspense, lazy, useState } from 'react';
 import type { ActiveView, Country, RegionalEconomicLevel, Theme, User } from '../types.ts';
 import Icon from './Icon.tsx';
-import RegistryOverview from './RegistryOverview.tsx';
 import { mockShops } from '../data.ts';
 
 const CountriesPage = lazy(() => import('./CountriesPage.tsx'));
@@ -10,6 +9,7 @@ const CountryAdminLevelsPage = lazy(() => import('./CountryAdminLevelsPage.tsx')
 const CountryElectoralLevelsPage = lazy(() => import('./CountryElectoralLevelsPage.tsx'));
 const RegionalEconomicLevelsPage = lazy(() => import('./RegionalEconomicLevelsPage.tsx'));
 const CountryProfilePage = lazy(() => import('./CountryProfilePage.tsx'));
+const LegacyFeatureRouter = lazy(() => import('./LegacyFeatureRouter.tsx'));
 
 interface MainContentProps {
   theme: Theme; activeView: ActiveView; user: User; countries: Country[]; regionalLevels: RegionalEconomicLevel[];
@@ -20,12 +20,20 @@ interface MainContentProps {
 }
 
 const titles: Partial<Record<ActiveView, string>> = {
-  dashboard: 'Dashboard', countries: 'Countries', 'countries-map': 'Regional Map', 'country-admin-levels': 'Country Admin Levels',
+  dashboard: 'Users Data', 'dashboard-users': 'Users Data', 'dashboard-system': 'System Usage', 'dashboard-traffic': 'Traffic Data', 'dashboard-products': 'Product Performance',
+  'dashboard-customer': 'My Dashboard', 'customer-make-order': 'Make an Order', 'customer-purchases': 'My Purchases', 'customer-loyalty': 'Loyalty Points',
+  countries: 'Countries', 'countries-map': 'Regional Map', 'country-admin-levels': 'Country Admin Levels',
   'country-electoral-levels': 'Country Electoral Levels', 'regional-economic-levels': 'Regional Economic Levels',
   'country-profile': 'Country Profile', profile: 'My Profile',
+  settings: 'Settings', 'settings-cameras': 'Camera Settings', 'settings-api': 'API Settings', 'settings-calls': 'Call Settings',
+  'id-verification': 'ID Verification', 'stock-listing': 'Stock Listing', inventory: 'Inventory Tracking', 'stock-purchase': 'Stock Purchase',
+  'shop-users': 'Country Admins', 'super-users': 'Super Users', permissions: 'Permissions', roles: 'Roles', shops: 'Shops', 'shop-profile': 'Shop Profile', 'shop-surveillance': 'Surveillance', 'wallet-settings': 'Wallet Settings', leads: 'Leads',
+  'finances-income-statement': 'Income Statement', 'finances-balance-sheet': 'Balance Sheet', 'finances-cash-flow': 'Cash Flow', 'income-statement-detail': 'Financial Details', 'balance-sheet-detail': 'Balance Sheet Detail', 'cash-flow-detail': 'Cash Flow Detail',
+  'reports-messages': 'Messages', 'reports-calls': 'Calls', 'reports-daily-sales': 'Daily Sales', 'reports-stock-level': 'Stock Level', 'reports-product-profile': 'Product Profile', 'reports-packet-tracer': 'Packet Tracer', 'reports-packet-tracer-live': 'Live Packet Tracer', 'reports-packet-tracer-config': 'Packet Tracer Configuration',
+  'client-list': 'Contributor List', 'client-wallets': 'Client Wallets', 'client-loyalty': 'Client Loyalty', 'admin-loyalty-mgt': 'Loyalty Management', 'system-message-settings': 'Message Settings',
+  'product-chain-products': 'Products', 'product-chain-manufacturers': 'Manufacturers', 'product-chain-distributors': 'Distributors', 'product-chain-suppliers': 'Suppliers',
+  'sales-desk': 'Sales Desk', 'mobi-agent-settings': 'Mobi Account Settings', 'mno-wallet-settings': 'MNO & Wallet Settings', 'mno-wallet-transactions': 'MNO & Wallet Transactions', 'exchange-rate': 'Exchange Rates', 'lookup-values': 'Tax Values',
 };
-
-const initials = (name: string) => name.split(' ').filter(Boolean).map(part => part[0]).slice(0, 2).join('').toUpperCase();
 
 const MainContent: React.FC<MainContentProps> = props => {
   const { theme, activeView, user, countries, regionalLevels, onToggleSidebar, onNavigate, onAddCountry, onUpdateCountry, onDeleteCountry, onSaveRegionalLevel, onDeleteRegionalLevel } = props;
@@ -39,8 +47,7 @@ const MainContent: React.FC<MainContentProps> = props => {
       case 'country-electoral-levels': return <CountryElectoralLevelsPage theme={theme} countries={countries} onUpdateCountry={onUpdateCountry} />;
       case 'regional-economic-levels': return <RegionalEconomicLevelsPage theme={theme} regionalLevels={regionalLevels} countries={countries} onSave={onSaveRegionalLevel} onDelete={onDeleteRegionalLevel} />;
       case 'country-profile': return <CountryProfilePage theme={theme} country={selectedCountry} onNavigate={onNavigate} />;
-      case 'profile': return <section className={`max-w-3xl rounded-lg border p-6 shadow-sm ${dark ? 'border-slate-700 bg-slate-900' : 'border-slate-200 bg-white'}`}><div className="flex items-center gap-4">{user.avatar ? <img src={user.avatar} alt="" className="h-16 w-16 rounded-full object-cover" referrerPolicy="no-referrer" /> : <div className="grid h-16 w-16 place-items-center rounded-full bg-yellow-500 text-xl font-black text-slate-900">{initials(user.name)}</div>}<div><h2 className="text-xl font-bold">{user.name}</h2><p className={`mt-1 text-sm ${dark ? 'text-slate-400' : 'text-slate-500'}`}>{user.email}</p></div></div><dl className={`mt-8 grid gap-4 rounded-lg border p-5 sm:grid-cols-2 ${dark ? 'border-slate-700 bg-slate-800/50' : 'border-slate-200 bg-slate-50'}`}><div><dt className="text-[10px] font-bold uppercase tracking-wider text-slate-500">Role</dt><dd className="mt-1 text-sm font-semibold">{user.role}</dd></div><div><dt className="text-[10px] font-bold uppercase tracking-wider text-slate-500">Access</dt><dd className="mt-1 text-sm font-semibold text-emerald-500">Authenticated</dd></div></dl></section>;
-      case 'dashboard': default: return <RegistryOverview theme={theme} countries={countries} onNavigate={onNavigate} />;
+      default: return <LegacyFeatureRouter activeView={activeView} theme={theme} user={user} countries={countries} regionalLevels={regionalLevels} onNavigate={onNavigate} onUpdateCountry={onUpdateCountry} />;
     }
   };
 

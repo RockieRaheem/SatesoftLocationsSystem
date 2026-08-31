@@ -8,7 +8,18 @@ interface SidebarProps {
 }
 
 const groups: Array<{ label: string; items: Array<{ view: ActiveView; label: string; icon: IconName }> }> = [
-  { label: 'Workspace', items: [{ view: 'dashboard', label: 'Dashboard', icon: 'dashboard' }] },
+  { label: 'Dashboards', items: [
+    { view: 'dashboard', label: 'Users data', icon: 'dashboard' },
+    { view: 'dashboard-traffic', label: 'Traffic data', icon: 'analytics' },
+    { view: 'dashboard-products', label: 'Product performance', icon: 'product-chain' },
+    { view: 'dashboard-system', label: 'System usage', icon: 'system-settings' },
+  ] },
+  { label: 'Sales & stock', items: [
+    { view: 'sales-desk', label: 'Sales desk', icon: 'sales-desk' },
+    { view: 'stock-listing', label: 'Stock listing', icon: 'stock-listing' },
+    { view: 'stock-purchase', label: 'Stock purchase', icon: 'stock-purchase' },
+    { view: 'inventory', label: 'Inventory tracking', icon: 'manage-stock' },
+  ] },
   { label: 'Countries management', items: [
     { view: 'countries', label: 'Countries', icon: 'globe' },
     { view: 'countries-map', label: 'Regional map', icon: 'map' },
@@ -16,8 +27,67 @@ const groups: Array<{ label: string; items: Array<{ view: ActiveView; label: str
     { view: 'country-electoral-levels', label: 'Country electoral levels', icon: 'shield-check' },
     { view: 'regional-economic-levels', label: 'Regional economic levels', icon: 'countries' },
   ]},
-  { label: 'Account', items: [{ view: 'profile', label: 'My profile', icon: 'user-circle' }] },
+  { label: 'Shops & users', items: [
+    { view: 'shops', label: 'Shops', icon: 'shop-mgt' },
+    { view: 'shop-users', label: 'Country admins', icon: 'user-mgt' },
+    { view: 'super-users', label: 'Super users', icon: 'users' },
+    { view: 'roles', label: 'Roles', icon: 'key' },
+    { view: 'permissions', label: 'Permissions', icon: 'shield-check' },
+    { view: 'id-verification', label: 'ID verification', icon: 'shield-alert' },
+    { view: 'leads', label: 'Leads', icon: 'users' },
+  ]},
+  { label: 'Finances', items: [
+    { view: 'finances-income-statement', label: 'Income statement', icon: 'finances' },
+    { view: 'finances-balance-sheet', label: 'Balance sheet', icon: 'cash' },
+    { view: 'finances-cash-flow', label: 'Cash flow', icon: 'currencies' },
+    { view: 'exchange-rate', label: 'Exchange rates', icon: 'arrows-right-left' },
+    { view: 'wallet-settings', label: 'Wallet settings', icon: 'wallet' },
+  ]},
+  { label: 'Reports', items: [
+    { view: 'reports-messages', label: 'Messages', icon: 'chat-bubble' },
+    { view: 'reports-calls', label: 'Calls', icon: 'phone' },
+    { view: 'reports-daily-sales', label: 'Daily sales', icon: 'reports' },
+    { view: 'reports-stock-level', label: 'Stock level', icon: 'stock-listing' },
+    { view: 'reports-product-profile', label: 'Product profile', icon: 'product-chain' },
+    { view: 'reports-packet-tracer', label: 'Packet tracer', icon: 'analytics' },
+    { view: 'reports-packet-tracer-live', label: 'Live trace', icon: 'broadcast' },
+    { view: 'reports-packet-tracer-config', label: 'Trace configuration', icon: 'adjustments' },
+  ]},
+  { label: 'Clients & loyalty', items: [
+    { view: 'client-list', label: 'Contributor list', icon: 'client-mgt' },
+    { view: 'client-wallets', label: 'Client wallets', icon: 'wallet' },
+    { view: 'client-loyalty', label: 'Client loyalty', icon: 'star' },
+    { view: 'admin-loyalty-mgt', label: 'Loyalty management', icon: 'gift' },
+  ]},
+  { label: 'Customer portal', items: [
+    { view: 'dashboard-customer', label: 'Customer dashboard', icon: 'dashboard' },
+    { view: 'customer-make-order', label: 'Make order', icon: 'cart' },
+    { view: 'customer-purchases', label: 'Purchases', icon: 'stock-purchase' },
+    { view: 'customer-loyalty', label: 'Loyalty points', icon: 'star' },
+  ]},
+  { label: 'Product chain', items: [
+    { view: 'product-chain-products', label: 'Products', icon: 'product-chain' },
+    { view: 'product-chain-manufacturers', label: 'Manufacturers', icon: 'shop-mgt' },
+    { view: 'product-chain-distributors', label: 'Distributors', icon: 'countries' },
+    { view: 'product-chain-suppliers', label: 'Suppliers', icon: 'stock-purchase' },
+  ]},
+  { label: 'Mobi agent', items: [
+    { view: 'mobi-agent-settings', label: 'Mobi account', icon: 'user-circle' },
+    { view: 'mno-wallet-settings', label: 'MNO wallets', icon: 'wallet' },
+    { view: 'mno-wallet-transactions', label: 'MNO transactions', icon: 'arrows-right-left' },
+  ]},
+  { label: 'System', items: [
+    { view: 'settings-cameras', label: 'Camera settings', icon: 'camera' },
+    { view: 'settings-api', label: 'API settings', icon: 'api' },
+    { view: 'settings-calls', label: 'Call settings', icon: 'phone' },
+    { view: 'system-message-settings', label: 'Message settings', icon: 'chat-bubble' },
+    { view: 'lookup-values', label: 'Tax values', icon: 'lookup-values' },
+    { view: 'settings', label: 'Settings', icon: 'system-settings' },
+    { view: 'profile', label: 'My profile', icon: 'user-circle' },
+  ]},
 ];
+
+export const navigationViews = groups.flatMap(group => group.items.map(item => item.view));
 
 const initials = (name: string) => name.split(' ').filter(Boolean).map(part => part[0]).slice(0, 2).join('').toUpperCase();
 
