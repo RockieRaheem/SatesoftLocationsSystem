@@ -10,7 +10,7 @@ import Icon from './Icon.tsx';
 import MainContent from './MainContent.tsx';
 import Sidebar from './Sidebar.tsx';
 
-const registryViews: ActiveView[] = ['dashboard', 'countries', 'country-admin-levels', 'country-electoral-levels', 'regional-economic-levels', 'country-profile', 'profile'];
+const registryViews: ActiveView[] = ['dashboard', 'countries', 'countries-map', 'country-admin-levels', 'country-electoral-levels', 'regional-economic-levels', 'country-profile', 'profile'];
 const emptyUser: User = { id: '', name: 'Registry user', email: '', role: 'Viewer', bio: 'Location registry team member', avatar: null };
 const messageFrom = (error: unknown) => error instanceof Error ? error.message : 'The operation could not be completed.';
 

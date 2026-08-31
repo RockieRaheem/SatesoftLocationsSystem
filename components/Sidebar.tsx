@@ -11,6 +11,7 @@ const groups: Array<{ label: string; items: Array<{ view: ActiveView; label: str
   { label: 'Workspace', items: [{ view: 'dashboard', label: 'Dashboard', icon: 'dashboard' }] },
   { label: 'Countries management', items: [
     { view: 'countries', label: 'Countries', icon: 'globe' },
+    { view: 'countries-map', label: 'Regional map', icon: 'map' },
     { view: 'country-admin-levels', label: 'Country admin levels', icon: 'map' },
     { view: 'country-electoral-levels', label: 'Country electoral levels', icon: 'shield-check' },
     { view: 'regional-economic-levels', label: 'Regional economic levels', icon: 'countries' },

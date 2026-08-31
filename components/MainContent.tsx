@@ -2,8 +2,10 @@ import React, { Suspense, lazy, useState } from 'react';
 import type { ActiveView, Country, RegionalEconomicLevel, Theme, User } from '../types.ts';
 import Icon from './Icon.tsx';
 import RegistryOverview from './RegistryOverview.tsx';
+import { mockShops } from '../data.ts';
 
 const CountriesPage = lazy(() => import('./CountriesPage.tsx'));
+const CountriesMapPage = lazy(() => import('./CountriesMapPage.tsx'));
 const CountryAdminLevelsPage = lazy(() => import('./CountryAdminLevelsPage.tsx'));
 const CountryElectoralLevelsPage = lazy(() => import('./CountryElectoralLevelsPage.tsx'));
 const RegionalEconomicLevelsPage = lazy(() => import('./RegionalEconomicLevelsPage.tsx'));
@@ -18,7 +20,7 @@ interface MainContentProps {
 }
 
 const titles: Partial<Record<ActiveView, string>> = {
-  dashboard: 'Dashboard', countries: 'Countries', 'country-admin-levels': 'Country Admin Levels',
+  dashboard: 'Dashboard', countries: 'Countries', 'countries-map': 'Regional Map', 'country-admin-levels': 'Country Admin Levels',
   'country-electoral-levels': 'Country Electoral Levels', 'regional-economic-levels': 'Regional Economic Levels',
   'country-profile': 'Country Profile', profile: 'My Profile',
 };
@@ -32,6 +34,7 @@ const MainContent: React.FC<MainContentProps> = props => {
   const render = () => {
     switch (activeView) {
       case 'countries': return <CountriesPage theme={theme} countries={countries} onAddCountry={onAddCountry} onUpdateCountry={onUpdateCountry} onDeleteCountry={onDeleteCountry} onViewProfile={country => { setSelectedCountry(country); onNavigate('country-profile'); }} />;
+      case 'countries-map': return <CountriesMapPage theme={theme} shops={mockShops} regionalLevels={regionalLevels} countries={countries} />;
       case 'country-admin-levels': return <CountryAdminLevelsPage theme={theme} countries={countries} onUpdateCountry={onUpdateCountry} />;
       case 'country-electoral-levels': return <CountryElectoralLevelsPage theme={theme} countries={countries} onUpdateCountry={onUpdateCountry} />;
       case 'regional-economic-levels': return <RegionalEconomicLevelsPage theme={theme} regionalLevels={regionalLevels} countries={countries} onSave={onSaveRegionalLevel} onDelete={onDeleteRegionalLevel} />;
