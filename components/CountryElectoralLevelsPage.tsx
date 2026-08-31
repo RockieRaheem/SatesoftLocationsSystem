@@ -78,11 +78,11 @@ const CountryElectoralLevelsPage: React.FC<CountryElectoralLevelsPageProps> = ({
             
             <div className="space-y-6">
                 <UgandaElectoralRegistry theme={theme} />
-                <div className="surface-card overflow-hidden">
-                <div className="flex flex-col gap-4 border-b border-[#ebe9e2] p-5 sm:flex-row sm:items-center sm:justify-between">
+                <div className={`${theme === 'dark' ? 'bg-slate-900' : 'bg-white'} overflow-hidden rounded-lg shadow-sm`}>
+                <div className={`flex flex-col gap-4 border-b p-5 sm:flex-row sm:items-center sm:justify-between ${theme === 'dark' ? 'border-slate-700' : 'border-slate-200'}`}>
                     <div>
-                        <h2 className="text-base font-semibold tracking-[-0.02em]">Country hierarchy definitions</h2>
-                        <p className="mt-1 text-xs text-[#88867f]">Configure electoral terminology for connected country records.</p>
+                        <h2 className="text-xl font-bold">Country hierarchy definitions</h2>
+                        <p className={`mt-1 text-sm ${theme === 'dark' ? 'text-slate-400' : 'text-slate-500'}`}>Configure electoral terminology for connected country records.</p>
                     </div>
                     
                     <div className="relative w-full sm:w-64">
@@ -100,8 +100,8 @@ const CountryElectoralLevelsPage: React.FC<CountryElectoralLevelsPageProps> = ({
                 </div>
 
                 <div className="overflow-x-auto">
-                    <table className="min-w-full divide-y divide-[#ebe9e2] text-xs">
-                        <thead className="bg-[#fafaf7]">
+                    <table className={`min-w-full divide-y ${theme === 'dark' ? 'divide-slate-700' : 'divide-slate-200'}`}>
+                        <thead className={theme === 'dark' ? 'bg-slate-800' : 'bg-slate-50'}>
                             <tr>
                                 <th scope="col" className={`px-6 py-3 text-left text-xs font-medium uppercase tracking-wider ${theme === 'dark' ? 'text-slate-400' : 'text-slate-500'}`}>Country</th>
                                 <th scope="col" className={`px-6 py-3 text-center text-xs font-medium uppercase tracking-wider ${theme === 'dark' ? 'text-slate-400' : 'text-slate-500'}`}>Total Levels</th>
@@ -109,9 +109,9 @@ const CountryElectoralLevelsPage: React.FC<CountryElectoralLevelsPageProps> = ({
                                 <th scope="col" className={`px-6 py-3 text-right text-xs font-medium uppercase tracking-wider ${theme === 'dark' ? 'text-slate-400' : 'text-slate-500'}`}>Actions</th>
                             </tr>
                         </thead>
-                        <tbody className="divide-y divide-[#efede7] bg-white">
+                        <tbody className={`divide-y ${theme === 'dark' ? 'divide-slate-700 bg-slate-900' : 'divide-slate-200 bg-white'}`}>
                             {filteredCountries.map(country => (
-                                <tr key={country.id} className="hover:bg-[#fffdf5]">
+                                <tr key={country.id} className={theme === 'dark' ? 'hover:bg-slate-800/50' : 'hover:bg-slate-50'}>
                                     <td className="px-6 py-4 whitespace-nowrap">
                                         <div className="flex items-center">
                                             <FlagIcon countryCode={country.countryCode} countryName={country.name} />

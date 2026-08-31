@@ -2,12 +2,11 @@ import React, { useEffect, useMemo, useState } from 'react';
 import type { Theme } from '../types.ts';
 import type { ElectoralOption, PaginatedResponse, UgandaElectoralRecord, UgandaElectoralSummary } from '../electoral/types.ts';
 import { apiFetch } from '../src/services/api.ts';
-import Icon from './Icon.tsx';
 
 type Selection = { district: string; constituency: string; subcounty: string; parish: string };
 const emptySelection: Selection = { district: '', constituency: '', subcounty: '', parish: '' };
 
-const UgandaElectoralRegistry: React.FC<{ theme: Theme }> = () => {
+const UgandaElectoralRegistry: React.FC<{ theme: Theme }> = ({ theme }) => {
   const [summary, setSummary] = useState<UgandaElectoralSummary | null>(null);
   const [options, setOptions] = useState<Record<keyof Selection, ElectoralOption[]>>({ district: [], constituency: [], subcounty: [], parish: [] });
   const [selection, setSelection] = useState<Selection>(emptySelection);
@@ -16,6 +15,7 @@ const UgandaElectoralRegistry: React.FC<{ theme: Theme }> = () => {
   const [page, setPage] = useState(1);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(true);
+  const dark = theme === 'dark';
 
   const query = useMemo(() => {
     const params = new URLSearchParams();
@@ -66,33 +66,22 @@ const UgandaElectoralRegistry: React.FC<{ theme: Theme }> = () => {
     setSelection(current => Object.fromEntries(order.map((item, position) => [item, position < index ? current[item] : position === index ? value : ''])) as unknown as Selection);
     setPage(1);
   };
-  const reset = () => { setSelection(emptySelection); setSearch(''); setPage(1); };
+
+  const surface = dark ? 'border-slate-700 bg-slate-800 text-slate-100' : 'border-slate-200 bg-white text-slate-900';
+  const input = dark ? 'border-slate-600 bg-slate-900 text-slate-100' : 'border-slate-300 bg-white text-slate-900';
   const totals = summary?.normalizedTotals;
-  const filtersActive = search || Object.values(selection).some(Boolean);
 
-  return <section className="space-y-5" aria-labelledby="uganda-electoral-heading">
-    <div className="surface-card overflow-hidden">
-      <div className="flex flex-col gap-5 border-b border-[#ebe9e2] p-5 sm:p-6 lg:flex-row lg:items-start lg:justify-between">
-        <div className="flex gap-4"><div className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-[#f9c80e] font-bold text-[#1f1f1f]">UG</div><div><div className="flex flex-wrap items-center gap-2"><h2 id="uganda-electoral-heading" className="text-lg font-semibold tracking-[-0.02em]">Uganda national hierarchy</h2><span className="rounded-full bg-[#fff4c7] px-2.5 py-1 text-[10px] font-semibold text-[#6e5700]">2022 source</span></div><p className="mt-1.5 max-w-2xl text-xs leading-5 text-[#77766f]">Trace each village or cell through its parish, subcounty, constituency, and district.</p></div></div>
-        <a className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#474742] hover:text-black" href="https://www.ec.or.ug/" target="_blank" rel="noreferrer">Source: Electoral Commission <span aria-hidden="true">↗</span></a>
-      </div>
-
-      {error && <div role="alert" className="m-5 rounded-xl bg-red-50 p-3 text-sm text-red-800">{error}</div>}
-
-      {summary && <div className="grid grid-cols-2 border-b border-[#ebe9e2] md:grid-cols-3 xl:grid-cols-6">{[
-        ['Districts & cities', totals?.districtsAndCities], ['Constituencies', totals?.constituencies],
-        ['Subcounties', totals?.subcountiesTownsAndDivisions], ['Parishes & wards', totals?.parishesAndWards],
-        ['Villages & cells', totals?.villagesAndCells], ['Needs review', totals?.recordsNeedingVerification],
-      ].map(([label, value], index) => <div key={String(label)} className={`border-[#ebe9e2] p-4 md:p-5 ${index < 5 ? 'xl:border-r' : ''}`}><div className="text-xl font-semibold tracking-[-0.03em]">{Number(value ?? 0).toLocaleString()}</div><div className="mt-1 text-[10px] text-[#8c8a82]">{label}</div></div>)}</div>}
-
-      <div className="bg-[#fafaf7] p-5 sm:p-6"><div className="grid gap-3 md:grid-cols-2 xl:grid-cols-5">{(['district', 'constituency', 'subcounty', 'parish'] as const).map((level, index) => <label key={level} className="text-[11px] font-semibold capitalize text-[#5f5f5a]">{level}<select value={selection[level]} onChange={event => choose(level, event.target.value)} disabled={index > 0 && !selection[(['district', 'constituency', 'subcounty'] as const)[index - 1]]} className="field-control mt-1.5 block w-full p-2.5 text-xs disabled:bg-[#f0efe9]"><option value="">All {level === 'parish' ? 'parishes' : `${level}s`}</option>{options[level].map(option => <option key={option.id} value={option.name}>{option.name} ({option.recordCount.toLocaleString()})</option>)}</select></label>)}<label className="text-[11px] font-semibold text-[#5f5f5a]">Village or cell<div className="relative mt-1.5"><Icon name="search" className="absolute left-3 top-2.5 h-4 w-4 text-[#99978f]" /><input value={search} onChange={event => { setSearch(event.target.value); setPage(1); }} maxLength={100} placeholder="Search locations" className="field-control block w-full py-2.5 pl-9 pr-3 text-xs" /></div></label></div>{filtersActive && <button onClick={reset} className="mt-3 text-[11px] font-semibold text-[#6f6e68] underline decoration-[#c7c4bb] underline-offset-4 hover:text-black">Clear all filters</button>}</div>
-    </div>
-
-    <div className="surface-card overflow-hidden"><div className="flex items-center justify-between border-b border-[#ebe9e2] px-5 py-4"><div><h3 className="text-sm font-semibold">Location records</h3><p className="mt-0.5 text-[10px] text-[#96948c]">{villages ? `${villages.pagination.totalItems.toLocaleString()} matching records` : 'Loading records'}</p></div>{loading && <span className="h-4 w-4 animate-spin rounded-full border-2 border-[#dedcd4] border-t-[#1f1f1f]" />}</div><div className="overflow-x-auto"><table className="min-w-full text-left text-xs"><thead className="bg-[#fafaf7] text-[#77766f]"><tr>{['Village / Cell', 'Parish / Ward', 'Subcounty / Division', 'Constituency', 'District / City', 'Status'].map(name => <th key={name} className="whitespace-nowrap border-b border-[#ebe9e2] px-4 py-3 font-semibold">{name}</th>)}</tr></thead><tbody className="divide-y divide-[#efede7]">{villages?.data.map(record => <tr key={record.id} className="transition-colors hover:bg-[#fffdf5]"><td className="whitespace-nowrap px-4 py-3.5 font-semibold text-[#292925]">{record.village}</td><td className="whitespace-nowrap px-4 py-3.5 text-[#66655f]">{record.parish}</td><td className="whitespace-nowrap px-4 py-3.5 text-[#66655f]">{record.subcounty}</td><td className="whitespace-nowrap px-4 py-3.5 text-[#66655f]">{record.constituency}</td><td className="whitespace-nowrap px-4 py-3.5 text-[#66655f]">{record.district}</td><td className="px-4 py-3.5"><span className={`whitespace-nowrap rounded-full px-2.5 py-1 text-[10px] font-semibold ${record.needsVerification ? 'bg-[#fff4c7] text-[#6e5700]' : 'bg-[#eef6ee] text-[#2e6932]'}`}>{record.needsVerification ? 'Review' : 'Mapped'}</span></td></tr>)}</tbody></table>{!loading && villages?.data.length === 0 && <div className="grid min-h-48 place-items-center p-8 text-center"><div><p className="text-sm font-semibold">No matching locations</p><p className="mt-1 text-xs text-[#88867f]">Try removing a filter or using a broader search.</p></div></div>}</div>
-      {villages && villages.pagination.totalPages > 1 && <div className="flex flex-col gap-3 border-t border-[#ebe9e2] px-5 py-4 text-xs sm:flex-row sm:items-center sm:justify-between"><span className="text-[#77766f]">Page {villages.pagination.page} of {villages.pagination.totalPages}</span><div className="flex gap-2"><button className="button-secondary !px-3 !py-1.5 !text-xs" disabled={page <= 1} onClick={() => setPage(value => value - 1)}>Previous</button><button className="button-secondary !px-3 !py-1.5 !text-xs" disabled={page >= villages.pagination.totalPages} onClick={() => setPage(value => value + 1)}>Next</button></div></div>}
-    </div>
-
-    {summary && <details className="rounded-2xl border border-[#eadca3] bg-[#fffaf0] p-4 text-xs text-[#6e5700]"><summary className="cursor-pointer font-semibold">Data quality and operational notice</summary><ul className="mt-3 list-disc space-y-1.5 pl-5 leading-5">{summary.warnings.map(warning => <li key={warning}>{warning}</li>)}</ul></details>}
+  return <section className={`mb-8 rounded-lg border p-5 ${surface}`} aria-labelledby="uganda-electoral-heading">
+    <div className="flex flex-col gap-3 lg:flex-row lg:items-start lg:justify-between"><div><div className="flex flex-wrap items-center gap-2"><h2 id="uganda-electoral-heading" className="text-xl font-bold">Uganda electoral location registry</h2><span className="rounded-full bg-amber-100 px-2.5 py-1 text-xs font-semibold text-amber-900">Historical 2022 · verification required</span></div><p className={`mt-1 text-sm ${dark ? 'text-slate-400' : 'text-slate-600'}`}>Browse District/City → Constituency → Subcounty/Town/Division → Parish/Ward → Village/Cell.</p></div><a className="text-sm font-medium text-yellow-500 hover:underline" href="https://www.ec.or.ug/" target="_blank" rel="noreferrer">Electoral Commission Uganda ↗</a></div>
+    {error && <div role="alert" className="mt-4 rounded-md bg-red-100 p-3 text-sm text-red-800">{error}</div>}
+    {summary && <><div className="mt-5 grid grid-cols-2 gap-3 md:grid-cols-3 xl:grid-cols-6">{[
+      ['Districts / Cities', totals?.districtsAndCities], ['Constituencies', totals?.constituencies],
+      ['Subcounties', totals?.subcountiesTownsAndDivisions], ['Parishes / Wards', totals?.parishesAndWards],
+      ['Villages / Cells', totals?.villagesAndCells], ['Needs review', totals?.recordsNeedingVerification],
+    ].map(([label, value]) => <div key={String(label)} className={`rounded-lg border p-3 ${dark ? 'border-slate-700 bg-slate-900/60' : 'border-slate-200 bg-slate-50'}`}><div className="text-xl font-bold">{Number(value ?? 0).toLocaleString()}</div><div className="text-xs opacity-70">{label}</div></div>)}</div><details className={`mt-4 rounded-lg p-3 text-sm ${dark ? 'bg-amber-950/40 text-amber-200' : 'bg-amber-50 text-amber-900'}`}><summary className="cursor-pointer font-semibold">Data quality and operational notice</summary><ul className="mt-2 list-disc space-y-1 pl-5">{summary.warnings.map(warning => <li key={warning}>{warning}</li>)}</ul></details></>}
+    <div className="mt-5 grid gap-3 md:grid-cols-2 xl:grid-cols-5">{(['district', 'constituency', 'subcounty', 'parish'] as const).map((level, index) => <label key={level} className="text-xs font-semibold capitalize">{level}<select value={selection[level]} onChange={event => choose(level, event.target.value)} disabled={index > 0 && !selection[(['district', 'constituency', 'subcounty'] as const)[index - 1]]} className={`mt-1 block w-full rounded-md border p-2 text-sm ${input}`}><option value="">All {level === 'parish' ? 'parishes' : `${level}s`}</option>{options[level].map(option => <option key={option.id} value={option.name}>{option.name} ({option.recordCount.toLocaleString()})</option>)}</select></label>)}<label className="text-xs font-semibold">Search villages<input value={search} onChange={event => { setSearch(event.target.value); setPage(1); }} maxLength={100} placeholder="Name or parent location" className={`mt-1 block w-full rounded-md border p-2 text-sm ${input}`} /></label></div>
+    <div className="mt-5 overflow-x-auto"><table className="min-w-full text-left text-sm"><thead className={dark ? 'text-slate-400' : 'text-slate-500'}><tr>{['Village / Cell', 'Parish / Ward', 'Subcounty / Division', 'Constituency', 'District / City', 'Status'].map(name => <th key={name} className="border-b p-2 font-semibold">{name}</th>)}</tr></thead><tbody>{villages?.data.map(record => <tr key={record.id}><td className="border-b p-2 font-medium">{record.village}</td><td className="border-b p-2">{record.parish}</td><td className="border-b p-2">{record.subcounty}</td><td className="border-b p-2">{record.constituency}</td><td className="border-b p-2">{record.district}</td><td className="border-b p-2"><span className={`whitespace-nowrap rounded px-2 py-1 text-xs ${record.needsVerification ? 'bg-amber-100 text-amber-900' : 'bg-emerald-100 text-emerald-900'}`}>{record.needsVerification ? 'Review' : 'Mapped'}</span></td></tr>)}</tbody></table>{!loading && villages?.data.length === 0 && <p className="py-8 text-center text-sm opacity-60">No matching villages or cells.</p>}{loading && <p className="py-8 text-center text-sm opacity-60" aria-live="polite">Loading electoral locations…</p>}</div>
+    {villages && villages.pagination.totalPages > 1 && <div className="mt-4 flex items-center justify-between text-sm"><span>{villages.pagination.totalItems.toLocaleString()} records · Page {villages.pagination.page} of {villages.pagination.totalPages}</span><div className="flex gap-2"><button className={`rounded border px-3 py-1.5 ${input}`} disabled={page <= 1} onClick={() => setPage(value => value - 1)}>Previous</button><button className={`rounded border px-3 py-1.5 ${input}`} disabled={page >= villages.pagination.totalPages} onClick={() => setPage(value => value + 1)}>Next</button></div></div>}
   </section>;
 };
 

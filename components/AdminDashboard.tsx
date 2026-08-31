@@ -15,7 +15,7 @@ const emptyUser: User = { id: '', name: 'Registry user', email: '', role: 'Viewe
 const messageFrom = (error: unknown) => error instanceof Error ? error.message : 'The operation could not be completed.';
 
 const AdminDashboard: React.FC = () => {
-  const theme: Theme = 'light';
+  const [theme, setTheme] = useState<Theme>(() => localStorage.getItem('registry-theme') === 'light' ? 'light' : 'dark');
   const [activeView, setActiveView] = useState<ActiveView>(() => {
     const requested = window.location.hash.slice(1) as ActiveView;
     return registryViews.includes(requested) ? requested : 'dashboard';
@@ -30,7 +30,6 @@ const AdminDashboard: React.FC = () => {
   const [loggingIn, setLoggingIn] = useState(false);
 
   useEffect(() => {
-    document.documentElement.className = '';
     if (!supabase) { setAuthReady(true); return; }
     supabase.auth.getSession().then(({ data, error }) => {
       if (error) setFeedback(error.message);
@@ -43,6 +42,11 @@ const AdminDashboard: React.FC = () => {
     });
     return () => data.subscription.unsubscribe();
   }, []);
+
+  useEffect(() => {
+    document.documentElement.className = theme;
+    localStorage.setItem('registry-theme', theme);
+  }, [theme]);
 
   useEffect(() => {
     if (!session) { setCountries([]); setRegionalLevels([]); setUser(emptyUser); return; }
@@ -112,14 +116,11 @@ const AdminDashboard: React.FC = () => {
     window.history.replaceState(null, '', `${window.location.pathname}${window.location.search}#${view}`);
   };
 
-  if (!authReady) return <div className="grid h-screen place-items-center bg-[#f7f7f3]"><div className="flex flex-col items-center gap-4"><div className="h-9 w-9 animate-spin rounded-full border-2 border-[#dedcd4] border-t-[#1f1f1f]" /><p className="text-xs font-medium text-[#77766f]">Preparing registry workspace</p></div></div>;
+  if (!authReady) return <div className={`grid h-screen place-items-center ${theme === 'dark' ? 'bg-slate-900 text-white' : 'bg-slate-100 text-slate-900'}`}><div className="flex flex-col items-center gap-4"><div className="h-9 w-9 animate-spin rounded-full border-2 border-slate-600 border-t-yellow-500" /><p className="text-xs font-semibold text-slate-500">Preparing registry workspace</p></div></div>;
 
-  if (!session) return <div className="relative grid min-h-screen overflow-hidden bg-[#f7f7f3] text-[#1f1f1f] lg:grid-cols-[1fr_520px]">
-    <section className="relative hidden overflow-hidden bg-[#f9c80e] p-14 lg:flex lg:flex-col lg:justify-between"><div className="relative grid h-11 w-11 place-items-center overflow-hidden rounded-xl bg-[#1f1f1f] text-[13px] font-bold text-white">LR<span className="absolute bottom-0 h-1 w-full bg-white" /></div><div className="relative max-w-xl"><p className="label-caps text-[#5c4900]">National location infrastructure</p><h1 className="mt-5 text-[58px] font-semibold leading-[0.98] tracking-[-0.055em]">Every place<br />has a place.</h1><p className="mt-6 max-w-md text-[15px] leading-7 text-black/65">One controlled workspace for Uganda’s administrative and electoral location hierarchy.</p></div><p className="relative text-[11px] font-medium text-black/55">Location Register · Uganda</p><div className="absolute -bottom-36 -right-28 h-[420px] w-[420px] rounded-full border-[70px] border-black/10" /><div className="absolute right-20 top-24 h-24 w-24 rounded-full bg-white/30" /></section>
-    <section className="flex items-center justify-center px-5 py-10 sm:px-10"><div className="w-full max-w-sm"><div className="mb-12 flex items-center gap-3 lg:hidden"><div className="relative grid h-10 w-10 place-items-center overflow-hidden rounded-xl bg-[#1f1f1f] text-xs font-bold text-white">LR<span className="absolute bottom-0 h-1 w-full bg-[#f9c80e]" /></div><span className="text-sm font-semibold">Location Register</span></div><p className="label-caps text-[#8b6b00]">Secure workspace</p><h2 className="mt-3 text-[32px] font-semibold tracking-[-0.04em]">Welcome back</h2><p className="mt-3 text-sm leading-6 text-[#77766f]">Sign in with your authorized Google account to continue to the registry.</p><button onClick={login} disabled={loggingIn || !isSupabaseConfigured} className="mt-8 flex w-full items-center justify-center gap-3 rounded-xl bg-[#1f1f1f] py-3 text-sm font-semibold text-white transition hover:bg-black disabled:cursor-not-allowed disabled:opacity-50">{loggingIn ? <span className="h-5 w-5 animate-spin rounded-full border-2 border-current border-t-transparent" /> : <Icon name="lock" className="h-[18px] w-[18px]" />} {loggingIn ? 'Redirecting…' : 'Continue with Google'}</button>{!isSupabaseConfigured && <p role="alert" className="mt-4 rounded-xl bg-[#fff4c7] p-3 text-xs leading-5 text-[#6e5700]">Supabase is not configured. Copy .env.example to .env and add this project’s public connection values.</p>}{feedback && <p role="alert" className="mt-4 rounded-xl bg-red-50 p-3 text-xs text-red-800">{feedback}</p>}<div className="mt-8 flex items-start gap-2 border-t border-[#e6e4dd] pt-5 text-[10px] leading-5 text-[#96948c]"><Icon name="shield-check" className="mt-0.5 h-4 w-4 shrink-0" /><p>Access and data changes are protected by Supabase authentication and row-level security.</p></div></div></section>
-  </div>;
+  if (!session) return <div className={`grid min-h-screen place-items-center px-5 ${theme === 'dark' ? 'bg-slate-900 text-white' : 'bg-slate-100 text-slate-900'}`}><section className="w-full max-w-md text-center"><div className="mx-auto flex h-20 w-20 rotate-12 items-center justify-center rounded-2xl bg-yellow-500 shadow-lg"><span className="text-4xl font-black text-slate-900">L</span></div><h1 className="mt-8 text-4xl font-black tracking-tight">Location Register Dashboard</h1><p className={`mt-2 text-sm ${theme === 'dark' ? 'text-slate-400' : 'text-slate-600'}`}>Integrated Location Register & Map System</p><button onClick={login} disabled={loggingIn || !isSupabaseConfigured} className="mt-8 flex w-full items-center justify-center gap-3 rounded-xl border border-slate-200 bg-white py-4 font-bold text-slate-900 shadow-xl transition hover:shadow-2xl disabled:cursor-not-allowed disabled:opacity-50">{loggingIn ? <span className="h-5 w-5 animate-spin rounded-full border-2 border-current border-t-transparent" /> : <Icon name="lock" className="h-5 w-5" />} {loggingIn ? 'Connecting…' : 'Sign in with Google'}</button>{!isSupabaseConfigured && <p role="alert" className="mt-4 rounded-lg bg-amber-100 p-3 text-xs text-amber-900">Supabase is not configured. Add the project’s public connection values to .env.</p>}{feedback && <p role="alert" className="mt-4 rounded-lg bg-red-100 p-3 text-xs text-red-800">{feedback}</p>}<p className="mt-7 text-xs text-slate-500">Authorized personnel only. Access is protected by row-level security.</p></section></div>;
 
-  return <AppErrorBoundary theme={theme}><div className="flex h-screen overflow-hidden">{feedback && <div role="alert" className="fixed right-5 top-5 z-[100] flex max-w-md items-start gap-3 rounded-xl border border-red-200 bg-red-50 p-4 text-xs font-semibold text-red-900 shadow-panel"><span className="flex-1">{feedback}</span><button onClick={() => setFeedback('')} aria-label="Dismiss message">×</button></div>}<Sidebar activeView={activeView} isOpen={sidebarOpen} user={user} onNavigate={navigate} onClose={() => setSidebarOpen(false)} onLogout={logout} /><MainContent theme={theme} activeView={activeView} user={user} countries={countries} regionalLevels={regionalLevels} onToggleSidebar={() => setSidebarOpen(true)} onNavigate={navigate} onAddCountry={addCountry} onUpdateCountry={updateCountry} onDeleteCountry={removeCountry} onSaveRegionalLevel={saveRegion} onDeleteRegionalLevel={removeRegion} /></div></AppErrorBoundary>;
+  return <AppErrorBoundary theme={theme}><div className="flex h-screen overflow-hidden">{feedback && <div role="alert" className="fixed right-5 top-5 z-[100] flex max-w-md items-start gap-3 rounded-lg border border-red-300 bg-red-50 p-4 text-xs font-semibold text-red-900 shadow-xl"><span className="flex-1">{feedback}</span><button onClick={() => setFeedback('')} aria-label="Dismiss message">×</button></div>}<Sidebar theme={theme} activeView={activeView} isOpen={sidebarOpen} user={user} onNavigate={navigate} onClose={() => setSidebarOpen(false)} onToggleTheme={() => setTheme(current => current === 'dark' ? 'light' : 'dark')} onLogout={logout} /><MainContent theme={theme} activeView={activeView} user={user} countries={countries} regionalLevels={regionalLevels} onToggleSidebar={() => setSidebarOpen(true)} onNavigate={navigate} onAddCountry={addCountry} onUpdateCountry={updateCountry} onDeleteCountry={removeCountry} onSaveRegionalLevel={saveRegion} onDeleteRegionalLevel={removeRegion} /></div></AppErrorBoundary>;
 };
 
 export default AdminDashboard;

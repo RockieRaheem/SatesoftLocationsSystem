@@ -17,14 +17,10 @@ interface MainContentProps {
   onDeleteRegionalLevel: (id: number, remarks?: string) => Promise<void>;
 }
 
-const pageMeta: Partial<Record<ActiveView, { eyebrow: string; title: string; description: string }>> = {
-  dashboard: { eyebrow: 'Workspace', title: 'Registry overview', description: 'A clear view of Uganda’s national location registry.' },
-  countries: { eyebrow: 'Registry', title: 'Countries', description: 'Maintain standardized country records and configuration.' },
-  'country-admin-levels': { eyebrow: 'Registry', title: 'Administrative levels', description: 'Define how territorial levels are named and nested.' },
-  'country-electoral-levels': { eyebrow: 'Uganda registry', title: 'Electoral locations', description: 'Explore normalized Electoral Commission location data.' },
-  'regional-economic-levels': { eyebrow: 'Registry', title: 'Regional groupings', description: 'Manage economic communities and country membership.' },
-  'country-profile': { eyebrow: 'Country record', title: 'Country profile', description: 'Review configuration and connected hierarchy data.' },
-  profile: { eyebrow: 'Workspace', title: 'Your account', description: 'Identity and access for this registry workspace.' },
+const titles: Partial<Record<ActiveView, string>> = {
+  dashboard: 'Dashboard', countries: 'Countries', 'country-admin-levels': 'Country Admin Levels',
+  'country-electoral-levels': 'Country Electoral Levels', 'regional-economic-levels': 'Regional Economic Levels',
+  'country-profile': 'Country Profile', profile: 'My Profile',
 };
 
 const initials = (name: string) => name.split(' ').filter(Boolean).map(part => part[0]).slice(0, 2).join('').toUpperCase();
@@ -32,8 +28,7 @@ const initials = (name: string) => name.split(' ').filter(Boolean).map(part => p
 const MainContent: React.FC<MainContentProps> = props => {
   const { theme, activeView, user, countries, regionalLevels, onToggleSidebar, onNavigate, onAddCountry, onUpdateCountry, onDeleteCountry, onSaveRegionalLevel, onDeleteRegionalLevel } = props;
   const [selectedCountry, setSelectedCountry] = useState<Country | null>(null);
-  const meta = pageMeta[activeView] ?? pageMeta.dashboard!;
-
+  const dark = theme === 'dark';
   const render = () => {
     switch (activeView) {
       case 'countries': return <CountriesPage theme={theme} countries={countries} onAddCountry={onAddCountry} onUpdateCountry={onUpdateCountry} onDeleteCountry={onDeleteCountry} onViewProfile={country => { setSelectedCountry(country); onNavigate('country-profile'); }} />;
@@ -41,14 +36,14 @@ const MainContent: React.FC<MainContentProps> = props => {
       case 'country-electoral-levels': return <CountryElectoralLevelsPage theme={theme} countries={countries} onUpdateCountry={onUpdateCountry} />;
       case 'regional-economic-levels': return <RegionalEconomicLevelsPage theme={theme} regionalLevels={regionalLevels} countries={countries} onSave={onSaveRegionalLevel} onDelete={onDeleteRegionalLevel} />;
       case 'country-profile': return <CountryProfilePage theme={theme} country={selectedCountry} onNavigate={onNavigate} />;
-      case 'profile': return <section className="surface-card max-w-3xl p-6 md:p-8"><div className="flex items-center gap-4">{user.avatar ? <img src={user.avatar} alt="" className="h-16 w-16 rounded-2xl object-cover" referrerPolicy="no-referrer" /> : <div className="grid h-16 w-16 place-items-center rounded-2xl bg-[#1f1f1f] text-lg font-semibold text-white">{initials(user.name)}</div>}<div><h2 className="text-xl font-semibold tracking-[-0.02em]">{user.name}</h2><p className="mt-1 text-sm text-[#77766f]">{user.email}</p></div></div><dl className="mt-8 grid gap-4 rounded-2xl border border-[#ebe9e2] bg-[#fafaf7] p-5 sm:grid-cols-2"><div><dt className="label-caps">Role</dt><dd className="mt-1.5 text-sm font-medium">{user.role}</dd></div><div><dt className="label-caps">Access</dt><dd className="mt-1.5 flex items-center gap-2 text-sm font-medium"><span className="h-2 w-2 rounded-full bg-[#2e7d32]" /> Authenticated</dd></div></dl></section>;
+      case 'profile': return <section className={`max-w-3xl rounded-lg border p-6 shadow-sm ${dark ? 'border-slate-700 bg-slate-900' : 'border-slate-200 bg-white'}`}><div className="flex items-center gap-4">{user.avatar ? <img src={user.avatar} alt="" className="h-16 w-16 rounded-full object-cover" referrerPolicy="no-referrer" /> : <div className="grid h-16 w-16 place-items-center rounded-full bg-yellow-500 text-xl font-black text-slate-900">{initials(user.name)}</div>}<div><h2 className="text-xl font-bold">{user.name}</h2><p className={`mt-1 text-sm ${dark ? 'text-slate-400' : 'text-slate-500'}`}>{user.email}</p></div></div><dl className={`mt-8 grid gap-4 rounded-lg border p-5 sm:grid-cols-2 ${dark ? 'border-slate-700 bg-slate-800/50' : 'border-slate-200 bg-slate-50'}`}><div><dt className="text-[10px] font-bold uppercase tracking-wider text-slate-500">Role</dt><dd className="mt-1 text-sm font-semibold">{user.role}</dd></div><div><dt className="text-[10px] font-bold uppercase tracking-wider text-slate-500">Access</dt><dd className="mt-1 text-sm font-semibold text-emerald-500">Authenticated</dd></div></dl></section>;
       case 'dashboard': default: return <RegistryOverview theme={theme} countries={countries} onNavigate={onNavigate} />;
     }
   };
 
-  return <main className="min-w-0 flex-1 overflow-y-auto bg-[#f7f7f3] text-[#1f1f1f]">
-    <header className="sticky top-0 z-20 border-b border-[#e6e4dd]/90 bg-[#f7f7f3]/90 backdrop-blur-xl"><div className="mx-auto flex h-[88px] max-w-[1500px] items-center gap-4 px-4 sm:px-7 lg:px-10"><button onClick={onToggleSidebar} aria-label="Open navigation" className="rounded-full border border-[#dedcd4] bg-white p-2.5 text-[#5f5f5a] lg:hidden"><Icon name="hamburger" className="h-5 w-5" /></button><div className="min-w-0 flex-1"><p className="label-caps text-[#8b6b00]">{meta.eyebrow}</p><h1 className="mt-1 truncate text-[22px] font-semibold tracking-[-0.035em] md:text-2xl">{meta.title}</h1></div><div className="hidden items-center gap-2 rounded-full border border-[#dedcd4] bg-white px-3.5 py-2 text-[11px] font-medium text-[#62615c] sm:flex"><span className="h-2 w-2 rounded-full bg-[#2e7d32]" /> Uganda data connected</div></div></header>
-    <div className="mx-auto max-w-[1500px] px-4 py-7 sm:px-7 lg:px-10 lg:py-9"><p className="mb-7 max-w-2xl text-sm leading-6 text-[#77766f]">{meta.description}</p><div className="registry-page"><Suspense fallback={<div className="grid min-h-[320px] place-items-center"><div className="h-8 w-8 animate-spin rounded-full border-2 border-[#dedcd4] border-t-[#1f1f1f]" /></div>}>{render()}</Suspense></div></div>
+  return <main className={`flex min-w-0 flex-1 flex-col overflow-hidden ${dark ? 'bg-slate-800 text-slate-200' : 'bg-slate-100 text-slate-800'}`}>
+    <header className="flex h-20 shrink-0 items-center justify-between px-4 md:px-6"><div className="flex min-w-0 items-center"><button onClick={onToggleSidebar} aria-label="Toggle navigation" className={`mr-4 rounded-md p-2 transition active:scale-95 ${dark ? 'text-slate-400 hover:bg-slate-700' : 'text-slate-500 hover:bg-slate-200'}`}><Icon name="hamburger" className="h-6 w-6" /></button><h1 className={`truncate text-xl font-semibold md:text-2xl ${dark ? 'text-slate-100' : 'text-slate-800'}`}>{titles[activeView] || 'Dashboard'}</h1></div><div className={`hidden items-center gap-2 rounded-md px-3 py-2 text-xs font-medium sm:flex ${dark ? 'bg-slate-900 text-slate-400' : 'bg-white text-slate-500'}`}><span className="h-2 w-2 rounded-full bg-emerald-500" /> Uganda data connected</div></header>
+    <div className="w-full flex-1 overflow-y-auto overflow-x-hidden px-4 pb-6 md:px-6 lg:px-4"><Suspense fallback={<div className="grid min-h-[320px] place-items-center"><div className="h-8 w-8 animate-spin rounded-full border-2 border-slate-600 border-t-yellow-500" /></div>}>{render()}</Suspense></div>
   </main>;
 };
 
