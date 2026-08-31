@@ -1,0 +1,157 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // 0. Default Deny Catch-all
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // ===============================================================
+    // PRIMITIVE HELPERS
+    // ===============================================================
+    function isSignedIn() { return request.auth != null; }
+    function isVerified() { return isSignedIn() && request.auth.token.email_verified == true; }
+    function incoming() { return request.resource.data; }
+    function existing() { return resource.data; }
+    
+    // Path Variable Hardening (Pillar 3)
+    function isValidId(id) { 
+      return id is string && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$'); 
+    }
+
+    // Identity Logic (Pillar 4)
+    function isOwner(userId) { 
+      return isSignedIn() && request.auth.uid == userId; 
+    }
+    
+    function isAdmin() {
+      return isVerified() && (
+        request.auth.token.email == "jabuyapm@gmail.com" ||
+        get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin'
+      );
+    }
+
+    // ===============================================================
+    // VALIDATION BLUEPRINTS (Pillar 2)
+    // ===============================================================
+    
+    function isValidProduct(data) {
+      return data.keys().hasAll(['id', 'sn', 'name', 'status']) &&
+             data.id is number &&
+             data.sn is string && data.sn.size() > 0 && data.sn.size() < 100 &&
+             data.name is string && data.name.size() > 0 && data.name.size() < 200 &&
+             data.status in ['ACTIVE', 'INACTIVE'] &&
+             (!('barcode' in data) || (data.barcode is string && data.barcode.size() < 100)) &&
+             (!('manufacturer' in data) || (data.manufacturer is string && data.manufacturer.size() < 200)) &&
+             (!('category' in data) || (data.category is string && data.category.size() < 100)) &&
+             (!('isGlobal' in data) || (data.isGlobal is bool));
+    }
+
+    function isValidStock(data) {
+      return data.keys().hasAll(['id', 'productName', 'productSN', 'quantity', 'shopId']) &&
+             data.id is number &&
+             data.productName is string && data.productName.size() > 0 && data.productName.size() < 200 &&
+             data.productSN is string && data.productSN.size() > 0 && data.productSN.size() < 100 &&
+             data.quantity is number &&
+             data.shopId is number;
+    }
+
+    function isValidShop(data) {
+      return data.keys().hasAll(['id', 'name', 'ownerId']) &&
+             data.id is number &&
+             data.name is string && data.name.size() > 0 && data.name.size() < 200 &&
+             data.ownerId is number;
+    }
+
+    function isValidUser(data, userId) {
+      return data.keys().hasAll(['uid', 'email']) &&
+             data.uid == userId &&
+             data.email is string && data.email.size() > 0 && data.email.size() < 256;
+    }
+
+    function isValidRegionalLevel(data) {
+      return data.keys().hasAll(['id', 'name', 'abbreviation']) &&
+             data.id is number &&
+             data.name is string && data.name.size() > 0 && data.name.size() < 200 &&
+             data.abbreviation is string && data.abbreviation.size() > 0 && data.abbreviation.size() < 20 &&
+             (!('countries' in data) || (data.countries is list && data.countries.size() <= 60 && (data.countries.size() == 0 || data.countries[0] is string))) &&
+             (!('level' in data) || (data.level is number));
+    }
+
+    // ===============================================================
+    // RESOURCE RULES
+    // ===============================================================
+
+    // User Profiles
+    match /users/{userId} {
+      allow get: if isOwner(userId) || isAdmin();
+      allow list: if isAdmin();
+      allow create: if isOwner(userId) && isValidUser(incoming(), userId);
+      allow update: if (isOwner(userId) || isAdmin()) && isValidUser(incoming(), userId) && (
+        incoming().uid == existing().uid && 
+        incoming().email == existing().email &&
+        (
+          // Action: Update Profile
+          (isOwner(userId) && incoming().diff(existing()).affectedKeys().hasOnly(['name', 'bio', 'avatar'])) ||
+          // Action: Admin Role Change
+          (isAdmin() && incoming().diff(existing()).affectedKeys().hasOnly(['role', 'status']))
+        )
+      );
+      allow delete: if isAdmin();
+    }
+
+    // Shops
+    match /shops/{shopId} {
+      allow get: if isSignedIn();
+      allow list: if isVerified();
+      allow create: if isAdmin() && isValidShop(incoming()) && isValidId(shopId);
+      allow update: if (isAdmin() || (isSignedIn() && existing().ownerId == request.auth.uid)) && isValidId(shopId) && isValidShop(incoming()) && (
+        incoming().id == existing().id &&
+        (
+          (isAdmin() && incoming().diff(existing()).affectedKeys().hasOnly(['name', 'status', 'ownerId'])) ||
+          (existing().ownerId == request.auth.uid && incoming().diff(existing()).affectedKeys().hasOnly(['name']))
+        )
+      );
+      allow delete: if isAdmin();
+    }
+
+    // Products
+    match /products/{productId} {
+      allow read: if true;
+      allow create: if isAdmin() && isValidProduct(incoming()) && isValidId(productId);
+      allow update: if isAdmin() && isValidProduct(incoming()) && isValidId(productId) && (
+        incoming().id == existing().id &&
+        incoming().diff(existing()).affectedKeys().hasOnly(['name', 'status', 'barcode', 'manufacturer', 'category'])
+      );
+      allow delete: if isAdmin();
+    }
+
+    // Stock Items
+    match /stock/{stockId} {
+      allow get: if true;
+      allow list: if true;
+      allow create: if isVerified() && isValidStock(incoming()) && isValidId(stockId) && (
+        get(/databases/$(database)/documents/shops/$(string(incoming().shopId))).data.ownerId == request.auth.uid || isAdmin()
+      );
+      allow update: if isVerified() && isValidStock(incoming()) && isValidId(stockId) && (
+        incoming().id == existing().id &&
+        (get(/databases/$(database)/documents/shops/$(string(existing().shopId))).data.ownerId == request.auth.uid || isAdmin()) &&
+        incoming().diff(existing()).affectedKeys().hasOnly(['quantity', 'unitPrice', 'customName', 'reorderPoint'])
+      );
+      allow delete: if isVerified() && (get(/databases/$(database)/documents/shops/$(string(existing().shopId))).data.ownerId == request.auth.uid || isAdmin());
+    }
+
+    // Regional Economic Levels
+    match /regionalEconomicLevels/{levelId} {
+      allow read: if true;
+      allow create: if isAdmin() && isValidRegionalLevel(incoming()) && isValidId(levelId);
+      allow update: if isAdmin() && isValidRegionalLevel(incoming()) && isValidId(levelId) && (
+        incoming().id == existing().id &&
+        incoming().diff(existing()).affectedKeys().hasOnly(['name', 'abbreviation', 'flag', 'description', 'countries', 'level'])
+      );
+      allow delete: if isAdmin();
+    }
+
+  }
+}

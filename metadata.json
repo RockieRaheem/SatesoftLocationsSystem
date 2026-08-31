@@ -1,0 +1,5 @@
+{
+  "name": "Location Register",
+  "description": "A replica of the Duqact shop purchases dashboard for managing stock and sales, demonstrating a complex UI layout with data tables and navigation.",
+  "requestFramePermissions": []
+}

@@ -1,0 +1,122 @@
+{
+  "entities": {
+    "ProductDefinition": {
+      "title": "Product Definition",
+      "description": "Definition of a product in the system",
+      "type": "object",
+      "properties": {
+        "id": { "type": "number" },
+        "sn": { "type": "string" },
+        "name": { "type": "string" },
+        "barcode": { "type": "string" },
+        "manufacturer": { "type": "string" },
+        "status": { "type": "string", "enum": ["ACTIVE", "INACTIVE"] },
+        "category": { "type": "string" },
+        "baseUnit": { "type": "string" },
+        "baseQuantity": { "type": "number" },
+        "containerUnit": { "type": "string" },
+        "containerQuantity": { "type": "number" },
+        "saleUnits": { "type": "string" },
+        "createdBy": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "hasBatchNumber": { "type": "boolean" },
+        "hasExpiryDate": { "type": "boolean" },
+        "isGlobal": { "type": "boolean" }
+      },
+      "required": ["id", "sn", "name", "status"]
+    },
+    "StockItem": {
+      "title": "Stock Item",
+      "description": "An item in stock at a specific location",
+      "type": "object",
+      "properties": {
+        "id": { "type": "number" },
+        "productName": { "type": "string" },
+        "productSN": { "type": "string" },
+        "customName": { "type": "string" },
+        "barcode": { "type": "string" },
+        "category": { "type": "string" },
+        "quantity": { "type": "number" },
+        "unit": { "type": "string" },
+        "unitPrice": { "type": "number" },
+        "currency": { "type": "string" },
+        "listedBy": { "type": "string" },
+        "listedOn": { "type": "string", "format": "date-time" },
+        "shopName": { "type": "string" },
+        "shopId": { "type": "number" },
+        "manufacturer": { "type": "string" },
+        "baseUnit": { "type": "string" },
+        "hasMultipleSaleUnits": { "type": "boolean" },
+        "reorderPoint": { "type": "number" },
+        "supplier": { "type": "string" }
+      },
+      "required": ["id", "productName", "productSN", "quantity", "shopId"]
+    },
+    "Shop": {
+      "title": "Shop",
+      "description": "A shop or business entity",
+      "type": "object",
+      "properties": {
+        "id": { "type": "number" },
+        "name": { "type": "string" },
+        "countryCode": { "type": "string" },
+        "currency": { "type": "string" },
+        "status": { "type": "string", "enum": ["Active", "Terminated"] },
+        "ownerId": { "type": "number" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "name", "ownerId"]
+    },
+    "UserProfile": {
+      "title": "User Profile",
+      "description": "Extended profile information for a user",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "name": { "type": "string" },
+        "email": { "type": "string", "format": "email" },
+        "role": { "type": "string" },
+        "bio": { "type": "string" },
+        "avatar": { "type": "string" }
+      },
+      "required": ["uid", "email"]
+    },
+    "RegionalEconomicLevel": {
+      "title": "Regional Economic Level",
+      "description": "A regional economic community or level",
+      "type": "object",
+      "properties": {
+        "id": { "type": "number" },
+        "name": { "type": "string" },
+        "abbreviation": { "type": "string" },
+        "flag": { "type": "string" },
+        "description": { "type": "string" },
+        "countries": { "type": "array", "items": { "type": "string" } },
+        "level": { "type": "number" }
+      },
+      "required": ["id", "name", "abbreviation"]
+    }
+  },
+  "firestore": {
+    "/products/{productId}": {
+      "schema": "ProductDefinition",
+      "description": "Collection of product definitions"
+    },
+    "/stock/{stockId}": {
+      "schema": "StockItem",
+      "description": "Collection of stock items"
+    },
+    "/shops/{shopId}": {
+      "schema": "Shop",
+      "description": "Collection of shops"
+    },
+    "/users/{userId}": {
+      "schema": "UserProfile",
+      "description": "Collection of user profiles"
+    },
+    "/regionalEconomicLevels/{levelId}": {
+      "schema": "RegionalEconomicLevel",
+      "description": "Collection of regional economic levels"
+    }
+  }
+}
