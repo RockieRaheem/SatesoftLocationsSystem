@@ -22,7 +22,7 @@
       "subcounty": "SUBCOUNTY ONE",
       "district": "ALPHA",
       "constituency": "CONSTITUENCY ONE",
-      "data": [{ "parish": "PARISH ONE", "villages": ["SAME", "NEW"] }]
+      "data": [{ "parish": "PARISH ONE", "villages": ["SAME", "NEW - PLACE", "NEW PLACE"] }]
     },
     "ALPHA||SUBCOUNTY TWO": {
       "subcounty": "SUBCOUNTY TWO",

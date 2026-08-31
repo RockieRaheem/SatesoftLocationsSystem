@@ -22,6 +22,14 @@ async function run() {
   const { error: regionError } = await admin.from('regional_economic_levels').upsert(ugandaRegions.map(regionToRow), { onConflict: 'abbreviation' });
   if (regionError) throw regionError;
 
+  const { data: failedDatasets, error: failedLookupError } = await admin.from('electoral_datasets')
+    .select('id').eq('country_code', 'UG').eq('status', 'failed').eq('active', false);
+  if (failedLookupError) throw failedLookupError;
+  for (const failed of failedDatasets ?? []) {
+    const { error } = await admin.from('electoral_locations').delete().eq('dataset_id', failed.id);
+    if (error) throw error;
+  }
+
   const source = readFileSync(sourcePath);
   const registry = new UgandaElectoralRegistry(sourcePath);
   const summary = registry.getSummary();
@@ -53,6 +61,8 @@ async function run() {
     if (activationError) throw activationError;
     console.log(`Activated Uganda dataset ${dataset.id} from ${path.basename(sourcePath)}.`);
   } catch (error) {
+    const { error: cleanupError } = await admin.from('electoral_locations').delete().eq('dataset_id', dataset.id);
+    if (cleanupError) console.error(`Failed to clean partial dataset ${dataset.id}: ${cleanupError.message}`);
     await admin.from('electoral_datasets').update({ status: 'failed', active: false }).eq('id', dataset.id);
     throw error;
   }

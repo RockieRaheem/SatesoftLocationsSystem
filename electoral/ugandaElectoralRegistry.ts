@@ -1,4 +1,5 @@
 import { readFileSync } from 'node:fs';
+import { createHash } from 'node:crypto';
 import path from 'node:path';
 import type {
   ElectoralFilters,
@@ -25,6 +26,12 @@ interface RawDataset {
 const clean = (value: unknown): string => String(value ?? '').trim().replace(/\s+/g, ' ').toUpperCase();
 const key = (...values: string[]) => values.map(clean).join('||');
 const idPart = (value: string) => encodeURIComponent(clean(value).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''));
+const stableId = (...values: string[]) => {
+  const normalized = values.map(clean);
+  const readable = normalized.map(idPart).join('/');
+  const fingerprint = createHash('sha256').update(normalized.join('||')).digest('hex').slice(0, 16);
+  return `${readable}--${fingerprint}`;
+};
 
 export class UgandaElectoralRegistry {
   private readonly records: UgandaElectoralRecord[];
@@ -54,7 +61,7 @@ export class UgandaElectoralRegistry {
         return;
       }
       merged.set(composite, {
-        id: [district, constituency, subcounty, parish, village].map(idPart).join('/'),
+        id: stableId(district, constituency, subcounty, parish, village),
         district, constituency, subcounty, parish, village,
         needsVerification,
         sources: [],
@@ -162,7 +169,7 @@ export class UgandaElectoralRegistry {
       } else grouped.set(optionKey, { name, count: 1, needsVerification: record.needsVerification });
     }
     return [...grouped.entries()].map(([optionKey, value]) => ({
-      id: optionKey.split('||').map(idPart).join('/'),
+      id: stableId(...optionKey.split('||')),
       name: value.name,
       recordCount: value.count,
       needsVerification: value.needsVerification,

@@ -9,11 +9,13 @@ describe('UgandaElectoralRegistry', () => {
 
   it('deduplicates overlaps while preserving same-name villages in different locations', () => {
     const result = registry.getVillages({}, 1, 20);
-    expect(result.pagination.totalItems).toBe(4);
-    expect(new Set(result.data.map(record => record.id)).size).toBe(4);
+    expect(result.pagination.totalItems).toBe(5);
+    expect(new Set(result.data.map(record => record.id)).size).toBe(5);
     expect(result.data.filter(record => record.village === 'SAME')).toHaveLength(2);
     expect(result.data.find(record => record.village === 'SAME' && record.subcounty === 'SUBCOUNTY ONE')?.sources)
       .toEqual(['bySubcounty', 'byVillage']);
+    expect(result.data.find(record => record.village === 'NEW - PLACE')?.id)
+      .not.toBe(result.data.find(record => record.village === 'NEW PLACE')?.id);
   });
 
   it('flags records whose constituency cannot be inferred', () => {
