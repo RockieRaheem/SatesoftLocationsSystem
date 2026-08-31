@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import type { ActiveView, Country, Theme } from '../types.ts';
 import type { UgandaElectoralSummary } from '../electoral/types.ts';
+import { apiFetch } from '../src/services/api.ts';
 import Icon, { type IconName } from './Icon.tsx';
 
 const RegistryOverview: React.FC<{ theme: Theme; countries: Country[]; onNavigate: (view: ActiveView) => void }> = ({ theme, countries, onNavigate }) => {
   const [summary, setSummary] = useState<UgandaElectoralSummary | null>(null);
   const dark = theme === 'dark';
-  useEffect(() => { fetch('/api/electoral/uganda/summary').then(r => r.ok ? r.json() : null).then(setSummary).catch(() => undefined); }, []);
+  useEffect(() => { apiFetch('/api/electoral/uganda/summary').then(r => r.json()).then(setSummary).catch(() => undefined); }, []);
   const totalAdminLevels = countries.reduce((sum, country) => sum + (country.numberOfAdminLevels ?? 0), 0);
   const metrics: Array<[string, string, string, IconName]> = [['Countries', countries.length.toLocaleString(), 'Active master records', 'globe'], ['Admin schemas', totalAdminLevels.toLocaleString(), 'Configured hierarchy levels', 'map'], ['Uganda locations', (summary?.normalizedTotals.villagesAndCells ?? 0).toLocaleString(), 'Normalized village/cell records', 'shield-check'], ['Review queue', (summary?.normalizedTotals.recordsNeedingVerification ?? 0).toLocaleString(), 'Records needing attention', 'exclamation-triangle']];
   const card = dark ? 'border-slate-800 bg-slate-900/75' : 'border-slate-200 bg-white';

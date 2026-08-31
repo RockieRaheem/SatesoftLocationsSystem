@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import type { Theme } from '../types.ts';
 import type { ElectoralOption, PaginatedResponse, UgandaElectoralRecord, UgandaElectoralSummary } from '../electoral/types.ts';
+import { apiFetch } from '../src/services/api.ts';
 
 type Selection = { district: string; constituency: string; subcounty: string; parish: string };
 const emptySelection: Selection = { district: '', constituency: '', subcounty: '', parish: '' };
@@ -23,8 +24,8 @@ const UgandaElectoralRegistry: React.FC<{ theme: Theme }> = ({ theme }) => {
 
   useEffect(() => {
     Promise.all([
-      fetch('/api/electoral/uganda/summary').then(response => response.ok ? response.json() : Promise.reject(new Error('Summary unavailable'))),
-      fetch('/api/electoral/uganda/districts').then(response => response.ok ? response.json() : Promise.reject(new Error('Districts unavailable'))),
+      apiFetch('/api/electoral/uganda/summary').then(response => response.json()),
+      apiFetch('/api/electoral/uganda/districts').then(response => response.json()),
     ]).then(([summaryData, districtData]) => {
       setSummary(summaryData);
       setOptions(current => ({ ...current, district: districtData.data }));
@@ -34,9 +35,9 @@ const UgandaElectoralRegistry: React.FC<{ theme: Theme }> = ({ theme }) => {
   useEffect(() => {
     const loadOptions = async () => {
       const updates: Partial<Record<keyof Selection, ElectoralOption[]>> = {};
-      if (selection.district) updates.constituency = (await fetch(`/api/electoral/uganda/constituencies?${query}`).then(r => r.json())).data;
-      if (selection.constituency) updates.subcounty = (await fetch(`/api/electoral/uganda/subcounties?${query}`).then(r => r.json())).data;
-      if (selection.subcounty) updates.parish = (await fetch(`/api/electoral/uganda/parishes?${query}`).then(r => r.json())).data;
+      if (selection.district) updates.constituency = (await apiFetch(`/api/electoral/uganda/constituencies?${query}`).then(r => r.json())).data;
+      if (selection.constituency) updates.subcounty = (await apiFetch(`/api/electoral/uganda/subcounties?${query}`).then(r => r.json())).data;
+      if (selection.subcounty) updates.parish = (await apiFetch(`/api/electoral/uganda/parishes?${query}`).then(r => r.json())).data;
       setOptions(current => ({ ...current, ...updates }));
     };
     loadOptions().catch(() => setError('Unable to load hierarchy options.'));
@@ -50,8 +51,8 @@ const UgandaElectoralRegistry: React.FC<{ theme: Theme }> = ({ theme }) => {
       params.set('pageSize', '25');
       if (search.trim()) params.set('search', search.trim());
       setLoading(true);
-      fetch(`/api/electoral/uganda/villages?${params}`, { signal: controller.signal })
-        .then(response => response.ok ? response.json() : Promise.reject(new Error('Villages unavailable')))
+      apiFetch(`/api/electoral/uganda/villages?${params}`, { signal: controller.signal })
+        .then(response => response.json())
         .then(setVillages)
         .catch((reason: Error) => reason.name !== 'AbortError' && setError(reason.message))
         .finally(() => setLoading(false));
