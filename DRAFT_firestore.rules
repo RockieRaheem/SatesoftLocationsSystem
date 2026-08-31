@@ -87,7 +87,11 @@ service cloud.firestore {
     match /users/{userId} {
       allow get: if isOwner(userId) || isAdmin();
       allow list: if isAdmin();
-      allow create: if isOwner(userId) && isValidUser(incoming(), userId);
+      allow create: if isOwner(userId) && isValidUser(incoming(), userId) && (
+        !('role' in incoming()) ||
+        incoming().role == 'user' ||
+        (isAdmin() && incoming().role == 'admin')
+      );
       allow update: if (isOwner(userId) || isAdmin()) && isValidUser(incoming(), userId) && (
         incoming().uid == existing().uid && 
         incoming().email == existing().email &&

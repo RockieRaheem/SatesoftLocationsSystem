@@ -81,7 +81,7 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout, userRole = 'A
           bio: isOwner ? 'System Administrator' : '',
           avatar: user.photoURL || null
         };
-        saveUserProfile(userProfile as any);
+        saveUserProfile({ ...userProfile, uid: user.uid });
         
         setUser(userProfile);
       }

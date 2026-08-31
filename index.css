@@ -1,0 +1,11 @@
+/* Local stylesheet entrypoint. Most current styles are defined in index.html. */
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+}

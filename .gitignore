@@ -11,6 +11,17 @@ node_modules
 dist
 dist-ssr
 *.local
+.env
+.env.*
+!.env.example
+coverage
+
+# Local recovery artifacts created while repairing the workspace.
+.recovery/
+
+# AI Studio exports used timestamp filenames that are invalid on Windows.
+# They remain available in Git history but are not runtime source files.
+migrated_prompt_history/
 
 # Editor directories and files
 .vscode/*

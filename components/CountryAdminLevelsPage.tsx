@@ -61,7 +61,7 @@ const CountryAdminLevelsPage: React.FC<CountryAdminLevelsPageProps> = ({ theme, 
                 ...country,
                 adminLevelNames: levels,
                 numberOfAdminLevels: count,
-                updatedBy: 'Paul Mboya',
+                updatedBy: 'Admin User',
                 updatedAt: new Date().toISOString()
             };
             onUpdateCountry(updatedCountry);

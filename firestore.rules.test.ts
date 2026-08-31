@@ -6,15 +6,18 @@ import {
   RulesTestEnvironment,
 } from '@firebase/rules-unit-testing';
 import { readFileSync } from 'fs';
-import { doc, setDoc, getDoc, updateDoc } from 'firebase/firestore';
+import { doc, setDoc, updateDoc, type Firestore } from 'firebase/firestore';
 
 let testEnv: RulesTestEnvironment;
+
+const firestoreFor = (uid: string, token: Record<string, unknown>): Firestore =>
+  testEnv.authenticatedContext(uid, token).firestore() as unknown as Firestore;
 
 beforeAll(async () => {
   testEnv = await initializeTestEnvironment({
     projectId: 'test-project',
     firestore: {
-      rules: readFileSync('DRAFT_firestore.rules', 'utf8'),
+      rules: readFileSync('firestore.rules', 'utf8'),
       host: 'localhost',
       port: 8080,
     },
@@ -41,7 +44,7 @@ describe('Firestore Security Rules', () => {
 
   describe('User Profiles', () => {
     it('allows Alice to create her own profile', async () => {
-      const aliceDb = testEnv.authenticatedContext(aliceId, aliceAuth.token).firestore();
+      const aliceDb = firestoreFor(aliceId, aliceAuth.token);
       await assertSucceeds(setDoc(doc(aliceDb, 'users', aliceId), {
         uid: aliceId,
         email: 'alice@example.com'
@@ -49,22 +52,31 @@ describe('Firestore Security Rules', () => {
     });
 
     it('denies Alice from creating Bob profile', async () => {
-      const aliceDb = testEnv.authenticatedContext(aliceId, aliceAuth.token).firestore();
+      const aliceDb = firestoreFor(aliceId, aliceAuth.token);
       await assertFails(setDoc(doc(aliceDb, 'users', bobId), {
         uid: bobId,
         email: 'bob@example.com'
       }));
     });
 
+    it('denies Alice from assigning herself the admin role on create', async () => {
+      const aliceDb = firestoreFor(aliceId, aliceAuth.token);
+      await assertFails(setDoc(doc(aliceDb, 'users', aliceId), {
+        uid: aliceId,
+        email: 'alice@example.com',
+        role: 'admin'
+      }));
+    });
+
     it('denies Alice from becoming admin via update', async () => {
-      const adminDb = testEnv.authenticatedContext(adminId, adminAuth.token).firestore();
+      const adminDb = firestoreFor(adminId, adminAuth.token);
       await setDoc(doc(adminDb, 'users', aliceId), {
         uid: aliceId,
         email: 'alice@example.com',
         role: 'user'
       });
 
-      const aliceDb = testEnv.authenticatedContext(aliceId, aliceAuth.token).firestore();
+      const aliceDb = firestoreFor(aliceId, aliceAuth.token);
       await assertFails(updateDoc(doc(aliceDb, 'users', aliceId), {
         role: 'admin'
       }));
@@ -73,7 +85,7 @@ describe('Firestore Security Rules', () => {
 
   describe('Shops', () => {
     it('denies regular user from creating shop', async () => {
-      const aliceDb = testEnv.authenticatedContext(aliceId, aliceAuth.token).firestore();
+      const aliceDb = firestoreFor(aliceId, aliceAuth.token);
       await assertFails(setDoc(doc(aliceDb, 'shops', '1'), {
         id: 1,
         name: 'Alice Shop',
@@ -82,7 +94,7 @@ describe('Firestore Security Rules', () => {
     });
 
     it('allows admin to create shop', async () => {
-      const adminDb = testEnv.authenticatedContext(adminId, adminAuth.token).firestore();
+      const adminDb = firestoreFor(adminId, adminAuth.token);
       // Need to seed admin user doc for isAdmin() helper
       await setDoc(doc(adminDb, 'users', adminId), { uid: adminId, email: adminEmail, role: 'admin' });
       
@@ -96,7 +108,7 @@ describe('Firestore Security Rules', () => {
 
   describe('Products', () => {
     it('allows admin to create product', async () => {
-      const adminDb = testEnv.authenticatedContext(adminId, adminAuth.token).firestore();
+      const adminDb = firestoreFor(adminId, adminAuth.token);
       await setDoc(doc(adminDb, 'users', adminId), { uid: adminId, email: adminEmail, role: 'admin' });
 
       await assertSucceeds(setDoc(doc(adminDb, 'products', 'p1'), {
@@ -108,7 +120,7 @@ describe('Firestore Security Rules', () => {
     });
 
     it('denies admin from injecting ghost fields in product', async () => {
-       const adminDb = testEnv.authenticatedContext(adminId, adminAuth.token).firestore();
+      const adminDb = firestoreFor(adminId, adminAuth.token);
       await setDoc(doc(adminDb, 'users', adminId), { uid: adminId, email: adminEmail, role: 'admin' });
 
       await assertFails(setDoc(doc(adminDb, 'products', 'p1'), {

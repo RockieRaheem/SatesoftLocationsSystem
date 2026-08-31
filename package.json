@@ -9,7 +9,9 @@
     "build": "vite build",
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
     "preview": "vite preview",
-    "lint": "tsc --noEmit"
+    "lint": "tsc --noEmit",
+    "typecheck": "tsc --noEmit",
+    "check": "npm run typecheck && npm run build"
   },
   "dependencies": {
     "cors": "^2.8.6",
