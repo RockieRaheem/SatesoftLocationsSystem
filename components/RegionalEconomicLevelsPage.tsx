@@ -97,7 +97,7 @@ const RegionalEconomicLevelsPage: React.FC<RegionalEconomicLevelsPageProps> = ({
         if (!file) return;
 
         setError(null);
-        // Check file size (limit to 200KB for Base64 storage in Firestore)
+        // Keep legacy inline flag images bounded until they move to object storage.
         if (file.size > 200 * 1024) {
             setError("Image is too large. Please select an image under 200KB.");
             return;

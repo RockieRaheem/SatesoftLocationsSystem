@@ -18,7 +18,7 @@ export default defineConfig(() => {
         rollupOptions: {
           output: {
             manualChunks(id) {
-              if (id.includes('node_modules/@firebase') || id.includes('node_modules/firebase')) return 'firebase';
+              if (id.includes('node_modules/@supabase')) return 'supabase';
               if (id.includes('node_modules/react') || id.includes('node_modules/scheduler')) return 'react';
               return undefined;
             }

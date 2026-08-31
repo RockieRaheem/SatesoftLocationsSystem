@@ -529,7 +529,7 @@ export const FAQ: React.FC<{ pricingTiers: PricingTier[] }> = ({ pricingTiers })
             content: <CostingAnswer pricingTiers={pricingTiers} />
         },
         { q: "What is the purpose of the Location Register?", content: "It is an interactive geographic system designed to record, categorize, and map business storefront points alongside national boundary lines, electoral blocks, and state subdivisions." },
-        { q: "Can I manage coordinates offline?", content: "Yes! The location forms collect geographic coordinates and sync with our Firebase database when network connectivity is re-established." },
+        { q: "Can I manage coordinates offline?", content: "Location changes require a secure online connection so Supabase can authorize, validate, and audit each write." },
         { q: "How do I configure new administrative levels?", content: "By navigating to the Admin settings inside the dashboard, you can define specific organizational tiers (such as regional sub-counties, polling stations, or trade segments)." },
         { q: "Are the geographic bounding boxes calculated dynamically?", content: "Yes! The register includes automated node calculations to scale and frame SVGs such as South Africa, Angola, or Zimbabwe perfectly in the map components." }
     ];
