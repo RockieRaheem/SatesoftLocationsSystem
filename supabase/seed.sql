@@ -1,0 +1,2 @@
+-- Deliberately empty. Production-like seed data is loaded through
+-- `npm run supabase:seed`, which uses the server-only Supabase secret key.
