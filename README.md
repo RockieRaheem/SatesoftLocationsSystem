@@ -1,7 +1,7 @@
 # Location Register Dashboard
 
-Location Register is a React and TypeScript dashboard for managing African
-country data, shops, inventory, sales, users, communications, wallets, and
+Location Register is a focused React and TypeScript workspace for governing
+country master records, administrative hierarchies, electoral locations, and
 regional economic structures.
 
 ## Requirements
@@ -44,10 +44,26 @@ npx firebase-tools emulators:start --only firestore
 
 ## Persistence
 
-- Firestore: products, stock, regional economic levels, and user profiles
+- Firestore: regional economic levels and authenticated user profiles
 - Express memory: countries (reset when the server restarts)
-- Browser local storage: partners and pricing
-- React demonstration state: most remaining modules
+- Server-side source file: normalized Uganda electoral location data
+- Browser local storage: color-theme preference only
+
+The country API still uses process memory and must be connected to a durable
+database before multi-instance production deployment.
+
+## Product scope
+
+The active application is intentionally limited to six workflows: registry
+overview, countries, administrative levels, electoral locations, regional
+groupings, and the authenticated account. The former AI Studio retail, sales,
+inventory, finance, wallet, surveillance, marketing, personality, and packet
+tracing demonstrations are no longer imported into the application runtime.
+
+The UI uses locally compiled Tailwind CSS, responsive navigation, route-level
+code splitting, accessible focus states, reduced-motion support, and deep-link
+hashes such as `#country-electoral-levels`. Preview access is shown only on
+`localhost`; deployed environments require Google authentication.
 
 ## Uganda electoral registry
 
@@ -83,7 +99,7 @@ Useful endpoints:
 
 ## Architecture entrypoints
 
-- `App.tsx`: public site and dashboard entry
+- `App.tsx`: focused authenticated workspace entry
 - `components/AdminDashboard.tsx`: authentication and shared dashboard state
 - `components/MainContent.tsx`: dashboard view dispatch
 - `types.ts`: shared domain contracts

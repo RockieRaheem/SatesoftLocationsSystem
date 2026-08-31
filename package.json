@@ -4,14 +4,14 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "tsx server.ts",
-    "start": "tsx server.ts",
-    "build": "vite build",
+    "dev": "node node_modules/tsx/dist/cli.mjs server.ts",
+    "start": "node node_modules/tsx/dist/cli.mjs server.ts",
+    "build": "node node_modules/vite/bin/vite.js build",
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
     "test:electoral": "node --experimental-vm-modules node_modules/jest/bin/jest.js electoral/ugandaElectoralRegistry.test.ts --runInBand",
-    "preview": "vite preview",
-    "lint": "tsc --noEmit",
-    "typecheck": "tsc --noEmit",
+    "preview": "node node_modules/vite/bin/vite.js preview",
+    "lint": "node node_modules/typescript/bin/tsc --noEmit",
+    "typecheck": "node node_modules/typescript/bin/tsc --noEmit",
     "check": "npm run typecheck && npm run test:electoral && npm run build"
   },
   "dependencies": {

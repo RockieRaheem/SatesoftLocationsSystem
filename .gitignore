@@ -15,6 +15,8 @@ dist-ssr
 .env.*
 !.env.example
 coverage
+.edge-review*/
+*-review.png
 
 # Local recovery artifacts created while repairing the workspace.
 .recovery/

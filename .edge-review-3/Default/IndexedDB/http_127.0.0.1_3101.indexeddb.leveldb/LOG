@@ -1,6 +1,0 @@
-2026/08/31-15:07:05.403 5628 Creating DB C:\Users\Raheem\Desktop\SatesoftLocationsSystem\.edge-review-3\Default\IndexedDB\http_127.0.0.1_3101.indexeddb.leveldb since it was missing.
-2026/08/31-15:07:05.410 5628 Reusing MANIFEST C:\Users\Raheem\Desktop\SatesoftLocationsSystem\.edge-review-3\Default\IndexedDB\http_127.0.0.1_3101.indexeddb.leveldb/MANIFEST-000001
-2026/08/31-15:07:09.559 4558 Level-0 table #5: started
-2026/08/31-15:07:09.561 4558 Level-0 table #5: 1373 bytes OK
-2026/08/31-15:07:09.570 4558 Delete type=0 #3
-2026/08/31-15:07:09.571 4558 Manual compaction at level-0 from '\x00\x01\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x02\x00\x00\x00' @ 0 : 0; will stop at (end)
