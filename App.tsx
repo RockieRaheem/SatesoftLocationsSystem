@@ -30,7 +30,7 @@ const pricingTiers: PricingTier[] = [
 ];
 
 const AppContent: React.FC = () => {
-  const [view, setView] = useState<PublicView>(() => window.location.hash === '#workspace' ? 'admin' : 'home');
+  const [view, setView] = useState<PublicView>(() => window.location.hash ? 'admin' : 'home');
   const [signupOpen, setSignupOpen] = useState(false);
   const [selectedPost, setSelectedPost] = useState<BlogPost | null>(null);
   const openWorkspace = () => { setView('admin'); window.history.replaceState(null, '', `${window.location.pathname}#workspace`); };
