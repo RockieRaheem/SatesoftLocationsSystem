@@ -1,0 +1,230 @@
+import { createHotContext as __vite__createHotContext } from "/@vite/client";import.meta.hot = __vite__createHotContext("/components/RegistryOverview.tsx");import __vite__cjsImport0_react_jsxDevRuntime from "/node_modules/.vite/deps/react_jsx-dev-runtime.js?v=f70ce694"; const jsxDEV = __vite__cjsImport0_react_jsxDevRuntime["jsxDEV"];
+var _s = $RefreshSig$();
+import __vite__cjsImport1_react from "/node_modules/.vite/deps/react.js?v=f70ce694"; const useEffect = __vite__cjsImport1_react["useEffect"]; const useState = __vite__cjsImport1_react["useState"];
+import Icon from "/components/Icon.tsx";
+const RegistryOverview = ({ theme, countries, onNavigate }) => {
+  _s();
+  const [summary, setSummary] = useState(null);
+  const dark = theme === "dark";
+  useEffect(() => {
+    fetch("/api/electoral/uganda/summary").then((r) => r.ok ? r.json() : null).then(setSummary).catch(() => void 0);
+  }, []);
+  const totalAdminLevels = countries.reduce((sum, country) => sum + (country.numberOfAdminLevels ?? 0), 0);
+  const metrics = [["Countries", countries.length.toLocaleString(), "Active master records", "globe"], ["Admin schemas", totalAdminLevels.toLocaleString(), "Configured hierarchy levels", "map"], ["Uganda locations", (summary?.normalizedTotals.villagesAndCells ?? 0).toLocaleString(), "Normalized village/cell records", "shield-check"], ["Review queue", (summary?.normalizedTotals.recordsNeedingVerification ?? 0).toLocaleString(), "Records needing attention", "exclamation-triangle"]];
+  const card = dark ? "border-slate-800 bg-slate-900/75" : "border-slate-200 bg-white";
+  return /* @__PURE__ */ jsxDEV("div", { className: "space-y-6", children: [
+    /* @__PURE__ */ jsxDEV("section", { className: `relative overflow-hidden rounded-[28px] border px-6 py-8 md:px-9 md:py-10 ${dark ? "border-emerald-900/40 bg-[#0b1718]" : "border-emerald-100 bg-[#ecfdf5]"}`, children: [
+      /* @__PURE__ */ jsxDEV("div", { className: "absolute -right-24 -top-32 h-80 w-80 rounded-full bg-emerald-400/10 blur-3xl" }, void 0, false, {
+        fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/RegistryOverview.tsx",
+        lineNumber: 14,
+        columnNumber: 185
+      }, this),
+      /* @__PURE__ */ jsxDEV("div", { className: "relative max-w-3xl", children: [
+        /* @__PURE__ */ jsxDEV("span", { className: `inline-flex items-center gap-2 rounded-full border px-3 py-1 text-[11px] font-bold uppercase tracking-widest ${dark ? "border-emerald-800 text-emerald-300" : "border-emerald-200 bg-white/70 text-emerald-800"}`, children: [
+          /* @__PURE__ */ jsxDEV("span", { className: "h-1.5 w-1.5 rounded-full bg-emerald-500" }, void 0, false, {
+            fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/RegistryOverview.tsx",
+            lineNumber: 14,
+            columnNumber: 546
+          }, this),
+          " Registry operational"
+        ] }, void 0, true, {
+          fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/RegistryOverview.tsx",
+          lineNumber: 14,
+          columnNumber: 317
+        }, this),
+        /* @__PURE__ */ jsxDEV("h2", { className: `mt-5 text-3xl font-bold tracking-[-0.035em] md:text-4xl ${dark ? "text-white" : "text-slate-950"}`, children: "One trusted structure for every location." }, void 0, false, {
+          fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/RegistryOverview.tsx",
+          lineNumber: 14,
+          columnNumber: 634
+        }, this),
+        /* @__PURE__ */ jsxDEV("p", { className: `mt-3 max-w-2xl text-sm leading-6 md:text-[15px] ${dark ? "text-slate-400" : "text-slate-600"}`, children: "Manage territorial definitions, trace electoral locations to their parents, and surface data-quality risks before records reach operational systems." }, void 0, false, {
+          fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/RegistryOverview.tsx",
+          lineNumber: 14,
+          columnNumber: 796
+        }, this),
+        /* @__PURE__ */ jsxDEV("div", { className: "mt-6 flex flex-wrap gap-3", children: [
+          /* @__PURE__ */ jsxDEV("button", { onClick: () => onNavigate("country-electoral-levels"), className: "rounded-xl bg-emerald-500 px-4 py-2.5 text-sm font-bold text-emerald-950 shadow-lg shadow-emerald-500/20 hover:bg-emerald-400", children: "Explore Uganda registry" }, void 0, false, {
+            fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/RegistryOverview.tsx",
+            lineNumber: 14,
+            columnNumber: 1102
+          }, this),
+          /* @__PURE__ */ jsxDEV("button", { onClick: () => onNavigate("countries"), className: `rounded-xl border px-4 py-2.5 text-sm font-semibold ${dark ? "border-slate-700 bg-slate-900 text-slate-200" : "border-emerald-200 bg-white text-slate-700"}`, children: "Manage countries" }, void 0, false, {
+            fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/RegistryOverview.tsx",
+            lineNumber: 14,
+            columnNumber: 1335
+          }, this)
+        ] }, void 0, true, {
+          fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/RegistryOverview.tsx",
+          lineNumber: 14,
+          columnNumber: 1059
+        }, this)
+      ] }, void 0, true, {
+        fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/RegistryOverview.tsx",
+        lineNumber: 14,
+        columnNumber: 281
+      }, this)
+    ] }, void 0, true, {
+      fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/RegistryOverview.tsx",
+      lineNumber: 14,
+      columnNumber: 5
+    }, this),
+    /* @__PURE__ */ jsxDEV("section", { className: "grid gap-4 sm:grid-cols-2 xl:grid-cols-4", children: metrics.map(([label, value, hint, icon]) => /* @__PURE__ */ jsxDEV("article", { className: `rounded-2xl border p-5 shadow-sm ${card}`, children: [
+      /* @__PURE__ */ jsxDEV("div", { className: "flex items-start justify-between", children: [
+        /* @__PURE__ */ jsxDEV("div", { children: [
+          /* @__PURE__ */ jsxDEV("p", { className: "text-xs font-semibold text-slate-500", children: label }, void 0, false, {
+            fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/RegistryOverview.tsx",
+            lineNumber: 15,
+            columnNumber: 243
+          }, this),
+          /* @__PURE__ */ jsxDEV("p", { className: `mt-2 text-3xl font-bold tracking-tight ${dark ? "text-white" : "text-slate-950"}`, children: value }, void 0, false, {
+            fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/RegistryOverview.tsx",
+            lineNumber: 15,
+            columnNumber: 306
+          }, this)
+        ] }, void 0, true, {
+          fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/RegistryOverview.tsx",
+          lineNumber: 15,
+          columnNumber: 238
+        }, this),
+        /* @__PURE__ */ jsxDEV("span", { className: `grid h-10 w-10 place-items-center rounded-xl ${dark ? "bg-slate-800 text-emerald-300" : "bg-emerald-50 text-emerald-700"}`, children: /* @__PURE__ */ jsxDEV(Icon, { name: icon, className: "h-5 w-5" }, void 0, false, {
+          fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/RegistryOverview.tsx",
+          lineNumber: 15,
+          columnNumber: 563
+        }, this) }, void 0, false, {
+          fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/RegistryOverview.tsx",
+          lineNumber: 15,
+          columnNumber: 421
+        }, this)
+      ] }, void 0, true, {
+        fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/RegistryOverview.tsx",
+        lineNumber: 15,
+        columnNumber: 188
+      }, this),
+      /* @__PURE__ */ jsxDEV("p", { className: `mt-3 text-[11px] ${dark ? "text-slate-600" : "text-slate-400"}`, children: hint }, void 0, false, {
+        fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/RegistryOverview.tsx",
+        lineNumber: 15,
+        columnNumber: 616
+      }, this)
+    ] }, label, true, {
+      fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/RegistryOverview.tsx",
+      lineNumber: 15,
+      columnNumber: 112
+    }, this)) }, void 0, false, {
+      fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/RegistryOverview.tsx",
+      lineNumber: 15,
+      columnNumber: 5
+    }, this),
+    /* @__PURE__ */ jsxDEV("div", { className: "grid gap-6 xl:grid-cols-[1.35fr_.65fr]", children: [
+      /* @__PURE__ */ jsxDEV("section", { className: `rounded-2xl border p-5 md:p-6 ${card}`, children: [
+        /* @__PURE__ */ jsxDEV("h3", { className: "text-base font-bold", children: "Registry workflow" }, void 0, false, {
+          fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/RegistryOverview.tsx",
+          lineNumber: 16,
+          columnNumber: 122
+        }, this),
+        /* @__PURE__ */ jsxDEV("p", { className: `mt-1 text-xs ${dark ? "text-slate-500" : "text-slate-500"}`, children: "A controlled path from definition to operational use." }, void 0, false, {
+          fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/RegistryOverview.tsx",
+          lineNumber: 16,
+          columnNumber: 180
+        }, this),
+        /* @__PURE__ */ jsxDEV("div", { className: "mt-6 grid gap-3 md:grid-cols-3", children: [["01", "Define", "Create country and hierarchy terminology."], ["02", "Validate", "Resolve conflicts and review source provenance."], ["03", "Publish", "Expose stable records to connected services."]].map(([number, title, copy]) => /* @__PURE__ */ jsxDEV("div", { className: `rounded-xl border p-4 ${dark ? "border-slate-800 bg-slate-950/40" : "border-slate-100 bg-slate-50"}`, children: [
+          /* @__PURE__ */ jsxDEV("span", { className: "text-[10px] font-black tracking-widest text-emerald-500", children: number }, void 0, false, {
+            fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/RegistryOverview.tsx",
+            lineNumber: 16,
+            columnNumber: 727
+          }, this),
+          /* @__PURE__ */ jsxDEV("h4", { className: "mt-3 text-sm font-bold", children: title }, void 0, false, {
+            fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/RegistryOverview.tsx",
+            lineNumber: 16,
+            columnNumber: 816
+          }, this),
+          /* @__PURE__ */ jsxDEV("p", { className: `mt-1 text-xs leading-5 ${dark ? "text-slate-500" : "text-slate-500"}`, children: copy }, void 0, false, {
+            fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/RegistryOverview.tsx",
+            lineNumber: 16,
+            columnNumber: 867
+          }, this)
+        ] }, number, true, {
+          fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/RegistryOverview.tsx",
+          lineNumber: 16,
+          columnNumber: 595
+        }, this)) }, void 0, false, {
+          fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/RegistryOverview.tsx",
+          lineNumber: 16,
+          columnNumber: 313
+        }, this)
+      ] }, void 0, true, {
+        fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/RegistryOverview.tsx",
+        lineNumber: 16,
+        columnNumber: 61
+      }, this),
+      /* @__PURE__ */ jsxDEV("section", { className: `rounded-2xl border p-5 md:p-6 ${card}`, children: [
+        /* @__PURE__ */ jsxDEV("h3", { className: "text-base font-bold", children: "Data posture" }, void 0, false, {
+          fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/RegistryOverview.tsx",
+          lineNumber: 16,
+          columnNumber: 1048
+        }, this),
+        /* @__PURE__ */ jsxDEV("div", { className: "mt-5 space-y-4", children: [["Server-side source", true], ["Stable composite IDs", true], ["Current EC verification", false]].map(([label, good]) => /* @__PURE__ */ jsxDEV("div", { className: "flex items-center justify-between text-xs", children: [
+          /* @__PURE__ */ jsxDEV("span", { className: dark ? "text-slate-400" : "text-slate-600", children: label }, void 0, false, {
+            fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/RegistryOverview.tsx",
+            lineNumber: 16,
+            columnNumber: 1335
+          }, this),
+          /* @__PURE__ */ jsxDEV("span", { className: `rounded-full px-2 py-1 font-bold ${good ? "bg-emerald-100 text-emerald-800" : "bg-amber-100 text-amber-900"}`, children: good ? "Ready" : "Required" }, void 0, false, {
+            fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/RegistryOverview.tsx",
+            lineNumber: 16,
+            columnNumber: 1410
+          }, this)
+        ] }, String(label), true, {
+          fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/RegistryOverview.tsx",
+          lineNumber: 16,
+          columnNumber: 1256
+        }, this)) }, void 0, false, {
+          fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/RegistryOverview.tsx",
+          lineNumber: 16,
+          columnNumber: 1101
+        }, this)
+      ] }, void 0, true, {
+        fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/RegistryOverview.tsx",
+        lineNumber: 16,
+        columnNumber: 987
+      }, this)
+    ] }, void 0, true, {
+      fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/RegistryOverview.tsx",
+      lineNumber: 16,
+      columnNumber: 5
+    }, this)
+  ] }, void 0, true, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/RegistryOverview.tsx",
+    lineNumber: 13,
+    columnNumber: 10
+  }, this);
+};
+_s(RegistryOverview, "lKGhItSa883pfTQ2Pj3nIYHV1As=");
+_c = RegistryOverview;
+export default RegistryOverview;
+var _c;
+$RefreshReg$(_c, "RegistryOverview");
+import * as RefreshRuntime from "/@react-refresh";
+const inWebWorker = typeof WorkerGlobalScope !== "undefined" && self instanceof WorkerGlobalScope;
+if (import.meta.hot && !inWebWorker) {
+  if (!window.$RefreshReg$) {
+    throw new Error(
+      "@vitejs/plugin-react can't detect preamble. Something is wrong."
+    );
+  }
+  RefreshRuntime.__hmr_import(import.meta.url).then((currentExports) => {
+    RefreshRuntime.registerExportsForReactRefresh("C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/RegistryOverview.tsx", currentExports);
+    import.meta.hot.accept((nextExports) => {
+      if (!nextExports) return;
+      const invalidateMessage = RefreshRuntime.validateRefreshBoundaryAndEnqueueUpdate("C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/RegistryOverview.tsx", currentExports, nextExports);
+      if (invalidateMessage) import.meta.hot.invalidate(invalidateMessage);
+    });
+  });
+}
+function $RefreshReg$(type, id) {
+  return RefreshRuntime.register(type, "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/RegistryOverview.tsx " + id);
+}
+function $RefreshSig$() {
+  return RefreshRuntime.createSignatureFunctionForTransform();
+}
+
+//# sourceMappingURL=data:application/json;base64,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QUFBQTtBQUFBLGVBQStULENBQU0sS0FBaGU7QUFBQTtBQUFBO0FBQUE7QUFBQSxlQUFrZTtBQUFBLFdBQXBsQjtBQUFBO0FBQUE7QUFBQTtBQUFBLGFBQTBsQjtBQUFBLFNBQWhqRDtBQUFBO0FBQUE7QUFBQTtBQUFBLFdBQTBqRDtBQUFBLE9BSHJqRDtBQUFBO0FBQUE7QUFBQTtBQUFBLFNBSVA7QUFDRjtBQUFFeEIsR0FaSUosa0JBQTBHO0FBQUEsS0FBMUdBO0FBY04sZUFBZUE7QUFBaUIsSUFBQXFDO0FBQUEsYUFBQUEsSUFBQSIsIm5hbWVzIjpbInVzZUVmZmVjdCIsInVzZVN0YXRlIiwiSWNvbiIsIlJlZ2lzdHJ5T3ZlcnZpZXciLCJ0aGVtZSIsImNvdW50cmllcyIsIm9uTmF2aWdhdGUiLCJfcyIsInN1bW1hcnkiLCJzZXRTdW1tYXJ5IiwiZGFyayIsImZldGNoIiwidGhlbiIsInIiLCJvayIsImpzb24iLCJjYXRjaCIsInVuZGVmaW5lZCIsInRvdGFsQWRtaW5MZXZlbHMiLCJyZWR1Y2UiLCJzdW0iLCJjb3VudHJ5IiwibnVtYmVyT2ZBZG1pbkxldmVscyIsIm1ldHJpY3MiLCJsZW5ndGgiLCJ0b0xvY2FsZVN0cmluZyIsIm5vcm1hbGl6ZWRUb3RhbHMiLCJ2aWxsYWdlc0FuZENlbGxzIiwicmVjb3Jkc05lZWRpbmdWZXJpZmljYXRpb24iLCJjYXJkIiwibWFwIiwibGFiZWwiLCJ2YWx1ZSIsImhpbnQiLCJpY29uIiwibnVtYmVyIiwidGl0bGUiLCJjb3B5IiwiZ29vZCIsIlN0cmluZyIsIl9jIl0sImlnbm9yZUxpc3QiOltdLCJzb3VyY2VzIjpbIlJlZ2lzdHJ5T3ZlcnZpZXcudHN4Il0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBSZWFjdCwgeyB1c2VFZmZlY3QsIHVzZVN0YXRlIH0gZnJvbSAncmVhY3QnO1xuaW1wb3J0IHR5cGUgeyBBY3RpdmVWaWV3LCBDb3VudHJ5LCBUaGVtZSB9IGZyb20gJy4uL3R5cGVzLnRzJztcbmltcG9ydCB0eXBlIHsgVWdhbmRhRWxlY3RvcmFsU3VtbWFyeSB9IGZyb20gJy4uL2VsZWN0b3JhbC90eXBlcy50cyc7XG5pbXBvcnQgSWNvbiwgeyB0eXBlIEljb25OYW1lIH0gZnJvbSAnLi9JY29uLnRzeCc7XG5cbmNvbnN0IFJlZ2lzdHJ5T3ZlcnZpZXc6IFJlYWN0LkZDPHsgdGhlbWU6IFRoZW1lOyBjb3VudHJpZXM6IENvdW50cnlbXTsgb25OYXZpZ2F0ZTogKHZpZXc6IEFjdGl2ZVZpZXcpID0+IHZvaWQgfT4gPSAoeyB0aGVtZSwgY291bnRyaWVzLCBvbk5hdmlnYXRlIH0pID0+IHtcbiAgY29uc3QgW3N1bW1hcnksIHNldFN1bW1hcnldID0gdXNlU3RhdGU8VWdhbmRhRWxlY3RvcmFsU3VtbWFyeSB8IG51bGw+KG51bGwpO1xuICBjb25zdCBkYXJrID0gdGhlbWUgPT09ICdkYXJrJztcbiAgdXNlRWZmZWN0KCgpID0+IHsgZmV0Y2goJy9hcGkvZWxlY3RvcmFsL3VnYW5kYS9zdW1tYXJ5JykudGhlbihyID0+IHIub2sgPyByLmpzb24oKSA6IG51bGwpLnRoZW4oc2V0U3VtbWFyeSkuY2F0Y2goKCkgPT4gdW5kZWZpbmVkKTsgfSwgW10pO1xuICBjb25zdCB0b3RhbEFkbWluTGV2ZWxzID0gY291bnRyaWVzLnJlZHVjZSgoc3VtLCBjb3VudHJ5KSA9PiBzdW0gKyAoY291bnRyeS5udW1iZXJPZkFkbWluTGV2ZWxzID8/IDApLCAwKTtcbiAgY29uc3QgbWV0cmljczogQXJyYXk8W3N0cmluZywgc3RyaW5nLCBzdHJpbmcsIEljb25OYW1lXT4gPSBbWydDb3VudHJpZXMnLCBjb3VudHJpZXMubGVuZ3RoLnRvTG9jYWxlU3RyaW5nKCksICdBY3RpdmUgbWFzdGVyIHJlY29yZHMnLCAnZ2xvYmUnXSwgWydBZG1pbiBzY2hlbWFzJywgdG90YWxBZG1pbkxldmVscy50b0xvY2FsZVN0cmluZygpLCAnQ29uZmlndXJlZCBoaWVyYXJjaHkgbGV2ZWxzJywgJ21hcCddLCBbJ1VnYW5kYSBsb2NhdGlvbnMnLCAoc3VtbWFyeT8ubm9ybWFsaXplZFRvdGFscy52aWxsYWdlc0FuZENlbGxzID8/IDApLnRvTG9jYWxlU3RyaW5nKCksICdOb3JtYWxpemVkIHZpbGxhZ2UvY2VsbCByZWNvcmRzJywgJ3NoaWVsZC1jaGVjayddLCBbJ1JldmlldyBxdWV1ZScsIChzdW1tYXJ5Py5ub3JtYWxpemVkVG90YWxzLnJlY29yZHNOZWVkaW5nVmVyaWZpY2F0aW9uID8/IDApLnRvTG9jYWxlU3RyaW5nKCksICdSZWNvcmRzIG5lZWRpbmcgYXR0ZW50aW9uJywgJ2V4Y2xhbWF0aW9uLXRyaWFuZ2xlJ11dO1xuICBjb25zdCBjYXJkID0gZGFyayA/ICdib3JkZXItc2xhdGUtODAwIGJnLXNsYXRlLTkwMC83NScgOiAnYm9yZGVyLXNsYXRlLTIwMCBiZy13aGl0ZSc7XG4gIHJldHVybiA8ZGl2IGNsYXNzTmFtZT1cInNwYWNlLXktNlwiPlxuICAgIDxzZWN0aW9uIGNsYXNzTmFtZT17YHJlbGF0aXZlIG92ZXJmbG93LWhpZGRlbiByb3VuZGVkLVsyOHB4XSBib3JkZXIgcHgtNiBweS04IG1kOnB4LTkgbWQ6cHktMTAgJHtkYXJrID8gJ2JvcmRlci1lbWVyYWxkLTkwMC80MCBiZy1bIzBiMTcxOF0nIDogJ2JvcmRlci1lbWVyYWxkLTEwMCBiZy1bI2VjZmRmNV0nfWB9PjxkaXYgY2xhc3NOYW1lPVwiYWJzb2x1dGUgLXJpZ2h0LTI0IC10b3AtMzIgaC04MCB3LTgwIHJvdW5kZWQtZnVsbCBiZy1lbWVyYWxkLTQwMC8xMCBibHVyLTN4bFwiIC8+PGRpdiBjbGFzc05hbWU9XCJyZWxhdGl2ZSBtYXgtdy0zeGxcIj48c3BhbiBjbGFzc05hbWU9e2BpbmxpbmUtZmxleCBpdGVtcy1jZW50ZXIgZ2FwLTIgcm91bmRlZC1mdWxsIGJvcmRlciBweC0zIHB5LTEgdGV4dC1bMTFweF0gZm9udC1ib2xkIHVwcGVyY2FzZSB0cmFja2luZy13aWRlc3QgJHtkYXJrID8gJ2JvcmRlci1lbWVyYWxkLTgwMCB0ZXh0LWVtZXJhbGQtMzAwJyA6ICdib3JkZXItZW1lcmFsZC0yMDAgYmctd2hpdGUvNzAgdGV4dC1lbWVyYWxkLTgwMCd9YH0+PHNwYW4gY2xhc3NOYW1lPVwiaC0xLjUgdy0xLjUgcm91bmRlZC1mdWxsIGJnLWVtZXJhbGQtNTAwXCIgLz4gUmVnaXN0cnkgb3BlcmF0aW9uYWw8L3NwYW4+PGgyIGNsYXNzTmFtZT17YG10LTUgdGV4dC0zeGwgZm9udC1ib2xkIHRyYWNraW5nLVstMC4wMzVlbV0gbWQ6dGV4dC00eGwgJHtkYXJrID8gJ3RleHQtd2hpdGUnIDogJ3RleHQtc2xhdGUtOTUwJ31gfT5PbmUgdHJ1c3RlZCBzdHJ1Y3R1cmUgZm9yIGV2ZXJ5IGxvY2F0aW9uLjwvaDI+PHAgY2xhc3NOYW1lPXtgbXQtMyBtYXgtdy0yeGwgdGV4dC1zbSBsZWFkaW5nLTYgbWQ6dGV4dC1bMTVweF0gJHtkYXJrID8gJ3RleHQtc2xhdGUtNDAwJyA6ICd0ZXh0LXNsYXRlLTYwMCd9YH0+TWFuYWdlIHRlcnJpdG9yaWFsIGRlZmluaXRpb25zLCB0cmFjZSBlbGVjdG9yYWwgbG9jYXRpb25zIHRvIHRoZWlyIHBhcmVudHMsIGFuZCBzdXJmYWNlIGRhdGEtcXVhbGl0eSByaXNrcyBiZWZvcmUgcmVjb3JkcyByZWFjaCBvcGVyYXRpb25hbCBzeXN0ZW1zLjwvcD48ZGl2IGNsYXNzTmFtZT1cIm10LTYgZmxleCBmbGV4LXdyYXAgZ2FwLTNcIj48YnV0dG9uIG9uQ2xpY2s9eygpID0+IG9uTmF2aWdhdGUoJ2NvdW50cnktZWxlY3RvcmFsLWxldmVscycpfSBjbGFzc05hbWU9XCJyb3VuZGVkLXhsIGJnLWVtZXJhbGQtNTAwIHB4LTQgcHktMi41IHRleHQtc20gZm9udC1ib2xkIHRleHQtZW1lcmFsZC05NTAgc2hhZG93LWxnIHNoYWRvdy1lbWVyYWxkLTUwMC8yMCBob3ZlcjpiZy1lbWVyYWxkLTQwMFwiPkV4cGxvcmUgVWdhbmRhIHJlZ2lzdHJ5PC9idXR0b24+PGJ1dHRvbiBvbkNsaWNrPXsoKSA9PiBvbk5hdmlnYXRlKCdjb3VudHJpZXMnKX0gY2xhc3NOYW1lPXtgcm91bmRlZC14bCBib3JkZXIgcHgtNCBweS0yLjUgdGV4dC1zbSBmb250LXNlbWlib2xkICR7ZGFyayA/ICdib3JkZXItc2xhdGUtNzAwIGJnLXNsYXRlLTkwMCB0ZXh0LXNsYXRlLTIwMCcgOiAnYm9yZGVyLWVtZXJhbGQtMjAwIGJnLXdoaXRlIHRleHQtc2xhdGUtNzAwJ31gfT5NYW5hZ2UgY291bnRyaWVzPC9idXR0b24+PC9kaXY+PC9kaXY+PC9zZWN0aW9uPlxuICAgIDxzZWN0aW9uIGNsYXNzTmFtZT1cImdyaWQgZ2FwLTQgc206Z3JpZC1jb2xzLTIgeGw6Z3JpZC1jb2xzLTRcIj57bWV0cmljcy5tYXAoKFtsYWJlbCwgdmFsdWUsIGhpbnQsIGljb25dKSA9PiA8YXJ0aWNsZSBrZXk9e2xhYmVsfSBjbGFzc05hbWU9e2Byb3VuZGVkLTJ4bCBib3JkZXIgcC01IHNoYWRvdy1zbSAke2NhcmR9YH0+PGRpdiBjbGFzc05hbWU9XCJmbGV4IGl0ZW1zLXN0YXJ0IGp1c3RpZnktYmV0d2VlblwiPjxkaXY+PHAgY2xhc3NOYW1lPVwidGV4dC14cyBmb250LXNlbWlib2xkIHRleHQtc2xhdGUtNTAwXCI+e2xhYmVsfTwvcD48cCBjbGFzc05hbWU9e2BtdC0yIHRleHQtM3hsIGZvbnQtYm9sZCB0cmFja2luZy10aWdodCAke2RhcmsgPyAndGV4dC13aGl0ZScgOiAndGV4dC1zbGF0ZS05NTAnfWB9Pnt2YWx1ZX08L3A+PC9kaXY+PHNwYW4gY2xhc3NOYW1lPXtgZ3JpZCBoLTEwIHctMTAgcGxhY2UtaXRlbXMtY2VudGVyIHJvdW5kZWQteGwgJHtkYXJrID8gJ2JnLXNsYXRlLTgwMCB0ZXh0LWVtZXJhbGQtMzAwJyA6ICdiZy1lbWVyYWxkLTUwIHRleHQtZW1lcmFsZC03MDAnfWB9PjxJY29uIG5hbWU9e2ljb259IGNsYXNzTmFtZT1cImgtNSB3LTVcIiAvPjwvc3Bhbj48L2Rpdj48cCBjbGFzc05hbWU9e2BtdC0zIHRleHQtWzExcHhdICR7ZGFyayA/ICd0ZXh0LXNsYXRlLTYwMCcgOiAndGV4dC1zbGF0ZS00MDAnfWB9PntoaW50fTwvcD48L2FydGljbGU+KX08L3NlY3Rpb24+XG4gICAgPGRpdiBjbGFzc05hbWU9XCJncmlkIGdhcC02IHhsOmdyaWQtY29scy1bMS4zNWZyXy42NWZyXVwiPjxzZWN0aW9uIGNsYXNzTmFtZT17YHJvdW5kZWQtMnhsIGJvcmRlciBwLTUgbWQ6cC02ICR7Y2FyZH1gfT48aDMgY2xhc3NOYW1lPVwidGV4dC1iYXNlIGZvbnQtYm9sZFwiPlJlZ2lzdHJ5IHdvcmtmbG93PC9oMz48cCBjbGFzc05hbWU9e2BtdC0xIHRleHQteHMgJHtkYXJrID8gJ3RleHQtc2xhdGUtNTAwJyA6ICd0ZXh0LXNsYXRlLTUwMCd9YH0+QSBjb250cm9sbGVkIHBhdGggZnJvbSBkZWZpbml0aW9uIHRvIG9wZXJhdGlvbmFsIHVzZS48L3A+PGRpdiBjbGFzc05hbWU9XCJtdC02IGdyaWQgZ2FwLTMgbWQ6Z3JpZC1jb2xzLTNcIj57W1snMDEnLCAnRGVmaW5lJywgJ0NyZWF0ZSBjb3VudHJ5IGFuZCBoaWVyYXJjaHkgdGVybWlub2xvZ3kuJ10sIFsnMDInLCAnVmFsaWRhdGUnLCAnUmVzb2x2ZSBjb25mbGljdHMgYW5kIHJldmlldyBzb3VyY2UgcHJvdmVuYW5jZS4nXSwgWycwMycsICdQdWJsaXNoJywgJ0V4cG9zZSBzdGFibGUgcmVjb3JkcyB0byBjb25uZWN0ZWQgc2VydmljZXMuJ11dLm1hcCgoW251bWJlciwgdGl0bGUsIGNvcHldKSA9PiA8ZGl2IGtleT17bnVtYmVyfSBjbGFzc05hbWU9e2Byb3VuZGVkLXhsIGJvcmRlciBwLTQgJHtkYXJrID8gJ2JvcmRlci1zbGF0ZS04MDAgYmctc2xhdGUtOTUwLzQwJyA6ICdib3JkZXItc2xhdGUtMTAwIGJnLXNsYXRlLTUwJ31gfT48c3BhbiBjbGFzc05hbWU9XCJ0ZXh0LVsxMHB4XSBmb250LWJsYWNrIHRyYWNraW5nLXdpZGVzdCB0ZXh0LWVtZXJhbGQtNTAwXCI+e251bWJlcn08L3NwYW4+PGg0IGNsYXNzTmFtZT1cIm10LTMgdGV4dC1zbSBmb250LWJvbGRcIj57dGl0bGV9PC9oND48cCBjbGFzc05hbWU9e2BtdC0xIHRleHQteHMgbGVhZGluZy01ICR7ZGFyayA/ICd0ZXh0LXNsYXRlLTUwMCcgOiAndGV4dC1zbGF0ZS01MDAnfWB9Pntjb3B5fTwvcD48L2Rpdj4pfTwvZGl2Pjwvc2VjdGlvbj48c2VjdGlvbiBjbGFzc05hbWU9e2Byb3VuZGVkLTJ4bCBib3JkZXIgcC01IG1kOnAtNiAke2NhcmR9YH0+PGgzIGNsYXNzTmFtZT1cInRleHQtYmFzZSBmb250LWJvbGRcIj5EYXRhIHBvc3R1cmU8L2gzPjxkaXYgY2xhc3NOYW1lPVwibXQtNSBzcGFjZS15LTRcIj57W1snU2VydmVyLXNpZGUgc291cmNlJywgdHJ1ZV0sIFsnU3RhYmxlIGNvbXBvc2l0ZSBJRHMnLCB0cnVlXSwgWydDdXJyZW50IEVDIHZlcmlmaWNhdGlvbicsIGZhbHNlXV0ubWFwKChbbGFiZWwsIGdvb2RdKSA9PiA8ZGl2IGtleT17U3RyaW5nKGxhYmVsKX0gY2xhc3NOYW1lPVwiZmxleCBpdGVtcy1jZW50ZXIganVzdGlmeS1iZXR3ZWVuIHRleHQteHNcIj48c3BhbiBjbGFzc05hbWU9e2RhcmsgPyAndGV4dC1zbGF0ZS00MDAnIDogJ3RleHQtc2xhdGUtNjAwJ30+e2xhYmVsfTwvc3Bhbj48c3BhbiBjbGFzc05hbWU9e2Byb3VuZGVkLWZ1bGwgcHgtMiBweS0xIGZvbnQtYm9sZCAke2dvb2QgPyAnYmctZW1lcmFsZC0xMDAgdGV4dC1lbWVyYWxkLTgwMCcgOiAnYmctYW1iZXItMTAwIHRleHQtYW1iZXItOTAwJ31gfT57Z29vZCA/ICdSZWFkeScgOiAnUmVxdWlyZWQnfTwvc3Bhbj48L2Rpdj4pfTwvZGl2Pjwvc2VjdGlvbj48L2Rpdj5cbiAgPC9kaXY+O1xufTtcblxuZXhwb3J0IGRlZmF1bHQgUmVnaXN0cnlPdmVydmlldztcbiJdLCJmaWxlIjoiQzovVXNlcnMvUmFoZWVtL0Rlc2t0b3AvU2F0ZXNvZnRMb2NhdGlvbnNTeXN0ZW0vY29tcG9uZW50cy9SZWdpc3RyeU92ZXJ2aWV3LnRzeCJ9

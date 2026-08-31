@@ -1,0 +1,268 @@
+import { createHotContext as __vite__createHotContext } from "/@vite/client";import.meta.hot = __vite__createHotContext("/components/MainContent.tsx");import __vite__cjsImport0_react_jsxDevRuntime from "/node_modules/.vite/deps/react_jsx-dev-runtime.js?v=f70ce694"; const jsxDEV = __vite__cjsImport0_react_jsxDevRuntime["jsxDEV"];
+var _s = $RefreshSig$();
+import __vite__cjsImport1_react from "/node_modules/.vite/deps/react.js?v=f70ce694"; const Suspense = __vite__cjsImport1_react["Suspense"]; const lazy = __vite__cjsImport1_react["lazy"]; const useState = __vite__cjsImport1_react["useState"];
+import Icon from "/components/Icon.tsx";
+import RegistryOverview from "/components/RegistryOverview.tsx";
+const CountriesPage = lazy(_c = () => import("/components/CountriesPage.tsx"));
+_c2 = CountriesPage;
+const CountryAdminLevelsPage = lazy(_c3 = () => import("/components/CountryAdminLevelsPage.tsx"));
+_c4 = CountryAdminLevelsPage;
+const CountryElectoralLevelsPage = lazy(_c5 = () => import("/components/CountryElectoralLevelsPage.tsx"));
+_c6 = CountryElectoralLevelsPage;
+const RegionalEconomicLevelsPage = lazy(_c7 = () => import("/components/RegionalEconomicLevelsPage.tsx"));
+_c8 = RegionalEconomicLevelsPage;
+const CountryProfilePage = lazy(_c9 = () => import("/components/CountryProfilePage.tsx"));
+_c0 = CountryProfilePage;
+const pageMeta = {
+  dashboard: { eyebrow: "Workspace", title: "Registry overview", description: "Monitor coverage, structure, and data readiness." },
+  countries: { eyebrow: "Location registry", title: "Country master records", description: "Maintain standardized country metadata and configuration." },
+  "country-admin-levels": { eyebrow: "Location registry", title: "Administrative hierarchies", description: "Define how territorial levels are named and nested." },
+  "country-electoral-levels": { eyebrow: "Location registry", title: "Electoral locations", description: "Explore normalized Electoral Commission location data." },
+  "regional-economic-levels": { eyebrow: "Location registry", title: "Regional groupings", description: "Manage economic communities and country membership." },
+  "country-profile": { eyebrow: "Country master", title: "Country profile", description: "Review configuration and connected hierarchy data." },
+  profile: { eyebrow: "System", title: "Account", description: "Review your authenticated workspace identity." }
+};
+const MainContent = (props) => {
+  _s();
+  const { theme, activeView, user, countries, regionalLevels, onToggleSidebar, onNavigate, onAddCountry, onUpdateCountry, onDeleteCountry, onSaveRegionalLevel, onDeleteRegionalLevel } = props;
+  const [selectedCountry, setSelectedCountry] = useState(null);
+  const dark = theme === "dark";
+  const meta = pageMeta[activeView] ?? pageMeta.dashboard;
+  const render = () => {
+    switch (activeView) {
+      case "countries":
+        return /* @__PURE__ */ jsxDEV(CountriesPage, { theme, countries, onAddCountry, onUpdateCountry, onDeleteCountry, onViewProfile: (country) => {
+          setSelectedCountry(country);
+          onNavigate("country-profile");
+        } }, void 0, false, {
+          fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/MainContent.tsx",
+          lineNumber: 45,
+          columnNumber: 31
+        }, this);
+      case "country-admin-levels":
+        return /* @__PURE__ */ jsxDEV(CountryAdminLevelsPage, { theme, countries, onUpdateCountry }, void 0, false, {
+          fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/MainContent.tsx",
+          lineNumber: 46,
+          columnNumber: 42
+        }, this);
+      case "country-electoral-levels":
+        return /* @__PURE__ */ jsxDEV(CountryElectoralLevelsPage, { theme, countries, onUpdateCountry }, void 0, false, {
+          fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/MainContent.tsx",
+          lineNumber: 47,
+          columnNumber: 46
+        }, this);
+      case "regional-economic-levels":
+        return /* @__PURE__ */ jsxDEV(RegionalEconomicLevelsPage, { theme, regionalLevels, countries, onSave: onSaveRegionalLevel, onDelete: onDeleteRegionalLevel }, void 0, false, {
+          fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/MainContent.tsx",
+          lineNumber: 48,
+          columnNumber: 46
+        }, this);
+      case "country-profile":
+        return /* @__PURE__ */ jsxDEV(CountryProfilePage, { theme, country: selectedCountry, onNavigate }, void 0, false, {
+          fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/MainContent.tsx",
+          lineNumber: 49,
+          columnNumber: 37
+        }, this);
+      case "profile":
+        return /* @__PURE__ */ jsxDEV("section", { className: `max-w-3xl rounded-3xl border p-6 md:p-8 ${dark ? "border-slate-800 bg-slate-900" : "border-slate-200 bg-white"}`, children: [
+          /* @__PURE__ */ jsxDEV("div", { className: "flex items-center gap-4", children: [
+            /* @__PURE__ */ jsxDEV("div", { className: "grid h-16 w-16 place-items-center rounded-2xl bg-gradient-to-br from-emerald-400 to-teal-600 text-xl font-black text-white", children: user.name.split(" ").map((part) => part[0]).slice(0, 2).join("") }, void 0, false, {
+              fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/MainContent.tsx",
+              lineNumber: 50,
+              columnNumber: 205
+            }, this),
+            /* @__PURE__ */ jsxDEV("div", { children: [
+              /* @__PURE__ */ jsxDEV("h2", { className: "text-xl font-bold", children: user.name }, void 0, false, {
+                fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/MainContent.tsx",
+                lineNumber: 50,
+                columnNumber: 422
+              }, this),
+              /* @__PURE__ */ jsxDEV("p", { className: `mt-1 text-sm ${dark ? "text-slate-400" : "text-slate-500"}`, children: user.email }, void 0, false, {
+                fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/MainContent.tsx",
+                lineNumber: 50,
+                columnNumber: 472
+              }, this)
+            ] }, void 0, true, {
+              fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/MainContent.tsx",
+              lineNumber: 50,
+              columnNumber: 417
+            }, this)
+          ] }, void 0, true, {
+            fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/MainContent.tsx",
+            lineNumber: 50,
+            columnNumber: 164
+          }, this),
+          /* @__PURE__ */ jsxDEV("dl", { className: `mt-8 grid gap-4 rounded-2xl border p-5 sm:grid-cols-2 ${dark ? "border-slate-800 bg-slate-950/40" : "border-slate-100 bg-slate-50"}`, children: [
+            /* @__PURE__ */ jsxDEV("div", { children: [
+              /* @__PURE__ */ jsxDEV("dt", { className: "text-[10px] font-bold uppercase tracking-widest text-slate-500", children: "Role" }, void 0, false, {
+                fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/MainContent.tsx",
+                lineNumber: 50,
+                columnNumber: 731
+              }, this),
+              /* @__PURE__ */ jsxDEV("dd", { className: "mt-1 text-sm font-semibold", children: user.role }, void 0, false, {
+                fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/MainContent.tsx",
+                lineNumber: 50,
+                columnNumber: 819
+              }, this)
+            ] }, void 0, true, {
+              fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/MainContent.tsx",
+              lineNumber: 50,
+              columnNumber: 726
+            }, this),
+            /* @__PURE__ */ jsxDEV("div", { children: [
+              /* @__PURE__ */ jsxDEV("dt", { className: "text-[10px] font-bold uppercase tracking-widest text-slate-500", children: "Access" }, void 0, false, {
+                fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/MainContent.tsx",
+                lineNumber: 50,
+                columnNumber: 889
+              }, this),
+              /* @__PURE__ */ jsxDEV("dd", { className: "mt-1 text-sm font-semibold text-emerald-500", children: "Authenticated" }, void 0, false, {
+                fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/MainContent.tsx",
+                lineNumber: 50,
+                columnNumber: 979
+              }, this)
+            ] }, void 0, true, {
+              fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/MainContent.tsx",
+              lineNumber: 50,
+              columnNumber: 884
+            }, this)
+          ] }, void 0, true, {
+            fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/MainContent.tsx",
+            lineNumber: 50,
+            columnNumber: 576
+          }, this)
+        ] }, void 0, true, {
+          fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/MainContent.tsx",
+          lineNumber: 50,
+          columnNumber: 29
+        }, this);
+      case "dashboard":
+      default:
+        return /* @__PURE__ */ jsxDEV(RegistryOverview, { theme, countries, onNavigate }, void 0, false, {
+          fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/MainContent.tsx",
+          lineNumber: 51,
+          columnNumber: 39
+        }, this);
+    }
+  };
+  return /* @__PURE__ */ jsxDEV("main", { className: `min-w-0 flex-1 overflow-y-auto ${dark ? "bg-[#080d16] text-slate-100" : "bg-[#f5f7f8] text-slate-900"}`, children: [
+    /* @__PURE__ */ jsxDEV("header", { className: `sticky top-0 z-20 border-b backdrop-blur-xl ${dark ? "border-slate-800/80 bg-[#080d16]/85" : "border-slate-200/80 bg-[#f5f7f8]/85"}`, children: /* @__PURE__ */ jsxDEV("div", { className: "mx-auto flex h-20 max-w-[1600px] items-center gap-4 px-4 sm:px-6 lg:px-8", children: [
+      /* @__PURE__ */ jsxDEV("button", { onClick: onToggleSidebar, "aria-label": "Open navigation", className: `rounded-xl border p-2.5 lg:hidden ${dark ? "border-slate-800 bg-slate-900 text-slate-300" : "border-slate-200 bg-white text-slate-600"}`, children: /* @__PURE__ */ jsxDEV(Icon, { name: "hamburger", className: "h-5 w-5" }, void 0, false, {
+        fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/MainContent.tsx",
+        lineNumber: 56,
+        columnNumber: 462
+      }, this) }, void 0, false, {
+        fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/MainContent.tsx",
+        lineNumber: 56,
+        columnNumber: 249
+      }, this),
+      /* @__PURE__ */ jsxDEV("div", { className: "min-w-0 flex-1", children: [
+        /* @__PURE__ */ jsxDEV("p", { className: "text-[10px] font-bold uppercase tracking-[0.18em] text-emerald-500", children: meta.eyebrow }, void 0, false, {
+          fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/MainContent.tsx",
+          lineNumber: 56,
+          columnNumber: 548
+        }, this),
+        /* @__PURE__ */ jsxDEV("h1", { className: "truncate text-lg font-bold tracking-tight md:text-xl", children: meta.title }, void 0, false, {
+          fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/MainContent.tsx",
+          lineNumber: 56,
+          columnNumber: 648
+        }, this)
+      ] }, void 0, true, {
+        fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/MainContent.tsx",
+        lineNumber: 56,
+        columnNumber: 516
+      }, this),
+      /* @__PURE__ */ jsxDEV("div", { className: `hidden items-center gap-2 rounded-full border px-3 py-1.5 text-[11px] font-semibold sm:flex ${dark ? "border-slate-800 bg-slate-900 text-slate-400" : "border-slate-200 bg-white text-slate-600"}`, children: [
+        /* @__PURE__ */ jsxDEV("span", { className: "h-1.5 w-1.5 rounded-full bg-emerald-500" }, void 0, false, {
+          fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/MainContent.tsx",
+          lineNumber: 56,
+          columnNumber: 953
+        }, this),
+        " Uganda dataset connected"
+      ] }, void 0, true, {
+        fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/MainContent.tsx",
+        lineNumber: 56,
+        columnNumber: 740
+      }, this)
+    ] }, void 0, true, {
+      fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/MainContent.tsx",
+      lineNumber: 56,
+      columnNumber: 159
+    }, this) }, void 0, false, {
+      fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/MainContent.tsx",
+      lineNumber: 56,
+      columnNumber: 5
+    }, this),
+    /* @__PURE__ */ jsxDEV("div", { className: "mx-auto max-w-[1600px] px-4 py-6 sm:px-6 lg:px-8", children: [
+      /* @__PURE__ */ jsxDEV("div", { className: "mb-6", children: /* @__PURE__ */ jsxDEV("p", { className: `max-w-2xl text-sm ${dark ? "text-slate-500" : "text-slate-500"}`, children: meta.description }, void 0, false, {
+        fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/MainContent.tsx",
+        lineNumber: 57,
+        columnNumber: 93
+      }, this) }, void 0, false, {
+        fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/MainContent.tsx",
+        lineNumber: 57,
+        columnNumber: 71
+      }, this),
+      /* @__PURE__ */ jsxDEV(Suspense, { fallback: /* @__PURE__ */ jsxDEV("div", { className: "grid min-h-[320px] place-items-center", children: /* @__PURE__ */ jsxDEV("div", { className: "h-8 w-8 animate-spin rounded-full border-2 border-slate-700 border-t-emerald-500" }, void 0, false, {
+        fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/MainContent.tsx",
+        lineNumber: 57,
+        columnNumber: 277
+      }, this) }, void 0, false, {
+        fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/MainContent.tsx",
+        lineNumber: 57,
+        columnNumber: 222
+      }, this), children: render() }, void 0, false, {
+        fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/MainContent.tsx",
+        lineNumber: 57,
+        columnNumber: 202
+      }, this)
+    ] }, void 0, true, {
+      fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/MainContent.tsx",
+      lineNumber: 57,
+      columnNumber: 5
+    }, this)
+  ] }, void 0, true, {
+    fileName: "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/MainContent.tsx",
+    lineNumber: 55,
+    columnNumber: 10
+  }, this);
+};
+_s(MainContent, "O8EnlKBO1L4ROr1lPlGXx/LnUQ4=");
+_c1 = MainContent;
+export default MainContent;
+var _c, _c2, _c3, _c4, _c5, _c6, _c7, _c8, _c9, _c0, _c1;
+$RefreshReg$(_c, "CountriesPage$lazy");
+$RefreshReg$(_c2, "CountriesPage");
+$RefreshReg$(_c3, "CountryAdminLevelsPage$lazy");
+$RefreshReg$(_c4, "CountryAdminLevelsPage");
+$RefreshReg$(_c5, "CountryElectoralLevelsPage$lazy");
+$RefreshReg$(_c6, "CountryElectoralLevelsPage");
+$RefreshReg$(_c7, "RegionalEconomicLevelsPage$lazy");
+$RefreshReg$(_c8, "RegionalEconomicLevelsPage");
+$RefreshReg$(_c9, "CountryProfilePage$lazy");
+$RefreshReg$(_c0, "CountryProfilePage");
+$RefreshReg$(_c1, "MainContent");
+import * as RefreshRuntime from "/@react-refresh";
+const inWebWorker = typeof WorkerGlobalScope !== "undefined" && self instanceof WorkerGlobalScope;
+if (import.meta.hot && !inWebWorker) {
+  if (!window.$RefreshReg$) {
+    throw new Error(
+      "@vitejs/plugin-react can't detect preamble. Something is wrong."
+    );
+  }
+  RefreshRuntime.__hmr_import(import.meta.url).then((currentExports) => {
+    RefreshRuntime.registerExportsForReactRefresh("C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/MainContent.tsx", currentExports);
+    import.meta.hot.accept((nextExports) => {
+      if (!nextExports) return;
+      const invalidateMessage = RefreshRuntime.validateRefreshBoundaryAndEnqueueUpdate("C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/MainContent.tsx", currentExports, nextExports);
+      if (invalidateMessage) import.meta.hot.invalidate(invalidateMessage);
+    });
+  });
+}
+function $RefreshReg$(type, id) {
+  return RefreshRuntime.register(type, "C:/Users/Raheem/Desktop/SatesoftLocationsSystem/components/MainContent.tsx " + id);
+}
+function $RefreshSig$() {
+  return RefreshRuntime.createSignatureFunctionForTransform();
+}
+
+//# sourceMappingURL=data:application/json;base64,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QTtBQUFBO0FBQUE7QUFBQSxXQUFxaEM7QUFBQSxJQUNyaEMsdUJBQUMsU0FBSSxXQUFVLG9EQUFtRDtBQUFBLDZCQUFDLFNBQUksV0FBVSxRQUFPLGlDQUFDLE9BQUUsV0FBVyxxQkFBcUJBLE9BQU8sbUJBQW1CLGdCQUFnQixJQUFLQyxlQUFLcEIsZUFBdkY7QUFBQTtBQUFBO0FBQUE7QUFBQSxhQUFtRyxLQUF6SDtBQUFBO0FBQUE7QUFBQTtBQUFBLGFBQTZIO0FBQUEsTUFBTSx1QkFBQyxZQUFTLFVBQVUsdUJBQUMsU0FBSSxXQUFVLHlDQUF3QyxpQ0FBQyxTQUFJLFdBQVUsc0ZBQWY7QUFBQTtBQUFBO0FBQUE7QUFBQSxhQUFpRyxLQUF4SjtBQUFBO0FBQUE7QUFBQTtBQUFBLGFBQTJKLEdBQVNxQixpQkFBTyxLQUEvTDtBQUFBO0FBQUE7QUFBQTtBQUFBLGFBQWlNO0FBQUEsU0FBdFk7QUFBQTtBQUFBO0FBQUE7QUFBQSxXQUFpWjtBQUFBLE9BRjVZO0FBQUE7QUFBQTtBQUFBO0FBQUEsU0FHUDtBQUNGO0FBQUVoQixHQXRCSUYsYUFBdUM7QUFBQSxNQUF2Q0E7QUF3Qk4sZUFBZUE7QUFBWSxJQUFBckIsSUFBQUMsS0FBQUUsS0FBQUMsS0FBQUUsS0FBQUMsS0FBQUUsS0FBQUMsS0FBQUUsS0FBQUMsS0FBQW9DO0FBQUEsYUFBQWpELElBQUE7QUFBQSxhQUFBQyxLQUFBO0FBQUEsYUFBQUUsS0FBQTtBQUFBLGFBQUFDLEtBQUE7QUFBQSxhQUFBRSxLQUFBO0FBQUEsYUFBQUMsS0FBQTtBQUFBLGFBQUFFLEtBQUE7QUFBQSxhQUFBQyxLQUFBO0FBQUEsYUFBQUUsS0FBQTtBQUFBLGFBQUFDLEtBQUE7QUFBQSxhQUFBb0MsS0FBQSIsIm5hbWVzIjpbIlN1c3BlbnNlIiwibGF6eSIsInVzZVN0YXRlIiwiSWNvbiIsIlJlZ2lzdHJ5T3ZlcnZpZXciLCJDb3VudHJpZXNQYWdlIiwiX2MiLCJfYzIiLCJDb3VudHJ5QWRtaW5MZXZlbHNQYWdlIiwiX2MzIiwiX2M0IiwiQ291bnRyeUVsZWN0b3JhbExldmVsc1BhZ2UiLCJfYzUiLCJfYzYiLCJSZWdpb25hbEVjb25vbWljTGV2ZWxzUGFnZSIsIl9jNyIsIl9jOCIsIkNvdW50cnlQcm9maWxlUGFnZSIsIl9jOSIsIl9jMCIsInBhZ2VNZXRhIiwiZGFzaGJvYXJkIiwiZXllYnJvdyIsInRpdGxlIiwiZGVzY3JpcHRpb24iLCJjb3VudHJpZXMiLCJwcm9maWxlIiwiTWFpbkNvbnRlbnQiLCJwcm9wcyIsIl9zIiwidGhlbWUiLCJhY3RpdmVWaWV3IiwidXNlciIsInJlZ2lvbmFsTGV2ZWxzIiwib25Ub2dnbGVTaWRlYmFyIiwib25OYXZpZ2F0ZSIsIm9uQWRkQ291bnRyeSIsIm9uVXBkYXRlQ291bnRyeSIsIm9uRGVsZXRlQ291bnRyeSIsIm9uU2F2ZVJlZ2lvbmFsTGV2ZWwiLCJvbkRlbGV0ZVJlZ2lvbmFsTGV2ZWwiLCJzZWxlY3RlZENvdW50cnkiLCJzZXRTZWxlY3RlZENvdW50cnkiLCJkYXJrIiwibWV0YSIsInJlbmRlciIsImNvdW50cnkiLCJuYW1lIiwic3BsaXQiLCJtYXAiLCJwYXJ0Iiwic2xpY2UiLCJqb2luIiwiZW1haWwiLCJyb2xlIiwiX2MxIl0sImlnbm9yZUxpc3QiOltdLCJzb3VyY2VzIjpbIk1haW5Db250ZW50LnRzeCJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgUmVhY3QsIHsgU3VzcGVuc2UsIGxhenksIHVzZVN0YXRlIH0gZnJvbSAncmVhY3QnO1xuaW1wb3J0IHR5cGUgeyBBY3RpdmVWaWV3LCBDb3VudHJ5LCBSZWdpb25hbEVjb25vbWljTGV2ZWwsIFRoZW1lLCBVc2VyIH0gZnJvbSAnLi4vdHlwZXMudHMnO1xuaW1wb3J0IEljb24gZnJvbSAnLi9JY29uLnRzeCc7XG5pbXBvcnQgUmVnaXN0cnlPdmVydmlldyBmcm9tICcuL1JlZ2lzdHJ5T3ZlcnZpZXcudHN4JztcblxuY29uc3QgQ291bnRyaWVzUGFnZSA9IGxhenkoKCkgPT4gaW1wb3J0KCcuL0NvdW50cmllc1BhZ2UudHN4JykpO1xuY29uc3QgQ291bnRyeUFkbWluTGV2ZWxzUGFnZSA9IGxhenkoKCkgPT4gaW1wb3J0KCcuL0NvdW50cnlBZG1pbkxldmVsc1BhZ2UudHN4JykpO1xuY29uc3QgQ291bnRyeUVsZWN0b3JhbExldmVsc1BhZ2UgPSBsYXp5KCgpID0+IGltcG9ydCgnLi9Db3VudHJ5RWxlY3RvcmFsTGV2ZWxzUGFnZS50c3gnKSk7XG5jb25zdCBSZWdpb25hbEVjb25vbWljTGV2ZWxzUGFnZSA9IGxhenkoKCkgPT4gaW1wb3J0KCcuL1JlZ2lvbmFsRWNvbm9taWNMZXZlbHNQYWdlLnRzeCcpKTtcbmNvbnN0IENvdW50cnlQcm9maWxlUGFnZSA9IGxhenkoKCkgPT4gaW1wb3J0KCcuL0NvdW50cnlQcm9maWxlUGFnZS50c3gnKSk7XG5cbmludGVyZmFjZSBNYWluQ29udGVudFByb3BzIHtcbiAgdGhlbWU6IFRoZW1lO1xuICBhY3RpdmVWaWV3OiBBY3RpdmVWaWV3O1xuICB1c2VyOiBVc2VyO1xuICBjb3VudHJpZXM6IENvdW50cnlbXTtcbiAgcmVnaW9uYWxMZXZlbHM6IFJlZ2lvbmFsRWNvbm9taWNMZXZlbFtdO1xuICBvblRvZ2dsZVNpZGViYXI6ICgpID0+IHZvaWQ7XG4gIG9uTmF2aWdhdGU6ICh2aWV3OiBBY3RpdmVWaWV3KSA9PiB2b2lkO1xuICBvbkFkZENvdW50cnk6IChjb3VudHJ5OiBPbWl0PENvdW50cnksICdpZCc+KSA9PiBQcm9taXNlPHZvaWQ+O1xuICBvblVwZGF0ZUNvdW50cnk6IChjb3VudHJ5OiBDb3VudHJ5KSA9PiBQcm9taXNlPHZvaWQ+O1xuICBvbkRlbGV0ZUNvdW50cnk6IChpZDogbnVtYmVyKSA9PiBQcm9taXNlPHZvaWQ+O1xuICBvblNhdmVSZWdpb25hbExldmVsOiAobGV2ZWw6IFJlZ2lvbmFsRWNvbm9taWNMZXZlbCkgPT4gUHJvbWlzZTx2b2lkPjtcbiAgb25EZWxldGVSZWdpb25hbExldmVsOiAoaWQ6IG51bWJlciwgcmVtYXJrcz86IHN0cmluZykgPT4gUHJvbWlzZTx2b2lkPjtcbn1cblxuY29uc3QgcGFnZU1ldGE6IFBhcnRpYWw8UmVjb3JkPEFjdGl2ZVZpZXcsIHsgZXllYnJvdzogc3RyaW5nOyB0aXRsZTogc3RyaW5nOyBkZXNjcmlwdGlvbjogc3RyaW5nIH0+PiA9IHtcbiAgZGFzaGJvYXJkOiB7IGV5ZWJyb3c6ICdXb3Jrc3BhY2UnLCB0aXRsZTogJ1JlZ2lzdHJ5IG92ZXJ2aWV3JywgZGVzY3JpcHRpb246ICdNb25pdG9yIGNvdmVyYWdlLCBzdHJ1Y3R1cmUsIGFuZCBkYXRhIHJlYWRpbmVzcy4nIH0sXG4gIGNvdW50cmllczogeyBleWVicm93OiAnTG9jYXRpb24gcmVnaXN0cnknLCB0aXRsZTogJ0NvdW50cnkgbWFzdGVyIHJlY29yZHMnLCBkZXNjcmlwdGlvbjogJ01haW50YWluIHN0YW5kYXJkaXplZCBjb3VudHJ5IG1ldGFkYXRhIGFuZCBjb25maWd1cmF0aW9uLicgfSxcbiAgJ2NvdW50cnktYWRtaW4tbGV2ZWxzJzogeyBleWVicm93OiAnTG9jYXRpb24gcmVnaXN0cnknLCB0aXRsZTogJ0FkbWluaXN0cmF0aXZlIGhpZXJhcmNoaWVzJywgZGVzY3JpcHRpb246ICdEZWZpbmUgaG93IHRlcnJpdG9yaWFsIGxldmVscyBhcmUgbmFtZWQgYW5kIG5lc3RlZC4nIH0sXG4gICdjb3VudHJ5LWVsZWN0b3JhbC1sZXZlbHMnOiB7IGV5ZWJyb3c6ICdMb2NhdGlvbiByZWdpc3RyeScsIHRpdGxlOiAnRWxlY3RvcmFsIGxvY2F0aW9ucycsIGRlc2NyaXB0aW9uOiAnRXhwbG9yZSBub3JtYWxpemVkIEVsZWN0b3JhbCBDb21taXNzaW9uIGxvY2F0aW9uIGRhdGEuJyB9LFxuICAncmVnaW9uYWwtZWNvbm9taWMtbGV2ZWxzJzogeyBleWVicm93OiAnTG9jYXRpb24gcmVnaXN0cnknLCB0aXRsZTogJ1JlZ2lvbmFsIGdyb3VwaW5ncycsIGRlc2NyaXB0aW9uOiAnTWFuYWdlIGVjb25vbWljIGNvbW11bml0aWVzIGFuZCBjb3VudHJ5IG1lbWJlcnNoaXAuJyB9LFxuICAnY291bnRyeS1wcm9maWxlJzogeyBleWVicm93OiAnQ291bnRyeSBtYXN0ZXInLCB0aXRsZTogJ0NvdW50cnkgcHJvZmlsZScsIGRlc2NyaXB0aW9uOiAnUmV2aWV3IGNvbmZpZ3VyYXRpb24gYW5kIGNvbm5lY3RlZCBoaWVyYXJjaHkgZGF0YS4nIH0sXG4gIHByb2ZpbGU6IHsgZXllYnJvdzogJ1N5c3RlbScsIHRpdGxlOiAnQWNjb3VudCcsIGRlc2NyaXB0aW9uOiAnUmV2aWV3IHlvdXIgYXV0aGVudGljYXRlZCB3b3Jrc3BhY2UgaWRlbnRpdHkuJyB9LFxufTtcblxuY29uc3QgTWFpbkNvbnRlbnQ6IFJlYWN0LkZDPE1haW5Db250ZW50UHJvcHM+ID0gcHJvcHMgPT4ge1xuICBjb25zdCB7IHRoZW1lLCBhY3RpdmVWaWV3LCB1c2VyLCBjb3VudHJpZXMsIHJlZ2lvbmFsTGV2ZWxzLCBvblRvZ2dsZVNpZGViYXIsIG9uTmF2aWdhdGUsIG9uQWRkQ291bnRyeSwgb25VcGRhdGVDb3VudHJ5LCBvbkRlbGV0ZUNvdW50cnksIG9uU2F2ZVJlZ2lvbmFsTGV2ZWwsIG9uRGVsZXRlUmVnaW9uYWxMZXZlbCB9ID0gcHJvcHM7XG4gIGNvbnN0IFtzZWxlY3RlZENvdW50cnksIHNldFNlbGVjdGVkQ291bnRyeV0gPSB1c2VTdGF0ZTxDb3VudHJ5IHwgbnVsbD4obnVsbCk7XG4gIGNvbnN0IGRhcmsgPSB0aGVtZSA9PT0gJ2RhcmsnO1xuICBjb25zdCBtZXRhID0gcGFnZU1ldGFbYWN0aXZlVmlld10gPz8gcGFnZU1ldGEuZGFzaGJvYXJkITtcblxuICBjb25zdCByZW5kZXIgPSAoKSA9PiB7XG4gICAgc3dpdGNoIChhY3RpdmVWaWV3KSB7XG4gICAgICBjYXNlICdjb3VudHJpZXMnOiByZXR1cm4gPENvdW50cmllc1BhZ2UgdGhlbWU9e3RoZW1lfSBjb3VudHJpZXM9e2NvdW50cmllc30gb25BZGRDb3VudHJ5PXtvbkFkZENvdW50cnl9IG9uVXBkYXRlQ291bnRyeT17b25VcGRhdGVDb3VudHJ5fSBvbkRlbGV0ZUNvdW50cnk9e29uRGVsZXRlQ291bnRyeX0gb25WaWV3UHJvZmlsZT17Y291bnRyeSA9PiB7IHNldFNlbGVjdGVkQ291bnRyeShjb3VudHJ5KTsgb25OYXZpZ2F0ZSgnY291bnRyeS1wcm9maWxlJyk7IH19IC8+O1xuICAgICAgY2FzZSAnY291bnRyeS1hZG1pbi1sZXZlbHMnOiByZXR1cm4gPENvdW50cnlBZG1pbkxldmVsc1BhZ2UgdGhlbWU9e3RoZW1lfSBjb3VudHJpZXM9e2NvdW50cmllc30gb25VcGRhdGVDb3VudHJ5PXtvblVwZGF0ZUNvdW50cnl9IC8+O1xuICAgICAgY2FzZSAnY291bnRyeS1lbGVjdG9yYWwtbGV2ZWxzJzogcmV0dXJuIDxDb3VudHJ5RWxlY3RvcmFsTGV2ZWxzUGFnZSB0aGVtZT17dGhlbWV9IGNvdW50cmllcz17Y291bnRyaWVzfSBvblVwZGF0ZUNvdW50cnk9e29uVXBkYXRlQ291bnRyeX0gLz47XG4gICAgICBjYXNlICdyZWdpb25hbC1lY29ub21pYy1sZXZlbHMnOiByZXR1cm4gPFJlZ2lvbmFsRWNvbm9taWNMZXZlbHNQYWdlIHRoZW1lPXt0aGVtZX0gcmVnaW9uYWxMZXZlbHM9e3JlZ2lvbmFsTGV2ZWxzfSBjb3VudHJpZXM9e2NvdW50cmllc30gb25TYXZlPXtvblNhdmVSZWdpb25hbExldmVsfSBvbkRlbGV0ZT17b25EZWxldGVSZWdpb25hbExldmVsfSAvPjtcbiAgICAgIGNhc2UgJ2NvdW50cnktcHJvZmlsZSc6IHJldHVybiA8Q291bnRyeVByb2ZpbGVQYWdlIHRoZW1lPXt0aGVtZX0gY291bnRyeT17c2VsZWN0ZWRDb3VudHJ5fSBvbk5hdmlnYXRlPXtvbk5hdmlnYXRlfSAvPjtcbiAgICAgIGNhc2UgJ3Byb2ZpbGUnOiByZXR1cm4gPHNlY3Rpb24gY2xhc3NOYW1lPXtgbWF4LXctM3hsIHJvdW5kZWQtM3hsIGJvcmRlciBwLTYgbWQ6cC04ICR7ZGFyayA/ICdib3JkZXItc2xhdGUtODAwIGJnLXNsYXRlLTkwMCcgOiAnYm9yZGVyLXNsYXRlLTIwMCBiZy13aGl0ZSd9YH0+PGRpdiBjbGFzc05hbWU9XCJmbGV4IGl0ZW1zLWNlbnRlciBnYXAtNFwiPjxkaXYgY2xhc3NOYW1lPVwiZ3JpZCBoLTE2IHctMTYgcGxhY2UtaXRlbXMtY2VudGVyIHJvdW5kZWQtMnhsIGJnLWdyYWRpZW50LXRvLWJyIGZyb20tZW1lcmFsZC00MDAgdG8tdGVhbC02MDAgdGV4dC14bCBmb250LWJsYWNrIHRleHQtd2hpdGVcIj57dXNlci5uYW1lLnNwbGl0KCcgJykubWFwKHBhcnQgPT4gcGFydFswXSkuc2xpY2UoMCwgMikuam9pbignJyl9PC9kaXY+PGRpdj48aDIgY2xhc3NOYW1lPVwidGV4dC14bCBmb250LWJvbGRcIj57dXNlci5uYW1lfTwvaDI+PHAgY2xhc3NOYW1lPXtgbXQtMSB0ZXh0LXNtICR7ZGFyayA/ICd0ZXh0LXNsYXRlLTQwMCcgOiAndGV4dC1zbGF0ZS01MDAnfWB9Pnt1c2VyLmVtYWlsfTwvcD48L2Rpdj48L2Rpdj48ZGwgY2xhc3NOYW1lPXtgbXQtOCBncmlkIGdhcC00IHJvdW5kZWQtMnhsIGJvcmRlciBwLTUgc206Z3JpZC1jb2xzLTIgJHtkYXJrID8gJ2JvcmRlci1zbGF0ZS04MDAgYmctc2xhdGUtOTUwLzQwJyA6ICdib3JkZXItc2xhdGUtMTAwIGJnLXNsYXRlLTUwJ31gfT48ZGl2PjxkdCBjbGFzc05hbWU9XCJ0ZXh0LVsxMHB4XSBmb250LWJvbGQgdXBwZXJjYXNlIHRyYWNraW5nLXdpZGVzdCB0ZXh0LXNsYXRlLTUwMFwiPlJvbGU8L2R0PjxkZCBjbGFzc05hbWU9XCJtdC0xIHRleHQtc20gZm9udC1zZW1pYm9sZFwiPnt1c2VyLnJvbGV9PC9kZD48L2Rpdj48ZGl2PjxkdCBjbGFzc05hbWU9XCJ0ZXh0LVsxMHB4XSBmb250LWJvbGQgdXBwZXJjYXNlIHRyYWNraW5nLXdpZGVzdCB0ZXh0LXNsYXRlLTUwMFwiPkFjY2VzczwvZHQ+PGRkIGNsYXNzTmFtZT1cIm10LTEgdGV4dC1zbSBmb250LXNlbWlib2xkIHRleHQtZW1lcmFsZC01MDBcIj5BdXRoZW50aWNhdGVkPC9kZD48L2Rpdj48L2RsPjwvc2VjdGlvbj47XG4gICAgICBjYXNlICdkYXNoYm9hcmQnOiBkZWZhdWx0OiByZXR1cm4gPFJlZ2lzdHJ5T3ZlcnZpZXcgdGhlbWU9e3RoZW1lfSBjb3VudHJpZXM9e2NvdW50cmllc30gb25OYXZpZ2F0ZT17b25OYXZpZ2F0ZX0gLz47XG4gICAgfVxuICB9O1xuXG4gIHJldHVybiA8bWFpbiBjbGFzc05hbWU9e2BtaW4tdy0wIGZsZXgtMSBvdmVyZmxvdy15LWF1dG8gJHtkYXJrID8gJ2JnLVsjMDgwZDE2XSB0ZXh0LXNsYXRlLTEwMCcgOiAnYmctWyNmNWY3ZjhdIHRleHQtc2xhdGUtOTAwJ31gfT5cbiAgICA8aGVhZGVyIGNsYXNzTmFtZT17YHN0aWNreSB0b3AtMCB6LTIwIGJvcmRlci1iIGJhY2tkcm9wLWJsdXIteGwgJHtkYXJrID8gJ2JvcmRlci1zbGF0ZS04MDAvODAgYmctWyMwODBkMTZdLzg1JyA6ICdib3JkZXItc2xhdGUtMjAwLzgwIGJnLVsjZjVmN2Y4XS84NSd9YH0+PGRpdiBjbGFzc05hbWU9XCJteC1hdXRvIGZsZXggaC0yMCBtYXgtdy1bMTYwMHB4XSBpdGVtcy1jZW50ZXIgZ2FwLTQgcHgtNCBzbTpweC02IGxnOnB4LThcIj48YnV0dG9uIG9uQ2xpY2s9e29uVG9nZ2xlU2lkZWJhcn0gYXJpYS1sYWJlbD1cIk9wZW4gbmF2aWdhdGlvblwiIGNsYXNzTmFtZT17YHJvdW5kZWQteGwgYm9yZGVyIHAtMi41IGxnOmhpZGRlbiAke2RhcmsgPyAnYm9yZGVyLXNsYXRlLTgwMCBiZy1zbGF0ZS05MDAgdGV4dC1zbGF0ZS0zMDAnIDogJ2JvcmRlci1zbGF0ZS0yMDAgYmctd2hpdGUgdGV4dC1zbGF0ZS02MDAnfWB9PjxJY29uIG5hbWU9XCJoYW1idXJnZXJcIiBjbGFzc05hbWU9XCJoLTUgdy01XCIgLz48L2J1dHRvbj48ZGl2IGNsYXNzTmFtZT1cIm1pbi13LTAgZmxleC0xXCI+PHAgY2xhc3NOYW1lPVwidGV4dC1bMTBweF0gZm9udC1ib2xkIHVwcGVyY2FzZSB0cmFja2luZy1bMC4xOGVtXSB0ZXh0LWVtZXJhbGQtNTAwXCI+e21ldGEuZXllYnJvd308L3A+PGgxIGNsYXNzTmFtZT1cInRydW5jYXRlIHRleHQtbGcgZm9udC1ib2xkIHRyYWNraW5nLXRpZ2h0IG1kOnRleHQteGxcIj57bWV0YS50aXRsZX08L2gxPjwvZGl2PjxkaXYgY2xhc3NOYW1lPXtgaGlkZGVuIGl0ZW1zLWNlbnRlciBnYXAtMiByb3VuZGVkLWZ1bGwgYm9yZGVyIHB4LTMgcHktMS41IHRleHQtWzExcHhdIGZvbnQtc2VtaWJvbGQgc206ZmxleCAke2RhcmsgPyAnYm9yZGVyLXNsYXRlLTgwMCBiZy1zbGF0ZS05MDAgdGV4dC1zbGF0ZS00MDAnIDogJ2JvcmRlci1zbGF0ZS0yMDAgYmctd2hpdGUgdGV4dC1zbGF0ZS02MDAnfWB9PjxzcGFuIGNsYXNzTmFtZT1cImgtMS41IHctMS41IHJvdW5kZWQtZnVsbCBiZy1lbWVyYWxkLTUwMFwiIC8+IFVnYW5kYSBkYXRhc2V0IGNvbm5lY3RlZDwvZGl2PjwvZGl2PjwvaGVhZGVyPlxuICAgIDxkaXYgY2xhc3NOYW1lPVwibXgtYXV0byBtYXgtdy1bMTYwMHB4XSBweC00IHB5LTYgc206cHgtNiBsZzpweC04XCI+PGRpdiBjbGFzc05hbWU9XCJtYi02XCI+PHAgY2xhc3NOYW1lPXtgbWF4LXctMnhsIHRleHQtc20gJHtkYXJrID8gJ3RleHQtc2xhdGUtNTAwJyA6ICd0ZXh0LXNsYXRlLTUwMCd9YH0+e21ldGEuZGVzY3JpcHRpb259PC9wPjwvZGl2PjxTdXNwZW5zZSBmYWxsYmFjaz17PGRpdiBjbGFzc05hbWU9XCJncmlkIG1pbi1oLVszMjBweF0gcGxhY2UtaXRlbXMtY2VudGVyXCI+PGRpdiBjbGFzc05hbWU9XCJoLTggdy04IGFuaW1hdGUtc3BpbiByb3VuZGVkLWZ1bGwgYm9yZGVyLTIgYm9yZGVyLXNsYXRlLTcwMCBib3JkZXItdC1lbWVyYWxkLTUwMFwiIC8+PC9kaXY+fT57cmVuZGVyKCl9PC9TdXNwZW5zZT48L2Rpdj5cbiAgPC9tYWluPjtcbn07XG5cbmV4cG9ydCBkZWZhdWx0IE1haW5Db250ZW50O1xuIl0sImZpbGUiOiJDOi9Vc2Vycy9SYWhlZW0vRGVza3RvcC9TYXRlc29mdExvY2F0aW9uc1N5c3RlbS9jb21wb25lbnRzL01haW5Db250ZW50LnRzeCJ9
