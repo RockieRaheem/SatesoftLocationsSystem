@@ -5,10 +5,10 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'sans-serif'],
+        sans: ['"Google Sans"', '"Aptos"', 'Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'sans-serif'],
       },
       boxShadow: {
-        'panel': '0 1px 2px rgba(15, 23, 42, 0.04), 0 12px 32px rgba(15, 23, 42, 0.04)',
+        'panel': '0 1px 2px rgba(31, 31, 31, 0.03), 0 12px 32px rgba(31, 31, 31, 0.035)',
       },
     },
   },
