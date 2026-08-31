@@ -12,7 +12,11 @@
     "preview": "node node_modules/vite/bin/vite.js preview",
     "lint": "node node_modules/typescript/bin/tsc --noEmit",
     "typecheck": "node node_modules/typescript/bin/tsc --noEmit",
-    "check": "npm run typecheck && npm run test:electoral && npm run build"
+    "check": "npm run typecheck && npm run test:electoral && npm run build",
+    "supabase:start": "node node_modules/supabase/bin/supabase start",
+    "supabase:reset": "node node_modules/supabase/bin/supabase db reset",
+    "supabase:push": "node node_modules/supabase/bin/supabase db push",
+    "supabase:seed": "node --env-file-if-exists=.env node_modules/tsx/dist/cli.mjs scripts/seedSupabase.ts"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.112.4",

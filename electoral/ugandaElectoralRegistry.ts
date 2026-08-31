@@ -141,6 +141,10 @@ export class UgandaElectoralRegistry {
     return this.summary;
   }
 
+  getAllRecords(): readonly UgandaElectoralRecord[] {
+    return this.records;
+  }
+
   getOptions(level: 'district' | 'constituency' | 'subcounty' | 'parish', filters: ElectoralFilters): ElectoralOption[] {
     const selected = this.filter(filters, false);
     const grouped = new Map<string, { name: string; count: number; needsVerification: boolean }>();

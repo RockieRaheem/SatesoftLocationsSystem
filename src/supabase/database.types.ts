@@ -22,8 +22,8 @@ export interface Database {
         Relationships: [];
       };
       electoral_datasets: {
-        Row: { id: string; country_code: string; reference_year: number; title: string; status: string; source_file: string; authoritative_for_current_use: boolean; active: boolean; summary: Json; warnings: Json; imported_at: string; imported_by: string | null };
-        Insert: { id?: string; country_code: string; reference_year: number; title: string; status: string; source_file: string; authoritative_for_current_use?: boolean; active?: boolean; summary?: Json; warnings?: Json; imported_by?: string | null };
+        Row: { id: string; country_code: string; reference_year: number; title: string; status: string; source_file: string; source_sha256: string; authoritative_for_current_use: boolean; active: boolean; summary: Json; warnings: Json; imported_at: string; imported_by: string | null };
+        Insert: { id?: string; country_code: string; reference_year: number; title: string; status: string; source_file: string; source_sha256: string; authoritative_for_current_use?: boolean; active?: boolean; summary?: Json; warnings?: Json; imported_by?: string | null };
         Update: Partial<Database['public']['Tables']['electoral_datasets']['Insert']>;
         Relationships: [];
       };
