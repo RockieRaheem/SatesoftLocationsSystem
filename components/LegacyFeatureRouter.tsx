@@ -53,6 +53,7 @@ import StockListingPage from './StockListingPage.tsx';
 import StockPurchasePage from './StockPurchasePage.tsx';
 import SuperUsersPage from './SuperUsersPage.tsx';
 import SuppliersPage from './SuppliersPage.tsx';
+import SystemUsageDashboard from './SystemUsageDashboard.tsx';
 import TrafficDashboard from './TrafficDashboard.tsx';
 import WalletSettingsPage from './WalletSettingsPage.tsx';
 
@@ -60,8 +61,6 @@ interface Props {
   activeView: ActiveView; theme: Theme; user: User; countries: Country[]; regionalLevels: RegionalEconomicLevel[];
   onNavigate: (view: ActiveView) => void; onUpdateCountry: (country: Country) => Promise<void>;
 }
-
-const SupabaseSystemUsage: React.FC<{ theme: Theme }> = ({ theme }) => <div className={`rounded-lg border p-6 shadow-sm ${theme === 'dark' ? 'border-slate-700 bg-slate-900' : 'border-slate-200 bg-white'}`}><h2 className="text-xl font-bold">System Usage</h2><p className="mt-1 text-sm text-slate-500">Current application infrastructure and service status.</p><div className="mt-6 grid gap-4 md:grid-cols-3">{[['Application', 'Operational'], ['Supabase Database', 'Connected'], ['Supabase Storage', 'Connected']].map(([label, status]) => <div key={label} className={`rounded-lg border p-4 ${theme === 'dark' ? 'border-slate-700 bg-slate-800' : 'border-slate-200 bg-slate-50'}`}><p className="text-xs text-slate-500">{label}</p><p className="mt-2 font-bold text-emerald-500">{status}</p></div>)}</div></div>;
 
 const LegacyFeatureRouter: React.FC<Props> = ({ activeView, theme, user, countries, regionalLevels, onNavigate, onUpdateCountry }) => {
   const [verificationRequests, setVerificationRequests] = useState<IDVerificationRequest[]>(mockVerificationRequests);
@@ -88,7 +87,7 @@ const LegacyFeatureRouter: React.FC<Props> = ({ activeView, theme, user, countri
   switch (activeView) {
     case 'profile': return <ProfilePage theme={theme} user={profileUser} setUser={setProfileUser} />;
     case 'dashboard': case 'dashboard-users': return <Dashboard theme={theme} shopRoles={shopRoles} superUserRoles={superUserRoles} shopUsers={shopUsers} superUsers={mockSuperUsers} notifications={notifications} onNavigate={onNavigate} trackedKeywords={trackedKeywords} userRole={user.role} regionalLevels={regionalLevels} />;
-    case 'dashboard-system': return <SupabaseSystemUsage theme={theme} />;
+    case 'dashboard-system': return <SystemUsageDashboard theme={theme} />;
     case 'dashboard-traffic': return <TrafficDashboard theme={theme} regionalLevels={regionalLevels} />;
     case 'dashboard-products': return <ProductDashboard theme={theme} />;
     case 'settings': return <SettingsPage theme={theme} />;
