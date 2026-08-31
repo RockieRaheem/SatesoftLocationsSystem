@@ -97,6 +97,10 @@ const RegionalEconomicLevelsPage: React.FC<RegionalEconomicLevelsPageProps> = ({
         if (!file) return;
 
         setError(null);
+        if (!['image/png', 'image/jpeg', 'image/webp'].includes(file.type)) {
+            setError("Use a PNG, JPEG, or WebP image.");
+            return;
+        }
         // Keep legacy inline flag images bounded until they move to object storage.
         if (file.size > 200 * 1024) {
             setError("Image is too large. Please select an image under 200KB.");
@@ -549,7 +553,7 @@ const RegionalEconomicLevelsPage: React.FC<RegionalEconomicLevelsPageProps> = ({
                                                         type="file" 
                                                         id="flag-upload" 
                                                         className="hidden" 
-                                                        accept="image/*"
+                                                        accept="image/png,image/jpeg,image/webp"
                                                         onChange={handleFileChange}
                                                     />
                                                     <label 

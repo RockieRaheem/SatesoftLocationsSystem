@@ -5,6 +5,7 @@ import type { ElectoralFilters, UgandaElectoralSummary } from './electoral/types
 import { countryFromRow, countryToRow, regionFromRow, regionToRow } from './src/supabase/mappers.ts';
 import { createPublicServerClient, createUserScopedClient, isServerSupabaseConfigured } from './src/supabase/server.ts';
 import type { Country, RegionalEconomicLevel } from './types.ts';
+import { countryInputSchema, parseBody, regionalLevelInputSchema } from './src/validation/registry.ts';
 
 const asyncRoute = (handler: (req: Request, res: Response) => Promise<void>) =>
   (req: Request, res: Response, next: NextFunction) => handler(req, res).catch(next);
@@ -32,7 +33,7 @@ function requireBearer(req: Request): string {
 function databaseError(error: { message: string; code?: string } | null): void {
   if (!error) return;
   const status = error.code === '42501' ? 403 : error.code === '23505' ? 409 : 500;
-  throw Object.assign(new Error(status === 500 ? 'The registry database operation failed.' : error.message), { status });
+  throw Object.assign(new Error(status === 500 ? 'The registry database operation failed.' : error.message, { cause: error }), { status });
 }
 
 async function startServer() {
@@ -97,13 +98,15 @@ async function startServer() {
   }));
 
   app.post('/api/countries', asyncRoute(async (req, res) => {
-    const { data, error } = await createUserScopedClient(res.locals.accessToken).from('countries').insert(countryToRow(req.body as Omit<Country, 'id'>)).select().single();
+    const input = parseBody(countryInputSchema, req.body) as Omit<Country, 'id'>;
+    const { data, error } = await createUserScopedClient(res.locals.accessToken).from('countries').insert(countryToRow(input)).select().single();
     databaseError(error);
     res.status(201).json(countryFromRow(data!));
   }));
 
   app.put('/api/countries/:id', asyncRoute(async (req, res) => {
-    const { data, error } = await createUserScopedClient(res.locals.accessToken).from('countries').update(countryToRow(req.body as Country)).eq('id', parseId(req.params.id)).select().maybeSingle();
+    const input = parseBody(countryInputSchema, req.body) as Country;
+    const { data, error } = await createUserScopedClient(res.locals.accessToken).from('countries').update(countryToRow(input)).eq('id', parseId(req.params.id)).select().maybeSingle();
     databaseError(error);
     if (!data) throw Object.assign(new Error('Country not found.'), { status: 404 });
     res.json(countryFromRow(data));
@@ -122,7 +125,7 @@ async function startServer() {
   }));
 
   app.put('/api/regions/:id', asyncRoute(async (req, res) => {
-    const region = { ...(req.body as RegionalEconomicLevel), id: parseId(req.params.id) };
+    const region = { ...(parseBody(regionalLevelInputSchema, req.body) as RegionalEconomicLevel), id: parseId(req.params.id) };
     const { data, error } = await createUserScopedClient(res.locals.accessToken).from('regional_economic_levels').upsert(regionToRow(region)).select().single();
     databaseError(error);
     res.json(regionFromRow(data!));
@@ -181,6 +184,8 @@ async function startServer() {
       pagination: { page, pageSize, totalItems: count ?? 0, totalPages: Math.ceil((count ?? 0) / pageSize) },
     });
   }));
+
+  app.use('/api', (_req, _res, next) => next(Object.assign(new Error('API endpoint not found.'), { status: 404 })));
 
   if (process.env.NODE_ENV !== 'production') {
     const { createServer: createViteServer } = await import('vite');

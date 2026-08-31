@@ -59,6 +59,7 @@ Use the local API URL and publishable/secret keys printed by the CLI in `.env`.
 - Express verifies each access token with Supabase Auth.
 - Database calls run with the user's token, so PostgreSQL row-level security remains the authorization boundary.
 - The Supabase secret key is used only by the controlled import process.
+- Regional flag uploads use a size- and MIME-restricted public Storage bucket with administrator-only writes.
 - Explicit table grants, RLS policies, protected roles, audit triggers, payload limits, CORS, and security headers are included.
 - Theme preference is the only application data stored in browser local storage.
 

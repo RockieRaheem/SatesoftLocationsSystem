@@ -4,18 +4,18 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "node node_modules/tsx/dist/cli.mjs server.ts",
-    "start": "node node_modules/tsx/dist/cli.mjs server.ts",
+    "dev": "node --env-file-if-exists=.env node_modules/tsx/dist/cli.mjs server.ts",
+    "start": "node --env-file-if-exists=.env node_modules/tsx/dist/cli.mjs server.ts",
     "build": "node node_modules/vite/bin/vite.js build",
-    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --runInBand",
     "test:electoral": "node --experimental-vm-modules node_modules/jest/bin/jest.js electoral/ugandaElectoralRegistry.test.ts --runInBand",
     "preview": "node node_modules/vite/bin/vite.js preview",
     "lint": "node node_modules/typescript/bin/tsc --noEmit",
     "typecheck": "node node_modules/typescript/bin/tsc --noEmit",
-    "check": "npm run typecheck && npm run test:electoral && npm run build",
-    "supabase:start": "node node_modules/supabase/bin/supabase start",
-    "supabase:reset": "node node_modules/supabase/bin/supabase db reset",
-    "supabase:push": "node node_modules/supabase/bin/supabase db push",
+    "check": "npm run typecheck && npm test && npm run build",
+    "supabase:start": "node node_modules/supabase/dist/supabase.js start",
+    "supabase:reset": "node node_modules/supabase/dist/supabase.js db reset",
+    "supabase:push": "node node_modules/supabase/dist/supabase.js db push",
     "supabase:seed": "node --env-file-if-exists=.env node_modules/tsx/dist/cli.mjs scripts/seedSupabase.ts"
   },
   "dependencies": {
@@ -24,9 +24,11 @@
     "date-fns": "^4.1.0",
     "express": "^5.2.1",
     "lucide-react": "^0.477.0",
+    "motion": "^13.1.1",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
-    "recharts": "^3.8.0"
+    "recharts": "^3.8.0",
+    "zod": "^4.5.4"
   },
   "devDependencies": {
     "@types/cors": "^2.8.19",
