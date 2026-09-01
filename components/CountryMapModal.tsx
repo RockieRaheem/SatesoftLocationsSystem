@@ -7,6 +7,7 @@ import {
 } from 'lucide-react';
 import { Theme } from '../types';
 import { countryDetailedMaps } from '../countryPaths';
+import { africaDetailedPaths } from '../africaPaths';
 
 const KAMPALA_DIVISIONS = [
   {
@@ -552,6 +553,10 @@ const CountryMapModal: React.FC<CountryMapModalProps> = ({
 
   // Parse paths from fetched dynamic SVG
   const parsedPaths = useMemo<ParsedPath[]>(() => {
+    if (countryId === 'UG') {
+      const uganda = africaDetailedPaths.find(country => country.countryId === 'UG');
+      return uganda ? [{ d: uganda.d, id: 'UG-outline', name: 'Uganda' }] : [];
+    }
     const localMap = countryDetailedMaps[countryId];
     if (localMap) {
       return localMap.paths.map((p, index) => ({
@@ -587,7 +592,7 @@ const CountryMapModal: React.FC<CountryMapModalProps> = ({
   // Fetch or Load Map
   useEffect(() => {
     const localMap = countryDetailedMaps[countryId];
-    if (localMap) {
+    if (localMap || countryId === 'UG') {
       setLoading(false);
       setError(null);
     } else {
@@ -621,6 +626,9 @@ const CountryMapModal: React.FC<CountryMapModalProps> = ({
     }
     if (countryId === 'TZ' && selectedDistrict === 'Dar es Salaam') {
       return "60 50 480 620";
+    }
+    if (countryId === 'UG') {
+      return "154 103 20 25";
     }
     const localMap = countryDetailedMaps[countryId];
     if (localMap) {

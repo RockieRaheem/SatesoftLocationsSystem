@@ -172,7 +172,9 @@ const TrafficDashboard: React.FC<{ theme: Theme; regionalLevels: RegionalEconomi
                          <div className="h-[320px] w-full -ml-4">
                              <AfricaMap 
                                 shops={mockShops} 
-                                shopDensity={visitorDensity} 
+                                coverageByCountry={Object.fromEntries(
+                                  Object.entries(visitorDensity).map(([code, count]) => [code, { count, label: 'Visitors' }])
+                                )}
                                 regionalLevels={regionalLevels} 
                                 theme={theme} 
                                 onCountryClick={(id, name) => setSelectedCountry({ id, name })}

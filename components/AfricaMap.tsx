@@ -7,7 +7,7 @@ import { ZoomIn, ZoomOut, Maximize2, RotateCcw } from 'lucide-react';
 
 interface AfricaMapProps {
   shops: Shop[];
-  shopDensity: Record<string, number>;
+  coverageByCountry: Record<string, { count: number; label: string }>;
   regionalLevels: RegionalEconomicLevel[];
   theme: Theme;
   countries?: Country[];
@@ -15,8 +15,8 @@ interface AfricaMapProps {
   onCountryDoubleClick?: (countryId: string, countryName: string) => void;
 }
 
-const AfricaMap: React.FC<AfricaMapProps> = ({ shops, shopDensity, regionalLevels, theme, countries, onCountryClick, onCountryDoubleClick }) => {
-  const [hoveredCountry, setHoveredCountry] = useState<{ id: string, name: string, density: number, color?: string } | null>(null);
+const AfricaMap: React.FC<AfricaMapProps> = ({ shops, coverageByCountry, regionalLevels, theme, countries, onCountryClick, onCountryDoubleClick }) => {
+  const [hoveredCountry, setHoveredCountry] = useState<{ id: string, name: string, count: number, coverageLabel: string, color?: string } | null>(null);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [scale, setScale] = useState(1);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -185,9 +185,9 @@ const AfricaMap: React.FC<AfricaMapProps> = ({ shops, shopDensity, regionalLevel
   }, [countries, getCountryRegion]);
 
   const maxDensity = useMemo(() => {
-    const values = Object.values(shopDensity);
+    const values = Object.values(coverageByCountry).map(item => item.count);
     return values.length > 0 ? Math.max(...values) : 1;
-  }, [shopDensity]);
+  }, [coverageByCountry]);
 
   const colorScale = (density: number, countryName: string) => {
     // Check if country belongs to a region with a custom color
@@ -311,7 +311,8 @@ const AfricaMap: React.FC<AfricaMapProps> = ({ shops, shopDensity, regionalLevel
                       <g key={regionName} id={`inactive-region-group-${regionName.replace(/\s+/g, '-').toLowerCase()}`}>
                         {countriesInThisRegion.map(country => {
                           const countryId = (country as any).countryId || country.id;
-                          const density = shopDensity[countryId] || 0;
+                          const coverage = coverageByCountry[countryId] ?? { count: 0, label: 'Mapped locations' };
+                          const density = coverage.count;
                           const isHovered = hoveredCountry?.id === country.id;
                           const baseColor = colorScale(density, country.name);
 
@@ -331,7 +332,7 @@ const AfricaMap: React.FC<AfricaMapProps> = ({ shops, shopDensity, regionalLevel
                                 scale: isHovered ? 1.01 : 1,
                                 transition: { duration: 0.2 }
                               }}
-                              onMouseEnter={() => setHoveredCountry({ id: country.id, name: country.name, density, color: baseColor })}
+                              onMouseEnter={() => setHoveredCountry({ id: country.id, name: country.name, count: density, coverageLabel: coverage.label, color: baseColor })}
                               onMouseLeave={() => setHoveredCountry(null)}
                               onClick={() => {
                                 const normalizedId = countryId.split('-')[0];
@@ -360,7 +361,8 @@ const AfricaMap: React.FC<AfricaMapProps> = ({ shops, shopDensity, regionalLevel
                       >
                         {countriesInThisRegion.map(country => {
                           const countryId = (country as any).countryId || country.id;
-                          const density = shopDensity[countryId] || 0;
+                          const coverage = coverageByCountry[countryId] ?? { count: 0, label: 'Mapped locations' };
+                          const density = coverage.count;
                           const isHovered = hoveredCountry?.id === country.id;
                           const baseColor = colorScale(density, country.name);
 
@@ -380,7 +382,7 @@ const AfricaMap: React.FC<AfricaMapProps> = ({ shops, shopDensity, regionalLevel
                                 scale: isHovered ? 1.01 : 1,
                                 transition: { duration: 0.2 }
                               }}
-                              onMouseEnter={() => setHoveredCountry({ id: country.id, name: country.name, density, color: baseColor })}
+                              onMouseEnter={() => setHoveredCountry({ id: country.id, name: country.name, count: density, coverageLabel: coverage.label, color: baseColor })}
                               onMouseLeave={() => setHoveredCountry(null)}
                               onClick={() => {
                                 const normalizedId = countryId.split('-')[0];
@@ -442,8 +444,8 @@ const AfricaMap: React.FC<AfricaMapProps> = ({ shops, shopDensity, regionalLevel
               )}
 
               <div className="flex items-baseline space-x-1">
-                <span className="text-lg font-black">{hoveredCountry.density}</span>
-                <span className="text-[10px] uppercase font-bold opacity-60">Villages Mapped</span>
+                <span className="text-lg font-black">{hoveredCountry.count.toLocaleString()}</span>
+                <span className="text-[10px] uppercase font-bold opacity-60">{hoveredCountry.coverageLabel}</span>
               </div>
             </div>
           </motion.div>
@@ -454,7 +456,7 @@ const AfricaMap: React.FC<AfricaMapProps> = ({ shops, shopDensity, regionalLevel
       <div className="absolute bottom-4 left-4 flex flex-col space-y-2 z-20">
         <div id="map-legend" className={`p-3 rounded-lg border backdrop-blur-sm shadow-lg ${theme === 'dark' ? 'bg-slate-900/80 border-slate-700' : 'bg-white/80 border-slate-200'}`}>
           <div className="flex flex-col space-y-1">
-            <span className={`text-[8px] font-bold uppercase ${theme === 'dark' ? 'text-slate-500' : 'text-slate-400'}`}>Village density</span>
+            <span className={`text-[8px] font-bold uppercase ${theme === 'dark' ? 'text-slate-500' : 'text-slate-400'}`}>Mapped coverage</span>
             <div className="flex h-1.5 w-32 rounded-full overflow-hidden">
               <div className="flex-1 bg-yellow-100" />
               <div className="flex-1 bg-yellow-300" />

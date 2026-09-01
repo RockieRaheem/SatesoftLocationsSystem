@@ -310,7 +310,9 @@ const Dashboard: React.FC<DashboardProps> = ({ theme, shopRoles, superUserRoles,
             ) : (
               <AfricaMap 
                 shops={mockShops} 
-                shopDensity={villagesPerCountry} 
+                coverageByCountry={Object.fromEntries(
+                  Object.entries(villagesPerCountry).map(([code, count]) => [code, { count, label: 'Mapped locations' }])
+                )}
                 regionalLevels={regionalLevels}
                 theme={theme} 
                 onCountryClick={(id, name) => setSelectedCountryId(id)}
