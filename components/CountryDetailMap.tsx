@@ -4,6 +4,7 @@ import { countryDetailedMaps } from '../countryPaths';
 import { Theme, Shop } from '../types';
 import { ArrowLeft, Plus, Minus, Maximize2, RotateCcw } from 'lucide-react';
 import CountryMapModal from './CountryMapModal';
+import UgandaElectoralMap from './UgandaElectoralMap';
 
 const KAMPALA_DIVISIONS = [
   {
@@ -374,6 +375,9 @@ const CountryDetailMap: React.FC<CountryDetailMapProps> = ({ countryId, shops, t
   }, [shops, countryId]);
 
   if (!mapData) {
+    if (countryId === 'UG') {
+      return <UgandaElectoralMap theme={theme} onBack={onBack} />;
+    }
     return (
       <div className="flex flex-col items-center justify-center h-full space-y-4">
         <p className="text-slate-500 font-medium">Detailed map for this country is coming soon.</p>

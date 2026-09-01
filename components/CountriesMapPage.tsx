@@ -28,8 +28,11 @@ const CountriesMapPage: React.FC<CountriesMapPageProps> = ({ theme, shops, regio
     }, []);
 
     const coverageByCountry = useMemo(() => {
-        const coverage: Record<string, { count: number; label: string }> = {};
+        const coverage: Record<string, { count: number; label: string; loading?: boolean }> = {
+            UG: { count: 0, label: 'EC coverage', loading: true },
+        };
         shops.forEach(shop => {
+            if (shop.countryCode === 'UG') return;
             const current = coverage[shop.countryCode]?.count ?? 0;
             coverage[shop.countryCode] = { count: current + 1, label: 'Registered shops' };
         });
@@ -42,13 +45,7 @@ const CountriesMapPage: React.FC<CountriesMapPageProps> = ({ theme, shops, regio
         return coverage;
     }, [shops, ugandaSummary]);
 
-    const openCountry = (id: string, name: string) => {
-        if (id === 'UG') {
-            setDoubleClickedCountry({ id, name });
-            return;
-        }
-        setSelectedCountryId(id);
-    };
+    const openCountry = (id: string) => setSelectedCountryId(id);
 
     return (
         <div className={`h-[calc(100vh-180px)] min-h-[500px] lg:min-h-[600px] w-full flex flex-col items-center justify-center p-4 rounded-xl relative overflow-hidden border ${theme === 'dark' ? 'border-slate-700 bg-slate-900' : 'border-slate-200 bg-[#f5f5f9]'}`}>
@@ -69,7 +66,7 @@ const CountriesMapPage: React.FC<CountriesMapPageProps> = ({ theme, shops, regio
                         theme={theme}
                         countries={countries}
                         onCountryClick={openCountry}
-                        onCountryDoubleClick={(id, name) => setDoubleClickedCountry({ id, name })}
+                        onCountryDoubleClick={(id, name) => id === 'UG' ? setSelectedCountryId(id) : setDoubleClickedCountry({ id, name })}
                     />
                 )}
             </div>

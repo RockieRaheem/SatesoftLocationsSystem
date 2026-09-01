@@ -1,7 +1,9 @@
 
 
-import React, { useState, useMemo } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { Theme, LeadStage, Role, ShopUser, SuperUser, Notification, ActiveView, ChatMessage, RegionalEconomicLevel } from '../types';
+import type { UgandaElectoralSummary } from '../electoral/types';
+import { apiFetch } from '../src/services/api';
 import Icon, { IconName } from './Icon';
 import { mockShops, mockSalesTransactions, mockLeads, mockMessages, mockCallRecords, allAfricanCountries } from '../data';
 import { DonutChart, BarChart, LineChart } from './Charts';
@@ -100,6 +102,14 @@ const Dashboard: React.FC<DashboardProps> = ({ theme, shopRoles, superUserRoles,
   const [sentimentFilter, setSentimentFilter] = useState<'All' | 'Positive' | 'Negative' | 'Neutral'>('All');
   const [selectedCountryId, setSelectedCountryId] = useState<string | null>(null);
   const [selectedModalCountry, setSelectedModalCountry] = useState<{ id: string; name: string } | null>(null);
+  const [ugandaSummary, setUgandaSummary] = useState<UgandaElectoralSummary | null>(null);
+
+  useEffect(() => {
+    apiFetch('/api/electoral/uganda/summary')
+      .then(response => response.json() as Promise<UgandaElectoralSummary>)
+      .then(setUgandaSummary)
+      .catch(() => undefined);
+  }, []);
 
   const isFinancialInstitution = userRole === 'Financial Institution';
 
@@ -195,7 +205,6 @@ const Dashboard: React.FC<DashboardProps> = ({ theme, shopRoles, superUserRoles,
 
   const villagesPerCountry = useMemo(() => {
     const counts: Record<string, number> = {
-      'UG': 12,
       'KE': 8,
       'TZ': 6,
       'RW': 4,
@@ -208,8 +217,9 @@ const Dashboard: React.FC<DashboardProps> = ({ theme, shopRoles, superUserRoles,
         counts[country.countryCode] = level3Count;
       }
     });
+    if (ugandaSummary) counts.UG = ugandaSummary.normalizedTotals.villagesAndCells;
     return counts;
-  }, []);
+  }, [ugandaSummary]);
 
   const shopActivitySummary = useMemo(() => {
       const activeShops = new Set<number>();
@@ -298,7 +308,7 @@ const Dashboard: React.FC<DashboardProps> = ({ theme, shopRoles, superUserRoles,
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-1 gap-6">
-        <Card title={selectedCountryId ? "Country Detail Map" : "Mapped villages"} className="lg:col-span-1">
+        <Card title={selectedCountryId ? "Country Detail Map" : "Africa coverage map"} className="lg:col-span-1">
           <div className="h-[768px] -mx-6 -my-4">
             {selectedCountryId ? (
               <CountryDetailMap 
@@ -311,12 +321,12 @@ const Dashboard: React.FC<DashboardProps> = ({ theme, shopRoles, superUserRoles,
               <AfricaMap 
                 shops={mockShops} 
                 coverageByCountry={Object.fromEntries(
-                  Object.entries(villagesPerCountry).map(([code, count]) => [code, { count, label: 'Mapped locations' }])
+                  Object.entries(villagesPerCountry).map(([code, count]) => [code, { count, label: code === 'UG' ? 'EC villages & cells' : 'Mapped locations' }])
                 )}
                 regionalLevels={regionalLevels}
                 theme={theme} 
                 onCountryClick={(id, name) => setSelectedCountryId(id)}
-                onCountryDoubleClick={(id, name) => setSelectedModalCountry({ id, name })}
+                onCountryDoubleClick={(id, name) => id === 'UG' ? setSelectedCountryId(id) : setSelectedModalCountry({ id, name })}
               />
             )}
           </div>

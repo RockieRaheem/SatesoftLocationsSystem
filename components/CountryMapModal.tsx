@@ -8,6 +8,7 @@ import {
 import { Theme } from '../types';
 import { countryDetailedMaps } from '../countryPaths';
 import { africaDetailedPaths } from '../africaPaths';
+import UgandaElectoralMap from './UgandaElectoralMap';
 
 const KAMPALA_DIVISIONS = [
   {
@@ -274,7 +275,7 @@ interface ParsedPath {
   labelY?: number;
 }
 
-const CountryMapModal: React.FC<CountryMapModalProps> = ({ 
+const GenericCountryMapModal: React.FC<CountryMapModalProps> = ({
   countryId, 
   countryName, 
   theme, 
@@ -1672,6 +1673,13 @@ const CountryMapModal: React.FC<CountryMapModalProps> = ({
 let currentMousePos = { x: 0, y: 0 };
 const handleMouseMove = (pos: { x: number, y: number }) => {
   currentMousePos = pos;
+};
+
+const CountryMapModal: React.FC<CountryMapModalProps> = (props) => {
+  if (props.countryId === 'UG') {
+    return <div className="fixed inset-0 z-[100] bg-slate-950/55 p-2 backdrop-blur-sm sm:p-5"><UgandaElectoralMap theme={props.theme} onBack={props.onClose} /></div>;
+  }
+  return <GenericCountryMapModal {...props} />;
 };
 
 export default CountryMapModal;

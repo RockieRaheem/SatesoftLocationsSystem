@@ -7,7 +7,7 @@ import { ZoomIn, ZoomOut, Maximize2, RotateCcw } from 'lucide-react';
 
 interface AfricaMapProps {
   shops: Shop[];
-  coverageByCountry: Record<string, { count: number; label: string }>;
+  coverageByCountry: Record<string, { count: number; label: string; loading?: boolean }>;
   regionalLevels: RegionalEconomicLevel[];
   theme: Theme;
   countries?: Country[];
@@ -16,7 +16,7 @@ interface AfricaMapProps {
 }
 
 const AfricaMap: React.FC<AfricaMapProps> = ({ shops, coverageByCountry, regionalLevels, theme, countries, onCountryClick, onCountryDoubleClick }) => {
-  const [hoveredCountry, setHoveredCountry] = useState<{ id: string, name: string, count: number, coverageLabel: string, color?: string } | null>(null);
+  const [hoveredCountry, setHoveredCountry] = useState<{ id: string, name: string, count: number, coverageLabel: string, loading?: boolean, color?: string } | null>(null);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [scale, setScale] = useState(1);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -332,7 +332,7 @@ const AfricaMap: React.FC<AfricaMapProps> = ({ shops, coverageByCountry, regiona
                                 scale: isHovered ? 1.01 : 1,
                                 transition: { duration: 0.2 }
                               }}
-                              onMouseEnter={() => setHoveredCountry({ id: country.id, name: country.name, count: density, coverageLabel: coverage.label, color: baseColor })}
+                              onMouseEnter={() => setHoveredCountry({ id: country.id, name: country.name, count: density, coverageLabel: coverage.label, loading: coverage.loading, color: baseColor })}
                               onMouseLeave={() => setHoveredCountry(null)}
                               onClick={() => {
                                 const normalizedId = countryId.split('-')[0];
@@ -382,7 +382,7 @@ const AfricaMap: React.FC<AfricaMapProps> = ({ shops, coverageByCountry, regiona
                                 scale: isHovered ? 1.01 : 1,
                                 transition: { duration: 0.2 }
                               }}
-                              onMouseEnter={() => setHoveredCountry({ id: country.id, name: country.name, count: density, coverageLabel: coverage.label, color: baseColor })}
+                              onMouseEnter={() => setHoveredCountry({ id: country.id, name: country.name, count: density, coverageLabel: coverage.label, loading: coverage.loading, color: baseColor })}
                               onMouseLeave={() => setHoveredCountry(null)}
                               onClick={() => {
                                 const normalizedId = countryId.split('-')[0];
@@ -444,7 +444,7 @@ const AfricaMap: React.FC<AfricaMapProps> = ({ shops, coverageByCountry, regiona
               )}
 
               <div className="flex items-baseline space-x-1">
-                <span className="text-lg font-black">{hoveredCountry.count.toLocaleString()}</span>
+                <span className="text-lg font-black">{hoveredCountry.loading ? '—' : hoveredCountry.count.toLocaleString()}</span>
                 <span className="text-[10px] uppercase font-bold opacity-60">{hoveredCountry.coverageLabel}</span>
               </div>
             </div>
